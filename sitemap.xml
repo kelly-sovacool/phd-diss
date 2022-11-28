@@ -2,34 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://sovacool.dev/phd-diss/index.html</loc>
-    <lastmod>2022-11-28T18:40:37.155Z</lastmod>
+    <lastmod>2022-11-28T20:49:50.445Z</lastmod>
   </url>
   <url>
-    <loc>http://sovacool.dev/phd-diss/intro.html</loc>
-    <lastmod>2022-11-28T18:40:37.155Z</lastmod>
-  </url>
-  <url>
-    <loc>http://sovacool.dev/phd-diss/optifit.html</loc>
-    <lastmod>2022-11-28T18:40:37.155Z</lastmod>
-  </url>
-  <url>
-    <loc>http://sovacool.dev/phd-diss/data-science.html</loc>
-    <lastmod>2022-11-28T18:40:37.155Z</lastmod>
-  </url>
-  <url>
-    <loc>http://sovacool.dev/phd-diss/cdiff.html</loc>
-    <lastmod>2022-11-28T18:40:37.155Z</lastmod>
-  </url>
-  <url>
-    <loc>http://sovacool.dev/phd-diss/discussion.html</loc>
-    <lastmod>2022-11-28T18:40:37.155Z</lastmod>
+    <loc>http://sovacool.dev/phd-diss/intro/index.html</loc>
+    <lastmod>2022-11-28T20:49:50.445Z</lastmod>
   </url>
   <url>
     <loc>http://sovacool.dev/phd-diss/references.html</loc>
-    <lastmod>2022-11-28T18:40:37.159Z</lastmod>
+    <lastmod>2022-11-28T20:49:50.449Z</lastmod>
   </url>
   <url>
     <loc>http://sovacool.dev/phd-diss/dissertation_KLS.pdf</loc>
-    <lastmod>2022-11-28T18:40:37.039Z</lastmod>
+    <lastmod>2022-11-28T20:49:50.281Z</lastmod>
   </url>
 </urlset>

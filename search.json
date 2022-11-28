@@ -7,24 +7,17 @@
     "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books."
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
+    "objectID": "intro/index.html",
+    "href": "intro/index.html",
     "title": "1  Introduction",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
-  },
-  {
-    "objectID": "discussion.html",
-    "href": "discussion.html",
-    "title": "5  Discussion",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever."
+    "text": "example reference (Schloss et al. 2009)\n\n\n\n\nSchloss, Patrick D., Sarah L. Westcott, Thomas Ryabin, Justine R. Hall, Martin Hartmann, Emily B. Hollister, Ryan A. Lesniewski, et al. 2009. “Introducing Mothur: Open-Source, Platform-Independent, Community-Supported Software for Describing and Comparing Microbial Communities.” Applied and Environmental Microbiology 75 (23): 7537–41. https://doi.org/10.1128/AEM.01541-09."
   },
   {
     "objectID": "references.html",
     "href": "references.html",
     "title": "References",
     "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+    "text": "Schloss, Patrick D., Sarah L. Westcott, Thomas Ryabin, Justine R. Hall,\nMartin Hartmann, Emily B. Hollister, Ryan A. Lesniewski, et al. 2009.\n“Introducing Mothur: Open-Source,\nPlatform-Independent, Community-Supported Software for Describing and\nComparing Microbial Communities.” Applied and Environmental\nMicrobiology 75 (23): 7537–41. https://doi.org/10.1128/AEM.01541-09."
   }
 ]
