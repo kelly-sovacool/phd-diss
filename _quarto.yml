@@ -20,11 +20,11 @@ book:
   downloads: [pdf]
   chapters:
     - index.qmd
-    - intro.qmd
-    - optifit.qmd
-    - data-science.qmd
-    - cdiff.qmd
-    - discussion.qmd
+    - intro/index.qmd
+    - optifit/index.qmd
+    - data-science/index.qmd
+    - cdiff/index.qmd
+    - discussion/index.qmd
     - references.qmd
 
 bibliography: references.bib 
@@ -32,7 +32,9 @@ fontsize: 12pt
 
 format:
   html:
-    theme: cosmo
+    theme:
+      light: flatly
+      dark: darkly
     title-block-banner: true
   pdf:
     documentclass: scrreprt

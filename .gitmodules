@@ -1,0 +1,11 @@
+[submodule "optifit/Sovacool_OptiFit_mSphere_2022"]
+	path = optifit/Sovacool_OptiFit_mSphere_2022
+	url = https://github.com/SchlossLab/Sovacool_OptiFit_mSphere_2022
+[submodule "data-science/mikropml"]
+	path = data-science/mikropml
+	url = https://github.com/SchlossLab/mikropml
+[submodule "data-science/software-carpentry"]
+	path = data-science/software-carpentry
+	url = https://github.com/umcarpentries/intro-curriculum-r
+[submodule "girls-who-code"]
+	url = https://github.com/GWC-DCMB/curriculum-notebooks
