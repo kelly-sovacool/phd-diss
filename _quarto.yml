@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: _book
 
 book:
   title: | 
@@ -27,9 +28,11 @@ book:
     - discussion/index.qmd
     - references.qmd
 
+execute: 
+  freeze: auto
+
 bibliography: references.bib 
 fontsize: 12pt
-
 format:
   html:
     theme:

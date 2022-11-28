@@ -1,0 +1,41 @@
+import yaml
+quarto_yml = '_quarto.yml'
+with open(quarto_yml, 'r') as infile:
+    quarto_meta = yaml.full_load(infile)
+
+pdf_output = f"{quarto_meta['project']['output-dir']}/{quarto_meta['book']['output-file']}.pdf"
+html_output = f"{quarto_meta['project']['output-dir']}/index.html"
+
+rule targets:
+    input:
+        pdf_output,
+        html_output
+
+
+rule cat_references:
+    input:
+        py = 'workflow/scripts/references.py',
+        bib = ["data-science/girls-who-code-paper/paper/paper.bib",
+        'data-science/mikropml-paper/vignettes/paper.bib',
+        'data-science/software-carpentry-paper/paper/paper.bib',
+        'optifit/optifit-paper/paper/references.bib']
+    output:
+        bib = 'references.bib'
+    script:
+        "scripts/references.py"
+
+
+rule render:
+    input:
+        yml = quarto_yml,
+        qmd = quarto_meta['book']['chapters'],
+        bib = rules.cat_references.output.bib,
+        tex = 'preamble.tex'
+    output:
+        pdf = pdf_output,
+        html = html_output,
+        tex = f"{quarto_meta['book']['output-file']}.tex"
+    shell:
+        """
+        quarto render
+        """
