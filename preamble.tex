@@ -1,7 +1,7 @@
-%\documentclass[12pt]{report} % Set default font size and document class
+\usepackage{helvet} % Helvetica font
+\renewcommand*\familydefault{\sfdefault} % Use the sans serif version of the font
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx} % to insert figures
-%\graphicspath{{images/}} % Show latex where to look for figures
 \usepackage{fullpage} % Set 1 inch margins
 \usepackage{setspace} % Set line spacing
 \usepackage{titletoc} % Table of contents
@@ -9,21 +9,13 @@
 \usepackage{sectsty} % for \chapterfont
 \chapterfont{\centering \large{}} % Center all chapter titles
 \usepackage[backend=biber, style=numeric, citestyle=numeric, sorting=none]{biblatex}
-%\addbibresource{references.bib} 
-%\input{shortcuts/shortcuts.tex} % Shortcuts/macros; e.g. $\cdif$ types in italics C. difficile
-
-% make arrows that go left and right over a symbol
-\usepackage{amsmath} % symbol is in this package
+\usepackage{amsmath}
 \usepackage{old-arrows} % make arrow slightly smaller
-
 % hyperlinks
 \usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
 \urlstyle{same}
-
 \usepackage{ragged2e} %\justify
 \usepackage{caption} %Captions for figures
 \captionsetup[figure]{justification=justified, singlelinecheck=off}
-
 \usepackage{adjustbox} % downsize table
-
 \usepackage{csvsimple} % generate simple table from tsv
