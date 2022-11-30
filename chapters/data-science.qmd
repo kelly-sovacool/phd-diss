@@ -2,14 +2,10 @@
 
 <!-- GIRLS WHO CODE -->
 
-```{r gwc}
-gwc_meta <- yaml::yaml.load_file(here::here('chapters', 'girls-who-code.yml'))
-gwc_authors <- paste(unlist(gwc_meta$authors), sep = ", ")
-```
+## Teaching Python for Data Science: Collaborative development of a modular & interactive curriculum
 
-## `r gwc_meta$title`
-
-Co-authors of the Girls Who Code paper include: `r gwc_authors`
+Co-authors of the Girls Who Code paper include: 
+Marlena Duda^\*^, Kelly L. Sovacool^\*^, Negar Farzaneh, Vy Kim Nguyen, Sarah E. Haynes, Hayley Falk, Katherine L. Furman, Logan A. Walker, Rucheng Diao, Morgan Oneka, Audrey C. Drotos, Alana Woloshin, Gabrielle A. Dotson, April Kriebel, Lucy Meng, Stephanie N. Thiede, Zena Lapp, and Brooke N. Wolford.
 
 ^\*^Indicates co-first author
 
@@ -397,14 +393,11 @@ All authors contributed to the curriculum and reviewed the manuscript.
 None.
 
 <!-- SOFTWARE CARPENTRY -->
-```{r swc}
-swc_meta <- yaml::yaml.load_file(here::here('chapters', 'software-carpentry.yml'))
-swc_authors <- paste(unlist(swc_meta$authors), ", ")
-```
 
-## `r swc_meta$title`
+## Developing and deploying an integrated workshop curriculum teaching computational skills for reproducible research
 
-Co-authors of the Software Carpentry paper include: `r swc_authors`
+Co-authors of the Software Carpentry paper include: 
+Zena Lapp^\*^, Kelly L. Sovacool^\*^, Nick Lesniak, Dana King, Catherine Barnier, Matthew Flickinger, Jule Krüger, Courtney R. Armour, Maya M. Lapp, Jason Tallant, Rucheng Diao, Morgan Oneka, Sarah Tomkovich, Jacqueline Moltzau Anderson, Sarah K. Lucas, and Patrick D. Schloss.
 
 ^\*^Indicates co-first author
 
@@ -689,14 +682,11 @@ All authors contributed to the development of the curriculum.
 None.
 
 <!-- MIKROPML -->
-```{r mikropml}
-mikropml_meta <- yaml::yaml.load_file(here::here('chapters', 'mikropml.yml'))
-mikropml_authors <- paste(unlist(mikropml_meta$authors), sep = ", ")
-```
 
-## `r mikropml_meta$title`
+## mikropml: User-Friendly R Package for Supervised Machine Learning Pipelines
 
-Co-authors of the mikropml paper include: `r mikropml_authors`
+Co-authors of the mikropml paper include: 
+Begüm D. Topçuoğlu^\*^, Zena Lapp^\*^, Kelly L. Sovacool^\*^, Evan Snitkin, Jenna Wiens, and Patrick D. Schloss.
 
 ^\*^Indicates co-first author
 
