@@ -41,6 +41,7 @@ authors:
     orcid: 0000-0003-3153-1552
 bibliography: girls-who-code-paper/paper/paper.bib
 ---
+# Teaching Python for Data Science: Collaborative development of a modular & interactive curriculum
 
 ## Summary
 

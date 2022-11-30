@@ -21,11 +21,11 @@ book:
   downloads: [pdf]
   chapters:
     - index.qmd
-    - intro/index.qmd
-    - optifit/index.qmd
-    - data-science/index.qmd
-    - cdiff/index.qmd
-    - discussion/index.qmd
+    - chapters/intro.qmd
+    - chapters/optifit.qmd
+    - chapters/data-science.qmd
+    - chapters/cdiff.qmd
+    - chapters/discussion.qmd
     - references.qmd
 
 execute: 

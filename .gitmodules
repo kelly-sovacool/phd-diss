@@ -1,12 +1,12 @@
 [submodule "optifit/optifit-paper"]
-	path = optifit/optifit-paper
+	path = papers/optifit
 	url = https://github.com/SchlossLab/Sovacool_OptiFit_mSphere_2022
 [submodule "data-science/girls-who-code-paper"]
-	path = data-science/girls-who-code-paper
+	path = papers/girls-who-code
 	url = https://github.com/GWC-DCMB/curriculum-notebooks
 [submodule "data-science/software-carpentry-paper"]
-	path = data-science/software-carpentry-paper
+	path = papers/software-carpentry
 	url = https://github.com/umcarpentries/intro-curriculum-r
 [submodule "data-science/mikropml-paper"]
-	path = data-science/mikropml-paper
+	path = papers/mikropml
 	url = https://github.com/SchlossLab/mikropml
