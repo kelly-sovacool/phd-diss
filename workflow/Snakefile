@@ -13,7 +13,10 @@ rule targets:
 
 rule render:
     input:
-        yml = quarto_yml,
+        yml = [quarto_yml, 
+               'chapters/girls-who-code.yml',
+               'chapters/software-carpentry.yml',
+               'chapters/mikropml.yml'],
         qmd = quarto_meta['book']['chapters'],
         bib = 'references.bib',
         tex = 'preamble.tex'
