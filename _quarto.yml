@@ -30,6 +30,7 @@ book:
 
 execute: 
   freeze: auto
+  echo: false
 
 bibliography: references.bib 
 fontsize: 12pt
