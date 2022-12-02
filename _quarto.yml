@@ -34,6 +34,9 @@ execute:
 
 bibliography: references.bib 
 fontsize: 12pt
+mainfont: Times New Roman
+sansfont: Times New Roman
+toc-depth: 2
 format:
   html:
     theme:
@@ -43,4 +46,8 @@ format:
   pdf:
     documentclass: scrreprt
     keep-tex: true
-    include-in-header: preamble.tex
+    include-in-header: 
+      - partials/include-in-header.tex
+    #template-partials: 
+    #  - partials/title.tex
+    #  - partials/before-body.tex
