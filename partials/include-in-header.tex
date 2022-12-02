@@ -1,6 +1,7 @@
-\usepackage{helvet} % Helvetica font
-\renewcommand*\familydefault{\sfdefault} % Use the sans serif version of the font
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+%\renewcommand*\familydefault{\sfdefault}
+\usepackage{fontspec}
 \usepackage{graphicx} % to insert figures
 \usepackage{fullpage} % Set 1 inch margins
 \usepackage{setspace} % Set line spacing
@@ -8,6 +9,18 @@
 \usepackage{multirow} % for tables
 \usepackage{sectsty} % for \chapterfont
 \chapterfont{\centering \large{}} % Center all chapter titles
+
+
+%% ---- SECTION HEADINGS -----------------------------------------------
+\usepackage{titlesec}
+
+\titleformat{\chapter}[display]
+  {\normalfont\large\filcenter\bfseries}{\chaptertitlename\ \thechapter}{1em}{\Large}
+
+\titlespacing*{\chapter}
+  {0pt}{30pt}{20pt}
+%-----------------------------------------------
+
 \usepackage[backend=biber, style=numeric, citestyle=numeric, sorting=none]{biblatex}
 \usepackage{amsmath}
 \usepackage{old-arrows} % make arrow slightly smaller

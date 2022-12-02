@@ -48,6 +48,12 @@ format:
     keep-tex: true
     include-in-header: 
       - partials/include-in-header.tex
-    #template-partials: 
+    cite-method: biblatex
+    linkcolor: black
+    filecolor: black
+    citecolor: black
+    urlcolor: black
+    anchorcolor: black
+    template-partials: 
+      - partials/before-body.tex
     #  - partials/title.tex
-    #  - partials/before-body.tex

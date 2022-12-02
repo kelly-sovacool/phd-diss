@@ -1,8 +1,12 @@
 # Democratizing data science with open curricula and user-friendly software tools
 
+## Preamble
+
+TODO introduce 3 papers and explain how they tie together
+
 <!-- GIRLS WHO CODE -->
 
-## Teaching Python for Data Science: Collaborative development of a modular & interactive curriculum
+## Teaching Python for Data Science: Collaborative development of a modular and interactive curriculum
 
 Co-authors of the Girls Who Code paper include: 
 Marlena Duda^\*^, Kelly L. Sovacool^\*^, Negar Farzaneh, Vy Kim Nguyen, Sarah E. Haynes, Hayley Falk, Katherine L. Furman, Logan A. Walker, Rucheng Diao, Morgan Oneka, Audrey C. Drotos, Alana Woloshin, Gabrielle A. Dotson, April Kriebel, Lucy Meng, Stephanie N. Thiede, Zena Lapp, and Brooke N. Wolford.
