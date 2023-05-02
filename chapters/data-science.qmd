@@ -179,7 +179,7 @@ Each lesson consists of a lesson notebook and a practice notebook containing sim
 exercises for the learner to complete on their own following the lesson.
 
 ![**Our lesson modules.** All Jupyter notebooks are available on
-GitHub (https://github.com/GWC-DCMB/curriculum-notebooks).](/papers/girls-who-code/paper/lesson-modules.png)
+GitHub (https://github.com/GWC-DCMB/curriculum-notebooks).](/papers/girls-who-code/paper/lesson-modules.png)`r sovatools::get_image_dims(here::here('papers/girls-who-code/paper/lesson-modules.png'))`
 
 Each lesson builds on those before it, beginning with relevant content reminders
 from the previous lessons and ending with a concise summary of the skills
@@ -304,7 +304,7 @@ more confident in myself.’
 
 ![**Post-survey responses.** Learners were asked if they felt that their
 skills in Python programming, problem solving, critical thinking, and
-collaboration had improved.](/papers/girls-who-code/paper/skill_plots.png)
+collaboration had improved.](/papers/girls-who-code/paper/skill_plots.png){width=100% height=66%}
 
 Overwhelmingly, learners' favorite parts of the program are the guest speakers
 and the project.
@@ -481,7 +481,7 @@ Our collaborative model ensured that at least two pairs of eyes viewed any
 changes before they could be included in the curriculum.
 This strategy helped us reduce mistakes and create better quality content.
 
-![The curriculum development framework. Created with BioRender.com.](/papers/software-carpentry/paper/development-framework.png)
+![The curriculum development framework. Created with BioRender.com.](/papers/software-carpentry/paper/development-framework.png){width=100% height=39%}
 
 Following the sprint, contributors finalized edits and continued to review each
 others' pull requests to complete the alpha version of our curriculum.
@@ -504,7 +504,7 @@ analysis, we also seek to provide a rigorous framework for adhering to
 reproducible research principles that enable researchers to easily share their
 empirical work with others.
 
-![Curriculum overview. Created with BioRender.com.](/papers/software-carpentry/paper/curriculum-overview.png)
+![Curriculum overview. Created with BioRender.com.](/papers/software-carpentry/paper/curriculum-overview.png){width=100% height=33%}
 
 #### Learning Objectives
 
@@ -620,7 +620,7 @@ survey respondents; see Figure 3).
 All attendees who filled out the post-workshop survey (n = 19) would recommend
 the workshop to others.
 
-![Pre- and post-workshop survey results.](/papers/software-carpentry/paper/survey-results.png)
+![Pre- and post-workshop survey results.](/papers/software-carpentry/paper/survey-results.png){width=100% height=50%}
 
 ##### Virtual Workshop Reflection
 
