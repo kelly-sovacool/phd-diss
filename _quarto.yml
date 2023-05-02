@@ -22,7 +22,6 @@ book:
   downloads: [pdf]
   chapters:
     - index.qmd
-    - chapters/intro.qmd
     - chapters/optifit.qmd
     - chapters/data-science.qmd
     - chapters/cdiff.qmd
@@ -50,8 +49,8 @@ acronyms:
 frontispiece: frontispiece.png
 list-commands: # toggle show/hide for each list
   - \showlistoffigures
-  - \showlistoftables
-  - \showlistofappendices
+  #- \showlistoftables
+  #- \showlistofappendices
   - \showlistofacronyms
 
 bibliography: references.bib

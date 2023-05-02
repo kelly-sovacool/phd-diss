@@ -1,4 +1,6 @@
-# Preface {.unnumbered}
+# Introduction
+
+Example reference [@schloss_introducing_2009]
 
 This is a Quarto book.
 
