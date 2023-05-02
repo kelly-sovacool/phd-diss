@@ -11,3 +11,4 @@ __pycache__
 *.log
 *.lot
 *.toc
+.Rproj.user

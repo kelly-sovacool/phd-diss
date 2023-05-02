@@ -65,4 +65,7 @@ format:
 
 execute:
   freeze: auto
+  cache: true
+  eval: true
   echo: false
+engine: knitr
