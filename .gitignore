@@ -3,4 +3,11 @@
 __pycache__
 /.quarto/
 /_book/
-dissertation_KLS.tex
+/dissertation_KLS.tex
+/thesis-umich.cls
+*.aux
+*.loa
+*.lof
+*.log
+*.lot
+*.toc

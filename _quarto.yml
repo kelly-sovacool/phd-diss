@@ -3,17 +3,18 @@ project:
   output-dir: _book
 
 book:
-  title: | 
-    Improving machine learning models for gut microbiome classification problems 
+  title: |
+    Improving machine learning models for gut microbiome classification problems
   subtitle: |
     and democratizing data science along the way
   output-file: dissertation_KLS
   author:
     - name: Kelly L. Sovacool
       orcid: 0000-0003-3283-829X
+      email: sovacool@umich.edu
       url: https://sovacool.dev/
-  date: today # TODO
-  date-format: iso
+  date: "2023" # TODO
+  date-format: YYYY
   search: true
   repo-url: https://github.com/kelly-sovacool/phd-diss
   site-url: http://sovacool.dev/phd-diss/
@@ -26,34 +27,46 @@ book:
     - chapters/data-science.qmd
     - chapters/cdiff.qmd
     - chapters/discussion.qmd
-    - references.qmd
 
-execute: 
-  freeze: auto
-  echo: false
+dept: Mathematics
+preface: |
+  TODO
+dedication: |
+  TODO
+acknowledgements: |
+  TODO
+abstract: |
+  TODO
+committee: # alphabetical order
+  - Professor John D. Brown, Chair
+  - Assistant Professor Charles Z. Jones
+  - Associate Professor Kathleen X. Lee, Yale University
+  - Associate Professor Horace H. Rackham
+  - Professor Emeritus Ann A. Smith
+chair: Professor Patrick D. Schloss
+#cochair: Co-chair One & Co-chair Two
+acronyms:
+  \acro{OTU}{Operational Taxonomic Unit}
+frontispiece: frontispiece.png
+list-commands: # toggle show/hide for each list
+  - \showlistoffigures
+  - \showlistoftables
+  - \showlistofappendices
+  - \showlistofacronyms
 
-bibliography: references.bib 
+bibliography: references.bib
 fontsize: 12pt
-mainfont: Times New Roman
-sansfont: Times New Roman
-toc-depth: 2
 format:
+  rackham-pdf:
+    keep-tex: true
+    classoption:
+      - thesis
   html:
     theme:
       light: flatly
       dark: darkly
     title-block-banner: true
-  pdf:
-    documentclass: scrreprt
-    keep-tex: true
-    include-in-header: 
-      - partials/include-in-header.tex
-    cite-method: biblatex
-    linkcolor: black
-    filecolor: black
-    citecolor: black
-    urlcolor: black
-    anchorcolor: black
-    template-partials: 
-      - partials/before-body.tex
-    #  - partials/title.tex
+
+execute:
+  freeze: auto
+  echo: false

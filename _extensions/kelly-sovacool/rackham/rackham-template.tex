@@ -1,0 +1,100 @@
+\documentclass[$if(fontsize)$
+$fontsize$,
+$endif$
+$if(papersize)$
+$papersize$paper,
+$endif$
+$for(classoption)$
+$classoption$$sep$,
+$endfor$]{thesis-umich}
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+\title{$title$}
+$for(authors)$
+    \author{$it.name.literal$}
+    \email{$it.email$}
+    \orcid{$it.orcid$}
+$endfor$
+
+% Department
+$if(dept)$
+\department{$dept$}
+$endif$
+% Year of completion
+$if(date)$
+\year=$date$
+$endif$
+
+
+$if(frontispiece)$
+\frontispiece{\includegraphics[width=4in]{$frontispiece$}}
+$endif$
+
+% Default style for front pages
+\frontpagestyle{7} % 7 is preferred by Rackham, but should be set individually for each front page
+
+$if(dedication)$
+\dedication[7]{$dedication$}
+$endif$
+$if(acknowledgements)$
+\acknowledgments[7]{$acknowledgements$}
+$endif$
+$if(preface)$
+\preface[7]{$preface$}
+$endif$
+
+$if(committee)$
+\committee{$for(committee)$$it$$sep$ \\
+ $endfor$}
+$endif$
+$if(chair)$
+\chair{$chair$}
+$endif$
+$if(cochair)$
+\cochair($cochair$)
+$endif$
+
+$if(acronyms)$
+\acronyms{$acronyms$}
+$endif$
+
+$if(abstract)$
+\abstract{$abstract$}
+$endif$
+
+% Commands to hide or show lists of figures, tables, etc.
+$for(list-commands)$
+$list-commands$
+$endfor$
+%\showlistoffigures
+%\showlistoftables
+%\showlistofmaps
+%\showlistofillustrations
+%\showlistofappendices
+%\showlistofabbreviations
+%\showlistofacronyms
+%\showlistofsymbols
+% OR
+%\hidelistoffigures
+%\hidelistoftables
+%\hidelistofmaps
+%\hidelistofillustrations
+%\hidelistofappendices
+%\hidelistofabbreviations
+%\hidelistofacronyms
+%\hidelistofsymbols
+
+
+\begin{document}
+
+$body$
+
+$if(bibliography)$
+\bibliographystyle{plain}
+\bibliography{$bibliography$}
+$endif$
+
+\end{document}
