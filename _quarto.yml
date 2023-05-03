@@ -11,7 +11,7 @@ book:
     - name: Kelly L. Sovacool
       orcid: 0000-0003-3283-829X
       email: sovacool@umich.edu
-  date: "2023-06-08" # TODO
+  date: "2023-06-08"
   date-format: YYYY
   search: true
   repo-url: https://github.com/kelly-sovacool/phd-diss
@@ -40,7 +40,6 @@ committee: # alphabetical order
   - Associate Professor Jenna Wiens
   - Professor Vincent B. Young
 chair: Professor Patrick D. Schloss, Chair
-#cochair: Co-chair One & Co-chair Two
 acronyms:
   \acro{OTU}{Operational Taxonomic Unit}
 frontispiece: frontispiece.png
