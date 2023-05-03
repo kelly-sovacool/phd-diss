@@ -42,7 +42,7 @@ committee: # alphabetical order
 chair: Professor Patrick D. Schloss, Chair
 acronyms:
   \acro{OTU}{Operational Taxonomic Unit}
-frontispiece: frontispiece.png
+frontispiece: frontispiece.png # TODO hex stickers
 list-commands: # toggle show/hide for each list
   - \showlistoffigures
   #- \showlistoftables
