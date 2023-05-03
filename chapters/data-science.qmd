@@ -177,13 +177,13 @@ science can be impactful across many disciplines.
 Our curriculum design consists of 27 lessons broken up into 5 modules that cover
 Jupyter notebook setup, Python coding fundamentals, use of essential data
 science packages including pandas and numpy, basic statistical analyses, and
-plotting using seaborn and matplotlib (Figure 1) [@harris_array_2020;
+plotting using seaborn and matplotlib (@#fig-gwc-lessons) [@harris_array_2020;
 @waskom_seaborn_2021; @hunter_matplotlib_2007].
 Each lesson consists of a lesson notebook and a practice notebook containing similar
 exercises for the learner to complete on their own following the lesson.
 
 ![**Our lesson modules.** All Jupyter notebooks are available on
-GitHub (https://github.com/GWC-DCMB/curriculum-notebooks).](/papers/girls-who-code/paper/lesson-modules.png)`r sovatools::get_image_dims(here::here('papers/girls-who-code/paper/lesson-modules.png'))`
+GitHub (https://github.com/GWC-DCMB/curriculum-notebooks).](/papers/girls-who-code/paper/lesson-modules.png){#fig-gwc-lessons `r sovatools::get_image_dims(here::here('papers/girls-who-code/paper/lesson-modules.png'))`}
 
 Each lesson builds on those before it, beginning with relevant content reminders
 from the previous lessons and ending with a concise summary of the skills
@@ -222,7 +222,7 @@ the video.
 Each video shows the Jupyter notebook alongside the instructor themselves
 teaching. Learners then complete a practice notebook corresponding to the lesson.
 During the virtual meeting time, instructors answer questions and review the
-core concepts in the practice exercises. 
+core concepts in the practice exercises.
 This virtual format is especially beneficial because it 1) allows learners to
 learn at their own pace, and 2) enables dissemination of our curriculum to a
 wider audience interested in learning introductory Python programming for data
@@ -232,7 +232,7 @@ For both in-person and virtual instruction, once learners have completed the
 Fundamentals module and reach the Data Science Essentials module they begin
 simultaneous work on their data science projects.
 Projects are completed in a pair programming style, where partners take turns
-assuming the “driver” (i.e. the typer) and “navigator” (i.e. the helper) roles
+assuming the "driver" (i.e. the typer) and "navigator" (i.e. the helper) roles
 [@hannay_effectiveness_2009].
 Switching off in this way helps both partners assume equal responsibility for
 the project workload, but more importantly it enables improved knowledge
@@ -294,21 +294,21 @@ successful women in STEM.
 
 We surveyed learners anonymously after each Club and Summer Experience and found
 that most felt that their skills in Python programming, problem solving,
-critical thinking, and collaboration had improved (Figure 2).
+critical thinking, and collaboration had improved (@fig-gwc-skills).
 Furthermore, on a 10 question skills assessment during the 2019-2020 instance of
 the Club, the average increase in correct answers between the first meeting and
 the last meeting was 4.2 with a standard deviation of 2.8 (N=5 respondents).
 We also surveyed Club and Summer Experience alumni and found that 75% (N=20)
 want to pursue a STEM career. 62% (N=21) are still coding.
 On a 5-point scale from 'Strongly Disagree' to 'Strongly Agree,' the average
-answer for ‘My participation in GWC impacted my career aspirations’ is 4
-(s.d.=0.9), with 4.5 (s.d.=0.6) for ‘Participating in GWC made me feel more
-confident in analyzing data’ and 3.9 (s.d.=1) for ‘Participating in GWC made me
-more confident in myself.’
+answer for 'My participation in GWC impacted my career aspirations' is 4
+(s.d.=0.9), with 4.5 (s.d.=0.6) for 'Participating in GWC made me feel more
+confident in analyzing data' and 3.9 (s.d.=1) for 'Participating in GWC made me
+more confident in myself.'
 
 ![**Post-survey responses.** Learners were asked if they felt that their
 skills in Python programming, problem solving, critical thinking, and
-collaboration had improved.](/papers/girls-who-code/paper/skill_plots.png)`r sovatools::get_image_dims(here::here('papers/girls-who-code/paper/skill_plots.png'))`
+collaboration had improved.](/papers/girls-who-code/paper/skill_plots.png){#fig-gwc-skills `r sovatools::get_image_dims(here::here('papers/girls-who-code/paper/skill_plots.png'))`}
 
 Overwhelmingly, learners' favorite parts of the program are the guest speakers
 and the project.
@@ -317,7 +317,7 @@ apply their newfound coding skills to asking an interesting question.
 A 2021 Club learner shared, "I plan to go to college for Computer Science and
 get a robotics minor when my college offers it.
 GWC has inspired me to consider pursuing a Masters or PhD in CS as well as take
-some electives in Data Science.”
+some electives in Data Science."
 Five of our 86 alumni have gone on to perform research with U-M faculty members,
 with one presenting her work at an international conference.
 In fact, about a third of participants claim that they are now more interested
@@ -357,7 +357,7 @@ the U-M Office of Research,
 the Michigan Council of Women in Technology Foundation,
 DELL Technologies,
 Cisco Systems,
-Zingerman’s Delicatessen,
+Zingerman's Delicatessen,
 the Girls Who Code Support Fund,
 and anonymous donations from Giving Blue Day 2019.
 
@@ -466,7 +466,7 @@ refined by The Carpentries organization.
 
 We drew on the expertise of The Carpentries community at the
 University of Michigan to develop a custom curriculum that would meet our goals
-(Figure 1).
+(@fig-swc-framework).
 To start, we organized a two-day sprint, where members of our community worked
 collaboratively to create an initial draft of the content.
 During the sprint, we met virtually to discuss our goals, then broke up into
@@ -485,7 +485,7 @@ Our collaborative model ensured that at least two pairs of eyes viewed any
 changes before they could be included in the curriculum.
 This strategy helped us reduce mistakes and create better quality content.
 
-![The curriculum development framework. Created with BioRender.com.](/papers/software-carpentry/paper/development-framework.png)`r sovatools::get_image_dims(here::here('papers/software-carpentry/paper/development-framework.png'))`
+![The curriculum development framework. Created with BioRender.com.](/papers/software-carpentry/paper/development-framework.png){#fig-swc-framework `r sovatools::get_image_dims(here::here('papers/software-carpentry/paper/development-framework.png'))`}
 
 Following the sprint, contributors finalized edits and continued to review each
 others' pull requests to complete the alpha version of our curriculum.
@@ -502,13 +502,13 @@ original curriculum development to gather their feedback.
 
 Our curriculum is tailored to people with no prior coding experience who want to
 learn how to use R programming for data analysis, visualization and the
-reporting of results (Figure 2).
+reporting of results (@fig-swc-curriculum).
 Not only do we aim to teach our learners the basics of performing empirical data
 analysis, we also seek to provide a rigorous framework for adhering to
 reproducible research principles that enable researchers to easily share their
 empirical work with others.
 
-![Curriculum overview. Created with BioRender.com.](/papers/software-carpentry/paper/curriculum-overview.png)`r sovatools::get_image_dims(here::here('papers/software-carpentry/paper/curriculum-overview.png'))`
+![Curriculum overview. Created with BioRender.com.](/papers/software-carpentry/paper/curriculum-overview.png){#fig-swc-curriculum `r sovatools::get_image_dims(here::here('papers/software-carpentry/paper/curriculum-overview.png'))`}
 
 #### Learning Objectives
 
@@ -620,11 +620,11 @@ pre- and post-workshop survey administered by the Carpentries.
 By the end of the workshop, learners on average felt more confident writing
 programs, using programming to work with data, overcoming problems while
 programming, and searching for answers to technical questions online (n = 14
-survey respondents; see Figure 3).
+survey respondents; see @fig-swc-survey).
 All attendees who filled out the post-workshop survey (n = 19) would recommend
 the workshop to others.
 
-![Pre- and post-workshop survey results.](/papers/software-carpentry/paper/survey-results.png)`r sovatools::get_image_dims(here::here('papers/software-carpentry/paper/survey-results.png'))`
+![Pre- and post-workshop survey results.](/papers/software-carpentry/paper/survey-results.png){#fig-swc-survey `r sovatools::get_image_dims(here::here('papers/software-carpentry/paper/survey-results.png'))`}
 
 ##### Virtual Workshop Reflection
 
@@ -700,7 +700,7 @@ Begüm D. Topçuoğlu^\*^, Zena Lapp^\*^, Kelly L. Sovacool^\*^, Evan Snitkin, J
 
 ### Summary
 
-![](/papers/mikropml/vignettes/mikropml-logo.png)`r sovatools::get_image_dims(here::here('papers/mikropml/vignettes/mikropml-logo.png'))`
+![](/papers/mikropml/vignettes/mikropml-logo.png){#fig-mikropml-logo `r sovatools::get_image_dims(here::here('papers/mikropml/vignettes/mikropml-logo.png'))`}
 
 Machine learning (ML) for classification and prediction based on a set of
 features is used to make decisions in healthcare, economics, criminal justice
@@ -757,7 +757,7 @@ publishing [@hagan_women_2020].
 ### mikropml package
 
 The `mikropml` package includes functionality to preprocess the data, train ML
-models, evaluate model performance, and quantify feature importance (Figure 1).
+models, evaluate model performance, and quantify feature importance (@fig-mikropml-pipeline).
 We also provide
 [vignettes](http://www.schlosslab.org/mikropml/articles/index.html) and an
 [example Snakemake
@@ -811,7 +811,7 @@ particularly useful for model interpretation [@topcuoglu_framework_2020]. Our
 vignette](http://www.schlosslab.org/mikropml/articles/introduction.html)
 contains a comprehensive tutorial on how to use `run_ml()`.
 
-![mikropml pipeline](/papers/mikropml/vignettes/mikRopML-pipeline.png)`r sovatools::get_image_dims(here::here('papers/mikropml/vignettes/mikRopML-pipeline.png'))`
+![mikropml pipeline](/papers/mikropml/vignettes/mikRopML-pipeline.png){#fig-mikropml-pipeline `r sovatools::get_image_dims(here::here('papers/mikropml/vignettes/mikRopML-pipeline.png'))`}
 
 #### Ideal workflow for running mikropml with many different train/test splits
 
