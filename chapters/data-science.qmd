@@ -1,5 +1,9 @@
 # Democratizing data science with open curricula and user-friendly software tools
 
+```{r}
+# this is a dummy code block to force inline code chunks to render correctly
+```
+
 ## Preamble
 
 TODO introduce 3 papers and explain how they tie together
@@ -8,7 +12,7 @@ TODO introduce 3 papers and explain how they tie together
 
 ## Teaching Python for Data Science: Collaborative development of a modular and interactive curriculum
 
-Co-authors of the Girls Who Code paper include: 
+Co-authors of the Girls Who Code paper include:
 Marlena Duda^\*^, Kelly L. Sovacool^\*^, Negar Farzaneh, Vy Kim Nguyen, Sarah E. Haynes, Hayley Falk, Katherine L. Furman, Logan A. Walker, Rucheng Diao, Morgan Oneka, Audrey C. Drotos, Alana Woloshin, Gabrielle A. Dotson, April Kriebel, Lucy Meng, Stephanie N. Thiede, Zena Lapp, and Brooke N. Wolford.
 
 ^\*^Indicates co-first author
@@ -504,7 +508,7 @@ analysis, we also seek to provide a rigorous framework for adhering to
 reproducible research principles that enable researchers to easily share their
 empirical work with others.
 
-![Curriculum overview. Created with BioRender.com.](/papers/software-carpentry/paper/curriculum-overview.png)`r sovatools::get_image_dims('papers/software-carpentry/paper/curriculum-overview.png')`
+![Curriculum overview. Created with BioRender.com.](/papers/software-carpentry/paper/curriculum-overview.png)`r sovatools::get_image_dims(here::here('papers/software-carpentry/paper/curriculum-overview.png'))`
 
 #### Learning Objectives
 
@@ -620,7 +624,7 @@ survey respondents; see Figure 3).
 All attendees who filled out the post-workshop survey (n = 19) would recommend
 the workshop to others.
 
-![Pre- and post-workshop survey results.](/papers/software-carpentry/paper/survey-results.png){width=100% height=50%}
+![Pre- and post-workshop survey results.](/papers/software-carpentry/paper/survey-results.png)`r sovatools::get_image_dims(here::here('papers/software-carpentry/paper/survey-results.png'))`
 
 ##### Virtual Workshop Reflection
 
@@ -696,7 +700,7 @@ Begüm D. Topçuoğlu^\*^, Zena Lapp^\*^, Kelly L. Sovacool^\*^, Evan Snitkin, J
 
 ### Summary
 
-![](/papers/mikropml/vignettes/mikropml-logo.png){ width=120px }
+![](/papers/mikropml/vignettes/mikropml-logo.png)`r sovatools::get_image_dims(here::here('papers/mikropml/vignettes/mikropml-logo.png'))`
 
 Machine learning (ML) for classification and prediction based on a set of
 features is used to make decisions in healthcare, economics, criminal justice
@@ -807,7 +811,7 @@ particularly useful for model interpretation [@topcuoglu_framework_2020]. Our
 vignette](http://www.schlosslab.org/mikropml/articles/introduction.html)
 contains a comprehensive tutorial on how to use `run_ml()`.
 
-![mikropml pipeline](/papers/mikropml/vignettes/mikRopML-pipeline.png){width=100%}
+![mikropml pipeline](/papers/mikropml/vignettes/mikRopML-pipeline.png)`r sovatools::get_image_dims(here::here('papers/mikropml/vignettes/mikRopML-pipeline.png'))`
 
 #### Ideal workflow for running mikropml with many different train/test splits
 
