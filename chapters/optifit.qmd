@@ -187,7 +187,10 @@ the dataset into a reference and query fraction, cluster the reference
 sequences *de novo*, then cluster the query sequences to the reference
 OTUs.
 
-![ Here we present a toy example of the OptiFit algorithm fitting query
+::: {#fig-algorithm fig-cap="The OptiFit algorithm"}
+![](/papers/optifit/paper/figures/algorithm-1.png){`r sovatools::get_image_dims(here::here('papers/optifit/paper/figures/algorithm-1.png'))`}
+\justify
+Here we present a toy example of the OptiFit algorithm fitting query
 sequences to existing OTUs, given the list of all sequence pairs that
 are within the distance threshold of 3%. Previously, 50 reference
 sequences were clustered *de novo* with OptiClust (see the OptiClust
@@ -210,8 +213,8 @@ only one iteration over each sequence was needed. Note that sequence Z
 was dissimilar from all other sequences and thus it remained a
 singleton. The final MCC score is 0.91 with 20 true positives, 3 false
 negatives, 1 false positive, and 1407 true
-negatives.](/papers/optifit/paper/figures/algorithm-1.png){#fig-algorithm `r sovatools::get_image_dims(here::here('papers/optifit/paper/figures/algorithm-1.png'))`}
-
+negatives.
+:::
 
 ### Reference clustering with public databases
 
@@ -238,7 +241,10 @@ OptiFit produced OTUs of very similar quality as *de novo* clustering
 with OptiClust, and closed reference OptiFit followed closely behind as
 long as a suitable reference database was chosen.
 
-![ Reference sequences from Greengenes, the RDP, and SILVA were
+::: {#fig-workflow fig-cap="The OptiFit benchmarking workflow"}
+![](/papers/optifit/paper/figures/workflow-1.png){`r sovatools::get_image_dims(here::here('papers/optifit/paper/figures/workflow-1.png'))`}
+\justify
+Reference sequences from Greengenes, the RDP, and SILVA were
 downloaded, preprocessed with mothur by trimming to the V4 region, and
 clustered *de novo* with OptiClust for 100 repetitions. Datasets from
 human, marine, mouse, and soil microbiomes were downloaded, preprocessed
@@ -249,7 +255,8 @@ repeated 100 times for each dataset and database combination. Datasets
 were also randomly split into a reference and query fraction, and the
 query sequences were fit to the reference sequences with OptiFit for 100
 repetitions. The final MCC score was reported for all OptiClust and
-OptiFit repetitions.](/papers/optifit/paper/figures/workflow-1.png){#fig-workflow `r sovatools::get_image_dims(here::here('papers/optifit/paper/figures/algorithm-1.png'))`}
+OptiFit repetitions.
+:::
 
 Since closed reference clustering does not cluster query sequences that
 could not be clustered into reference OTUs, an additional measure of
@@ -264,7 +271,10 @@ affects the final closed reference OTU assignments considerably in terms
 of both MCC score and fraction of query sequences that could be
 clustered into the reference OTUs.
 
-![ The median MCC score, fraction of query sequences that mapped in
+:::{#fig-results-sum fig-cap="OptiFit results with databases as references"}
+![](/papers/optifit/paper/figures/results_sum-1.png){`r sovatools::get_image_dims(here::here('papers/optifit/paper/figures/algorithm-1.png'))`}
+\justify
+The median MCC score, fraction of query sequences that mapped in
 closed-reference clustering, and runtime in seconds from repeating each
 clustering method 100 times. Each dataset underwent three clustering
 strategies; 1) *de novo* clustering the whole dataset using OptiClust,
@@ -275,8 +285,8 @@ with OptiFit, and 3) clustering the dataset to a reference database
 (Greengenes, SILVA, or RDP). Reference-based clustering was repeated
 with open and closed mode. For additional comparison, VSEARCH was used
 for *de novo* and reference-based clustering against the Greengenes
-database.](/papers/optifit/paper/figures/results_sum-1.png){#fig-results-sum `r sovatools::get_image_dims(here::here('papers/optifit/paper/figures/algorithm-1.png'))`}
-
+database.
+:::
 
 Despite the drawbacks, closed reference methods have been used when fast
 execution speed is required, such as when using very large datasets
@@ -377,7 +387,10 @@ quality in terms of MCC score nor the memory usage, but did affect the
 run time and the fraction of sequences that mapped during the closed
 reference clustering.
 
-![ The median MCC score, fraction of query sequences that mapped in
+::: {#fig-results-split fig-cap="OptiFit results with datasets as self-references"}
+![](/papers/optifit/paper/figures/results_split-1.png){`r sovatools::get_image_dims(here::here('papers/optifit/paper/figures/algorithm-1.png'))`}
+\justify
+The median MCC score, fraction of query sequences that mapped in
 closed-reference clustering, and runtime in seconds from repeating each
 clustering method 100 times. Each dataset was split into a reference and
 query fraction. Reference sequences were selected via a simple random
@@ -386,7 +399,8 @@ similarity to other sequences in the dataset. With the simple random
 sample method, dataset splitting was repeated with reference fractions
 ranging from 10% to 90% of the dataset and for 100 random seeds. *De
 novo* clustering each dataset with OptiClust is also shown for
-comparison.](/papers/optifit/paper/figures/results_split-1.png){#fig-results-split `r sovatools::get_image_dims(here::here('papers/optifit/paper/figures/algorithm-1.png'))`}
+comparison.
+:::
 
 After testing the split strategy using a simple random sample to select
 the reference sequences, we then investigated other methods of splitting
