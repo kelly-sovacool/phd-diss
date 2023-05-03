@@ -8,23 +8,39 @@ html_output = f"{quarto_meta['project']['output-dir']}/index.html"
 
 rule targets:
     input:
-        pdf_output,
-        html_output
+        pdf_output
 
-rule render:
+rule update_extension:
+    output:
+        directory("_extensions/kelly-sovacool/rackham/")
+    shell:
+        """
+        quarto update extension kelly-sovacool/rackham
+        """
+
+rule render_pdf:
     input:
-        yml = [quarto_yml, 
-               'chapters/girls-who-code.yml',
-               'chapters/software-carpentry.yml',
-               'chapters/mikropml.yml'],
+        yml = quarto_yml,
         qmd = quarto_meta['book']['chapters'],
         bib = 'references.bib',
-        tex = 'preamble.tex'
+        ext = rules.update_extension.output
     output:
         pdf = pdf_output,
-        html = html_output,
         tex = f"{quarto_meta['book']['output-file']}.tex"
     shell:
         """
-        quarto render
+        quarto render --to rackham-pdf
+        """
+
+rule render_html:
+    input:
+        yml = quarto_yml,
+        qmd = quarto_meta['book']['chapters'],
+        bib = 'references.bib',
+        ext = rules.update_extension.output
+    output:
+        html = html_output
+    shell:
+        """
+        quarto render --to html
         """
