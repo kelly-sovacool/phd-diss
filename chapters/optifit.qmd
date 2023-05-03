@@ -188,7 +188,7 @@ sequences *de novo*, then cluster the query sequences to the reference
 OTUs.
 
 ::: {#fig-algorithm fig-cap="The OptiFit algorithm"}
-![](/papers/optifit/paper/figures/algorithm-1.png){`r sovatools::get_image_dims(here::here('papers/optifit/paper/figures/algorithm-1.png'))`}
+`r sovatools::insert_image_md('papers/optifit/paper/figures/algorithm-1.png')`
 \justify
 Here we present a toy example of the OptiFit algorithm fitting query
 sequences to existing OTUs, given the list of all sequence pairs that
@@ -242,7 +242,7 @@ with OptiClust, and closed reference OptiFit followed closely behind as
 long as a suitable reference database was chosen.
 
 ::: {#fig-workflow fig-cap="The OptiFit benchmarking workflow"}
-![](/papers/optifit/paper/figures/workflow-1.png){`r sovatools::get_image_dims(here::here('papers/optifit/paper/figures/workflow-1.png'))`}
+`r sovatools::insert_image_md('papers/optifit/paper/figures/workflow-1.png')`
 \justify
 Reference sequences from Greengenes, the RDP, and SILVA were
 downloaded, preprocessed with mothur by trimming to the V4 region, and
@@ -272,7 +272,7 @@ of both MCC score and fraction of query sequences that could be
 clustered into the reference OTUs.
 
 :::{#fig-results-sum fig-cap="OptiFit results with databases as references"}
-![](/papers/optifit/paper/figures/results_sum-1.png){`r sovatools::get_image_dims(here::here('papers/optifit/paper/figures/algorithm-1.png'))`}
+`r sovatools::insert_image_md('papers/optifit/paper/figures/results_sum-1.png')`
 \justify
 The median MCC score, fraction of query sequences that mapped in
 closed-reference clustering, and runtime in seconds from repeating each
@@ -388,7 +388,7 @@ run time and the fraction of sequences that mapped during the closed
 reference clustering.
 
 ::: {#fig-results-split fig-cap="OptiFit results with datasets as self-references"}
-![](/papers/optifit/paper/figures/results_split-1.png){`r sovatools::get_image_dims(here::here('papers/optifit/paper/figures/algorithm-1.png'))`}
+`r sovatools::insert_image_md('papers/optifit/paper/figures/results_split-1.png')`
 \justify
 The median MCC score, fraction of query sequences that mapped in
 closed-reference clustering, and runtime in seconds from repeating each
