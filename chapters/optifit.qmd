@@ -6,7 +6,9 @@
 
 ## Preamble
 
-Co-authors TODO
+This paper was original published in 2022 in mSphere with the following co-authors:
+Kelly L. Sovacool, Sarah L. Westcott, M. Brodie Mumphrey, Gabrielle A. Doston,
+and Patrick D. Schloss [@sovacool_optifit_2022].
 
 ## Abstract
 

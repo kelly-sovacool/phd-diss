@@ -12,8 +12,13 @@ TODO introduce 3 papers and explain how they tie together
 
 ## Teaching Python for Data Science: Collaborative development of a modular and interactive curriculum
 
-Co-authors of the Girls Who Code paper include:
-Marlena Duda^\*^, Kelly L. Sovacool^\*^, Negar Farzaneh, Vy Kim Nguyen, Sarah E. Haynes, Hayley Falk, Katherine L. Furman, Logan A. Walker, Rucheng Diao, Morgan Oneka, Audrey C. Drotos, Alana Woloshin, Gabrielle A. Dotson, April Kriebel, Lucy Meng, Stephanie N. Thiede, Zena Lapp, and Brooke N. Wolford.
+This paper was originally published in 2021 in the Journal of Open Source
+Education with the following co-authors:
+Marlena Duda^\*^, Kelly L. Sovacool^\*^, Negar Farzaneh, Vy Kim Nguyen,
+Sarah E. Haynes, Hayley Falk, Katherine L. Furman, Logan A. Walker,
+Rucheng Diao, Morgan Oneka, Audrey C. Drotos, Alana Woloshin,
+Gabrielle A. Dotson, April Kriebel, Lucy Meng, Stephanie N. Thiede,
+Zena Lapp, and Brooke N. Wolford [@duda_teaching_2021].
 
 ^\*^Indicates co-first author
 
@@ -128,7 +133,8 @@ We divided the content by topic into Jupyter notebooks for each lesson, with
 each lesson taking approximately 15-20 minutes to teach via live coding.
 Every lesson has a corresponding practice notebook with additional exercises on
 the same content taught in the lesson, but using different data or variables.
-We used a similar development workflow as the U-M Carpentries curriculum [@lapp_developing_2021].
+We used a similar development workflow as the U-M Carpentries curriculum
+[@lapp_developing_2022].
 Briefly, we hosted the curriculum notebooks in a public GitHub repository to
 facilitate collaborative development and peer review using pull requests.
 In the initial curriculum drafting phase, developers were assigned lesson and
@@ -410,8 +416,13 @@ None.
 
 ## Developing and deploying an integrated workshop curriculum teaching computational skills for reproducible research
 
-Co-authors of the Software Carpentry paper include: 
-Zena Lapp^\*^, Kelly L. Sovacool^\*^, Nick Lesniak, Dana King, Catherine Barnier, Matthew Flickinger, Jule Krüger, Courtney R. Armour, Maya M. Lapp, Jason Tallant, Rucheng Diao, Morgan Oneka, Sarah Tomkovich, Jacqueline Moltzau Anderson, Sarah K. Lucas, and Patrick D. Schloss.
+This paper was original published in 2022 in the Journal of Open Source
+Education with the following co-authors:
+Zena Lapp^\*^, Kelly L. Sovacool^\*^, Nick Lesniak, Dana King,
+Catherine Barnier, Matthew Flickinger, Jule Krüger, Courtney R. Armour,
+Maya M. Lapp, Jason Tallant, Rucheng Diao, Morgan Oneka, Sarah Tomkovich,
+Jacqueline Moltzau Anderson, Sarah K. Lucas, and Patrick D. Schloss
+[@lapp_developing_2022].
 
 ^\*^Indicates co-first author
 
@@ -706,8 +717,10 @@ None.
 
 ## mikropml: User-Friendly R Package for Supervised Machine Learning Pipelines
 
-Co-authors of the mikropml paper include: 
-Begüm D. Topçuoğlu^\*^, Zena Lapp^\*^, Kelly L. Sovacool^\*^, Evan Snitkin, Jenna Wiens, and Patrick D. Schloss.
+This paper was original published in 2021 in the Journal of Open Source Software
+with the following co-authors:
+Begüm D. Topçuoğlu^\*^, Zena Lapp^\*^, Kelly L. Sovacool^\*^, Evan Snitkin,
+Jenna Wiens, and Patrick D. Schloss [@topcuoglu_mikropml_2021].
 
 ^\*^Indicates co-first author
 
