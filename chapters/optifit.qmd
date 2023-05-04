@@ -6,6 +6,13 @@
 
 ## Preamble
 
+This chapter introduces a new algorithm for performing reference-based
+clustering of amplicon sequences into Operational Taxonomic Units.
+TODO brief 3-sentence summary.
+
+I performed all of the analysis and created the figures for this chapter.
+Other co-authors conceived of and implented the OptiFit algorithm and
+contributed analysis code.
 This paper was original published in 2022 in mSphere with the following co-authors:
 Kelly L. Sovacool, Sarah L. Westcott, M. Brodie Mumphrey, Gabrielle A. Doston,
 and Patrick D. Schloss [@sovacool_optifit_2022].
