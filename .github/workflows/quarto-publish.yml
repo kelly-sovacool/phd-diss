@@ -1,8 +1,10 @@
 name: Render and Publish Quarto Project
 on:
   push:
-    branches:
-      - main
+    paths:
+      - _quarto.yml
+      - *.qmd
+      - *.tex
 
 jobs:
   quarto-render-and-deploy:
