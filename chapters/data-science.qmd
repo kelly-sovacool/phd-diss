@@ -177,13 +177,16 @@ science can be impactful across many disciplines.
 Our curriculum design consists of 27 lessons broken up into 5 modules that cover
 Jupyter notebook setup, Python coding fundamentals, use of essential data
 science packages including pandas and numpy, basic statistical analyses, and
-plotting using seaborn and matplotlib (@#fig-gwc-lessons) [@harris_array_2020;
+plotting using seaborn and matplotlib (@fig-gwc-lessons) [@harris_array_2020;
 @waskom_seaborn_2021; @hunter_matplotlib_2007].
 Each lesson consists of a lesson notebook and a practice notebook containing similar
 exercises for the learner to complete on their own following the lesson.
 
-![**Our lesson modules.** All Jupyter notebooks are available on
-GitHub (https://github.com/GWC-DCMB/curriculum-notebooks).](/papers/girls-who-code/paper/lesson-modules.png){#fig-gwc-lessons `r sovatools::get_image_dims(here::here('papers/girls-who-code/paper/lesson-modules.png'))`}
+::: {#fig-gwc-lessons fig-cap="Lesson modules.
+All Jupyter notebooks are available on GitHub
+(<https://github.com/GWC-DCMB/curriculum-notebooks>)."}
+`r sovatools::insert_image_md('papers/girls-who-code/paper/lesson-modules.png')`
+:::
 
 Each lesson builds on those before it, beginning with relevant content reminders
 from the previous lessons and ending with a concise summary of the skills
@@ -306,9 +309,12 @@ answer for 'My participation in GWC impacted my career aspirations' is 4
 confident in analyzing data' and 3.9 (s.d.=1) for 'Participating in GWC made me
 more confident in myself.'
 
-![**Post-survey responses.** Learners were asked if they felt that their
+::: {#fig-gwc-skills fig-cap="Post-survey responses.
+Learners were asked if they felt that their
 skills in Python programming, problem solving, critical thinking, and
-collaboration had improved.](/papers/girls-who-code/paper/skill_plots.png){#fig-gwc-skills `r sovatools::get_image_dims(here::here('papers/girls-who-code/paper/skill_plots.png'))`}
+collaboration had improved."}
+`r sovatools::insert_image_md('papers/girls-who-code/paper/skill_plots.png')`
+:::
 
 Overwhelmingly, learners' favorite parts of the program are the guest speakers
 and the project.
@@ -485,7 +491,9 @@ Our collaborative model ensured that at least two pairs of eyes viewed any
 changes before they could be included in the curriculum.
 This strategy helped us reduce mistakes and create better quality content.
 
-![The curriculum development framework. Created with BioRender.com.](/papers/software-carpentry/paper/development-framework.png){#fig-swc-framework `r sovatools::get_image_dims(here::here('papers/software-carpentry/paper/development-framework.png'))`}
+::: {#fig-swc-framework fig-cap="Curriculum development framework"}
+`r sovatools::insert_image_md('papers/software-carpentry/paper/development-framework.png')`
+:::
 
 Following the sprint, contributors finalized edits and continued to review each
 others' pull requests to complete the alpha version of our curriculum.
@@ -508,7 +516,10 @@ analysis, we also seek to provide a rigorous framework for adhering to
 reproducible research principles that enable researchers to easily share their
 empirical work with others.
 
-![Curriculum overview. Created with BioRender.com.](/papers/software-carpentry/paper/curriculum-overview.png){#fig-swc-curriculum `r sovatools::get_image_dims(here::here('papers/software-carpentry/paper/curriculum-overview.png'))`}
+::: {#fig-swc-curriculum fig-cap="Curriculum overview"}
+`r sovatools::insert_image_md('papers/software-carpentry/paper/curriculum-overview.png')`
+:::
+
 
 #### Learning Objectives
 
@@ -624,7 +635,9 @@ survey respondents; see @fig-swc-survey).
 All attendees who filled out the post-workshop survey (n = 19) would recommend
 the workshop to others.
 
-![Pre- and post-workshop survey results.](/papers/software-carpentry/paper/survey-results.png){#fig-swc-survey `r sovatools::get_image_dims(here::here('papers/software-carpentry/paper/survey-results.png'))`}
+::: {#fig-swc-survey fig-cap="Pre- and post-workshop survey results"}
+`r sovatools::insert_image_md('papers/software-carpentry/paper/survey-results.png')`
+:::
 
 ##### Virtual Workshop Reflection
 
@@ -699,8 +712,6 @@ Begüm D. Topçuoğlu^\*^, Zena Lapp^\*^, Kelly L. Sovacool^\*^, Evan Snitkin, J
 ^\*^Indicates co-first author
 
 ### Summary
-
-![](/papers/mikropml/vignettes/mikropml-logo.png){#fig-mikropml-logo `r sovatools::get_image_dims(here::here('papers/mikropml/vignettes/mikropml-logo.png'))`}
 
 Machine learning (ML) for classification and prediction based on a set of
 features is used to make decisions in healthcare, economics, criminal justice
@@ -811,7 +822,9 @@ particularly useful for model interpretation [@topcuoglu_framework_2020]. Our
 vignette](http://www.schlosslab.org/mikropml/articles/introduction.html)
 contains a comprehensive tutorial on how to use `run_ml()`.
 
-![mikropml pipeline](/papers/mikropml/vignettes/mikRopML-pipeline.png){#fig-mikropml-pipeline `r sovatools::get_image_dims(here::here('papers/mikropml/vignettes/mikRopML-pipeline.png'))`}
+::: {#fig-mikropml-pipeline fig-cap="The mikropml pipeline"}
+`r sovatools::insert_image_md('papers/mikropml/vignettes/mikRopML-pipeline.png')`
+:::
 
 #### Ideal workflow for running mikropml with many different train/test splits
 
