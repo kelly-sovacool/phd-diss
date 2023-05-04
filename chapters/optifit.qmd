@@ -190,6 +190,7 @@ OTUs.
 ::: {#fig-algorithm fig-cap="The OptiFit algorithm"}
 `r sovatools::insert_image_md('papers/optifit/paper/figures/algorithm-1.png')`
 \justify
+\small
 Here we present a toy example of the OptiFit algorithm fitting query
 sequences to existing OTUs, given the list of all sequence pairs that
 are within the distance threshold of 3%. Previously, 50 reference
@@ -244,6 +245,7 @@ long as a suitable reference database was chosen.
 ::: {#fig-workflow fig-cap="The OptiFit benchmarking workflow"}
 `r sovatools::insert_image_md('papers/optifit/paper/figures/workflow-1.png')`
 \justify
+\small
 Reference sequences from Greengenes, the RDP, and SILVA were
 downloaded, preprocessed with mothur by trimming to the V4 region, and
 clustered *de novo* with OptiClust for 100 repetitions. Datasets from
@@ -274,6 +276,7 @@ clustered into the reference OTUs.
 :::{#fig-results-sum fig-cap="OptiFit results with databases as references"}
 `r sovatools::insert_image_md('papers/optifit/paper/figures/results_sum-1.png')`
 \justify
+\small
 The median MCC score, fraction of query sequences that mapped in
 closed-reference clustering, and runtime in seconds from repeating each
 clustering method 100 times. Each dataset underwent three clustering
@@ -390,6 +393,7 @@ reference clustering.
 ::: {#fig-results-split fig-cap="OptiFit results with datasets as self-references"}
 `r sovatools::insert_image_md('papers/optifit/paper/figures/results_split-1.png')`
 \justify
+\small
 The median MCC score, fraction of query sequences that mapped in
 closed-reference clustering, and runtime in seconds from repeating each
 clustering method 100 times. Each dataset was split into a reference and
