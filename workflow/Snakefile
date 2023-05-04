@@ -12,6 +12,7 @@ rule targets:
 rule update_extension:
     output:
         directory("_extensions/kelly-sovacool/rackham/")
+    conda: "envs/env.yml"
     shell:
         """
         quarto update extension kelly-sovacool/rackham
@@ -26,6 +27,7 @@ rule render_pdf:
     output:
         pdf = pdf_output,
         tex = f"{quarto_meta['book']['output-file']}.tex"
+    conda: "envs/env.yml"
     shell:
         """
         quarto render --to rackham-pdf
