@@ -1,1 +1,9 @@
 # Predicting _C. difficile_ infection severity from the taxonomic composition of the gut microbiome
+
+```{r}
+# this is a dummy code block to force inline code chunks to render correctly
+```
+
+## Preamble
+
+This chapter TODO
