@@ -4,7 +4,6 @@ with open(quarto_yml, 'r') as infile:
     quarto_meta = yaml.full_load(infile)
 
 pdf_output = f"{quarto_meta['project']['output-dir']}/{quarto_meta['book']['output-file']}.pdf"
-html_output = f"{quarto_meta['project']['output-dir']}/index.html"
 
 rule targets:
     input:
@@ -30,17 +29,4 @@ rule render_pdf:
     shell:
         """
         quarto render --to rackham-pdf
-        """
-
-rule render_html:
-    input:
-        yml = quarto_yml,
-        qmd = quarto_meta['book']['chapters'],
-        bib = 'references.bib',
-        ext = rules.update_extension.output
-    output:
-        html = html_output
-    shell:
-        """
-        quarto render --to html
         """

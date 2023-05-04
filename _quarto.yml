@@ -58,11 +58,6 @@ format:
       - thesis
     include-in-header: header.tex
     fig-cap-location: top
-  html:
-    theme:
-      light: flatly
-      dark: darkly
-    title-block-banner: true
 
 execute:
   freeze: auto
