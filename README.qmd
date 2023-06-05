@@ -1,0 +1,26 @@
+---
+format:
+  gfm: default
+execute:
+  echo: false
+jupyter: python3
+---
+
+# phd-diss
+
+My Bioinformatics PhD dissertation
+
+- [rendered PDF](http://sovacool.dev/phd-diss/dissertation_KLS.pdf)
+- [Rackham formatting guidelines](https://rackham.umich.edu/navigating-your-degree/formatting-guidelines/)
+- [Quarto template](https://github.com/kelly-sovacool/rackham)
+
+## Word count
+
+```{python}
+import yaml
+
+with open('_quarto.yml', "r") as infile:
+    yaml_dict = yaml.load(infile, Loader=yaml.CLoader)
+
+print('abstract:', len(yaml_dict['abstract'].split()))
+```

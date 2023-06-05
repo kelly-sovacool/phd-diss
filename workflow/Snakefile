@@ -32,3 +32,12 @@ rule render_pdf:
         """
         quarto render --to rackham-pdf
         """
+
+rule render_readme:
+    input: qmd='README.qmd'
+    output: md='README.md'
+    conda: "envs/env.yml"
+    shell:
+        """
+        quarto render {input.qmd}
+        """
