@@ -6,4 +6,18 @@
 
 ## Preamble
 
-This chapter TODO
+This chapter aims to predict CDI severity from the taxonomic composition of the gut
+microbiome.
+We trained models on OTU relative abundances to predict four different severity
+definitions,
+identified features of the microbiota that may prevent or promote severity,
+and assessed the potential clinical value of micriobiome-based
+prediction models.
+
+I performed all of the analysis and created the figures and tables for this chapter.
+Other co-authors conceived of the study, processed samples, and assisted in
+training ML models.
+This chapter will be submitted to a peer-reviewed journal with the following
+co-authors:
+Kelly L. Sovacool, Sarah E. Tomkovich, Megan L. Coden, Jenna Wiens,
+Vincent B. Young, Krishna Rao, and Patrick D. Schloss.

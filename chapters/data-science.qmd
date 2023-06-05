@@ -6,7 +6,18 @@
 
 ## Preamble
 
-TODO introduce 3 papers and explain how they tie together
+In this chapter, we contributed to the democratization of data science for
+three key audiences: 
+1) high school students who wish to learn how to code for a potential career in data science, 
+2) academics who wish to learn how to code for reproducible research, and 
+3) scientists who wish to apply machine learning methods toward their areas of study.
+We developed a curriculum to teach the basics of Python for data science via a
+Girls Who Code club, a curriculum to teach introductory programming for
+reproducible research via Software Carpentry workshops, and an R package
+that implements current best practices in machine learning for novice practitioners.
+These free and open source contributions make data science education more 
+accessible to a range of audiences and promote responsible use of data science
+methods.
 
 <!-- GIRLS WHO CODE -->
 

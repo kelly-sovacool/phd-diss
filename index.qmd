@@ -5,13 +5,13 @@
 ml-based science to learn about underlying biology, and practical application to
 improve heatlh care.
 
-## _Clostridioides difficile_
+## _Clostridioides difficile_ infection
 
 ## Democratizing data science
 
 build quantitative self-confidence in biologists [@cuddington_challenges_2023]
 
-## Datasets
+## Datasets used in this dissertation
 
-## Outline
+## Dissertation outline
 

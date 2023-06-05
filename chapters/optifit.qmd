@@ -6,12 +6,17 @@
 
 ## Preamble
 
-This chapter introduces a new algorithm for performing reference-based
-clustering of amplicon sequences into Operational Taxonomic Units.
-TODO brief 3-sentence summary.
+This chapter introduces a novel algorithm, OptiFit, for performing
+reference-based clustering of amplicon sequences into Operational Taxonomic
+Units.
+We showed that OptiFit produces OTUs at a similar quality as other clustering
+methods while enabling new sequences to be clustered to existing _de novo_ OTUs,
+which was not previously possible.
+OptiFit can be used with OTU-based machine learning models to make predictions
+on new data, which we later demonstrated in a follow-up analysis [@armour_machine_2023].
 
 I performed all of the analysis and created the figures for this chapter.
-Other co-authors conceived of and implented the OptiFit algorithm and
+Other co-authors conceived of and implemented the OptiFit algorithm and
 contributed analysis code.
 This paper was original published in 2022 in mSphere with the following co-authors:
 Kelly L. Sovacool, Sarah L. Westcott, M. Brodie Mumphrey, Gabrielle A. Doston,
