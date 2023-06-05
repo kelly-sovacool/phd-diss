@@ -1,7 +1,17 @@
 # Introduction
 
-Example reference [@schloss_introducing_2009]
+## Machine learning for microbiome research
 
-This is a Quarto book.
+ml-based science to learn about underlying biology, and practical application to
+improve heatlh care.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+## _Clostridioides difficile_
+
+## Democratizing data science
+
+build quantitative self-confidence in biologists [@cuddington_challenges_2023]
+
+## Datasets
+
+## Outline
+

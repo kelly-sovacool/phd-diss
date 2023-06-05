@@ -4,8 +4,8 @@ project:
 
 book:
   title: |
-    Improving machine learning models for gut microbiome classification problems
-    and building resources to democratize data science
+    Improving machine learning models for microbiome analysis
+    and democratizing data science along the way
   output-file: dissertation_KLS
   author:
     - name: Kelly L. Sovacool
@@ -21,8 +21,8 @@ book:
   chapters:
     - index.qmd
     - chapters/optifit.qmd
-    - chapters/data-science.qmd
     - chapters/cdiff.qmd
+    - chapters/data-science.qmd
     - chapters/discussion.qmd
 
 dept: Bioinformatics
