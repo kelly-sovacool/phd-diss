@@ -5,6 +5,13 @@
 ml-based science to learn about underlying biology, and practical application to
 improve heatlh care.
 
+## Machine learning for health care
+
+Models deployed in health care settings to predict deterioration in COVID-19 patients [@kamran_early_2022],
+identify patients at risk of being infected with _C. difficile_ in intensive care units [@otles_clostridiales_2023], and
+
+Do no harm [@wiens_no_2019]
+
 ## _Clostridioides difficile_ infection
 
 ## Democratizing data science
