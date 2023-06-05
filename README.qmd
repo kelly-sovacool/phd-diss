@@ -17,6 +17,7 @@ My Bioinformatics PhD dissertation
 ## Word count
 
 ```{python}
+#| output: asis
 import yaml
 
 with open('_quarto.yml', "r") as infile:

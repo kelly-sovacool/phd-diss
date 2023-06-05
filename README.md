@@ -10,4 +10,4 @@ My Bioinformatics PhD dissertation
 
 ## Word count
 
-    abstract: 1
+abstract: 1
