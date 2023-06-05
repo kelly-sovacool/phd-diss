@@ -3,8 +3,8 @@ on:
   push:
     paths:
       - _quarto.yml
-      - *.qmd
-      - *.tex
+      - "*.qmd"
+      - "*.tex"
 
 jobs:
   quarto-render-and-deploy:
