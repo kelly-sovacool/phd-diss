@@ -13,7 +13,17 @@ conda_downloads <- 24727
 
 ### Novel method for reference-based OTU clustering
 
-Enables improved OTU quality paired with machine learning 
+Enables improved OTU quality paired with machine learning.
+Prior to OptiFit, the only option for researchers who wanted to deploy OTU-based
+ML models was to cluster both the training set and external validation sets to
+the same database using a closed-reference clustering method.
+Reference-based clustering against a database produces lower quality
+OTUs than _de novo_ clustering, but _de novo_ clustering results in slightly
+different OTU assignments when adding new sequences.
+Now with OptiFit, an initial dataset can be clustered _de novo_ and then used to
+train a model, then new sequences from an external validation set can be fit to
+the OTUs from the training data prior to deploying the model on the new dataset.
+A follow-up paper demonstrated the suitability of OptiFit for this very task [@armour_machine_2023].
 
 ### Microbiome models for CDI severity
 
