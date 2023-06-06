@@ -9,6 +9,8 @@ on:
 jobs:
   quarto-render-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     defaults:
       run:
         shell: bash -l {0}
@@ -29,5 +31,3 @@ jobs:
       with:
         target: gh-pages
         render: false
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
