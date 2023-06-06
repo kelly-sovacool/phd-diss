@@ -1,7 +1,43 @@
+```{r mikropml_downloads}
+library(cranlogs)
+library(dplyr)
+cran_downloads <- cran_downloads(package = "mikropml", 
+                                 from = "2020-11-23", to = "2023-06-08") %>% 
+  pull(count) %>% sum()
+conda_downloads <- 24727
+```
+
 # Discussion
 
 ## Major contributions
 
+### Novel method for reference-based OTU clustering
+
+Enables improved OTU quality paired with machine learning 
+
+### Microbiome models for CDI severity
+
+### Educational resources
+
+### Software
+
+In chapter 4.4, we introduced a tool that integrates current best practices
+for ML in a user-friendly R package.
+Our goal was to enable researchers who are novices in ML to train and evaluate
+models according to best practices, while allowing experienced users to tailor
+the package for advanced needs.
+At the time of this writing, mikropml has been downloaded `r cran_downloads` 
+times from the Comprehensive R Archive Network and `r conda_downloads` times
+from the Anaconda package manager.
+The mikropml publication has been cited 18 times in fields spanning gut
+microbiome research, microbial ecology, public health, and environmental
+research.
+
+<!-- mikropml snakemake workflow, schtools, mothur snakemake workflow -->
+
 ## Future work
+
+### Integrate microbial features with clinical factors for improved CDI severity prediction
+
 
 ## Conclusions
