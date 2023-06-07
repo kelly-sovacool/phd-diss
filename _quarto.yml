@@ -54,6 +54,7 @@ format:
 fig-dpi: 600
 execute:
   freeze: auto  # re-render only when source changes
+  cache: true
   eval: true
   echo: false
   message: false

@@ -2,7 +2,6 @@
 .snakemake
 __pycache__
 *_cache*
-/_freeze/
 /.quarto/
 /_book/
 /dissertation_KLS.tex
