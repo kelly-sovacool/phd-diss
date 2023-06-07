@@ -53,6 +53,7 @@ format:
     fig-cap-location: top
 fig-dpi: 600
 execute:
+  freeze: auto  # re-render only when source changes
   eval: true
   echo: false
   message: false
