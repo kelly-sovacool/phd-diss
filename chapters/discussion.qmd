@@ -16,6 +16,10 @@ This dissertation introduces two new tools that improve ML capabilities for
 microbiome research and beyond, applies ML with microbiome data to CDI severity
 prediction, and introduces two new educational resources that teach coding for
 data science to young audiences and scientists.
+For all of the analyses described in this dissertation, the complete software
+workflows and dependencies required to reproduce the results are publicly
+available with open source licenses so that anyone can reproduce, replicate or
+build upon our work.
 The impact of this work spans microbial ecology, gut microbiome research,
 applied machine learning, and data science education.
 
@@ -120,16 +124,27 @@ of Open Source Software.
 
 ### Integrate microbiota with clinical factors for improved CDI severity prediction
 
-The ultimate goal is to build models that can be used to predict early on which
-patients are at risk of experiencing disease-related complications so that
-clinicians can tailor treatments to prevent severe outcomes from occurring.
-OTUs + EHRs on same dataset
+The ultimate goal of CDI severity prediction models is to help clinicians
+identify early on which patients are at risk of experiencing a severe outcome
+so they can tailor treatments to prevent the outcome from ever occurring.
 
-decision threshold analysis instead of just 95th percentile of risk
+OTUs + EHRs on same dataset.
+huge increase in auroc may or may not translate to a huge increase in benefit
+to patients.
+decision threshold analysis instead of just 95th percentile of risk.
 
 ### Beyond taxonomic composition
 
 consider functional potential and actual function
+
+Efforts to find consistent changes in taxonomic composition of microbiomes between normal and dysbiotic states have found mixed success, in part because interpersonal variability in taxonomic composition sometimes exceeds the variability between disease states.
+Variability of microbiome composition between individuals with the same disease status may be explained by functional redundancy, where different microbial species carry out the same functions and thus can replace each other with little effect on the overall function of the community.
+
+Sequencing whole metagenomes to identify the genes present and annotate known gene functions is commonly used to build a profile of functional potential of the microbiome.
+Combining taxonomic composition from OTUs with functional potential from metagenomes allows one to characterize functional redundancy across communities, where communities with similar functional potential have different taxonomic composition.
+Untargeted mass spectrometry can validate the functional potential characterized from metagenomics by identifying metabolites that are active in a community, thus painting a more precise picture of active microbial functions.
+... investigate the impacts of taking functional redundancy and active metabolites into account for microbiome analyses.
+
 
 ### Democratizing the democratizers
 
