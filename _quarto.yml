@@ -53,8 +53,6 @@ format:
     fig-cap-location: top
 
 execute:
-  freeze: auto
-  cache: false
   eval: true
   echo: false
   message: false
