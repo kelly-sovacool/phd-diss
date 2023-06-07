@@ -10,3 +10,6 @@
 [submodule "data-science/mikropml-paper"]
 	path = papers/mikropml
 	url = https://github.com/SchlossLab/mikropml
+[submodule "papers/severe-cdi"]
+	path = papers/severe-cdi
+	url = https://github.com/SchlossLab/severe-CDI
