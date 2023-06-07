@@ -3,6 +3,7 @@
 ```{r setup}
 #| include: false
 schtools::set_knitr_opts()
+knitr::opts_chunk$set(dpi = 600)
 ```
 
 
@@ -763,7 +764,7 @@ Supervised ML is widely used to recognize patterns in large datasets and to make
 predictions about outcomes of interest. Several packages including `caret`
 [@kuhn_building_2008] and `tidymodels` [@kuhn_tidymodels_2020] in R,
 `scikitlearn` [@pedregosa_scikit-learn_2011] in Python, and the H2O `autoML`
-platform [@h2o_platform] allow scientists to train ML models with a variety of
+platform [@h2oai_h2o_2020] allow scientists to train ML models with a variety of
 algorithms. While these packages provide the tools necessary for each ML step,
 they do not implement a complete ML pipeline according to good practices in the
 literature. This makes it difficult for practitioners new to ML to easily begin
@@ -771,7 +772,7 @@ to perform ML analyses.
 
 To enable a broader range of researchers to apply ML to their problem domains,
 we created [`mikropml`](https://github.com/SchlossLab/mikropml/), an easy-to-use
-R package [@r_core_team_r_2020] that implements the ML pipeline created by
+R package [@r_core_team_r_2023] that implements the ML pipeline created by
 Topçuoğlu _et al._ [@topcuoglu_framework_2020] in a single function that returns a trained model,
 model performance metrics and feature importance. `mikropml` leverages
 the `caret` package to support several ML algorithms: linear regression,
@@ -799,7 +800,7 @@ We also provide
 [vignettes](http://www.schlosslab.org/mikropml/articles/index.html) and an
 [example Snakemake
 workflow](https://github.com/SchlossLab/mikropml-snakemake-workflow)
-[@koster_snakemakescalable_2012] to showcase how to run an ideal ML pipeline
+[@koster_snakemake_2012] to showcase how to run an ideal ML pipeline
 with multiple different train/test data splits. The results can be visualized
 using helper functions that use `ggplot2` [@wickham_ggplot2_2016].
 
@@ -879,7 +880,7 @@ tuning](http://www.schlosslab.org/mikropml/articles/tuning.html).
 
 #### Dependencies
 
-mikropml is written in R [@r_core_team_r_2020] and depends on several packages:
+mikropml is written in R [@r_core_team_r_2023] and depends on several packages:
 `dplyr` [@wickham_dplyr_2020], `rlang` [@henry_rlang_2020] and `caret`
 [@kuhn_building_2008]. The ML algorithms supported by `mikropml` require:
 `glmnet` [@friedman_regularization_2010], `e1071` [@meyer_e1071_2020], and

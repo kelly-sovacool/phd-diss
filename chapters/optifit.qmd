@@ -3,6 +3,7 @@
 ```{r setup}
 #| include: false
 schtools::set_knitr_opts()
+knitr::opts_chunk$set(dpi = 600)
 ```
 
 ## Preamble
@@ -578,7 +579,7 @@ Westcott *et al.* [@westcott_opticlust_2017].
 
 We implemented the analysis workflow in Snakemake
 [@koster_snakemake_2012] and wrote scripts in R
-[@r_core_team_r_2020], Python
+[@r_core_team_r_2023], Python
 [@van_rossum_python_2009], and GNU bash
 [@noauthor_bash_nodate]. Software used includes mothur v1.47.0
 [@schloss_introducing_2009], VSEARCH v2.15.2
@@ -586,10 +587,9 @@ We implemented the analysis workflow in Snakemake
 [@wickham_welcome_2019], R Markdown [@xie_r_2018],
 ggraph [@pederson_ggraph_2021], ggtext
 [@wilke_ggtext_2020], numpy [@harris_array_2020],
-the SRA toolkit [@noauthor_sra-tools_nodate], and conda
-[@noauthor_anaconda_2016]. The complete workflow and
-supporting files required to reproduce this manuscript are available at
-<https://github.com/SchlossLab/Sovacool_OptiFit_mSphere_2022>.
+the SRA toolkit [@noauthor_sra-tools_nodate], and conda. 
+The complete workflow and supporting files required to reproduce this manuscript
+are available at <https://github.com/SchlossLab/Sovacool_OptiFit_mSphere_2022>.
 
 ## Acknowledgements
 
