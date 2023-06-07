@@ -26,43 +26,11 @@ book:
     - chapters/discussion.qmd
 
 dept: Bioinformatics
-#preface:
-dedication: |
-  To my parents. I am forever grateful for all you do for me.
-acknowledgements: |
-  Family TODO
-
-  Friends TODO. 
-  
-  Kristi Janson, my high school teacher who taught the biomedical sciences
-  courses that made me want to become a scientist.
-  My undergraduate mentors at the University of Kentucky:
-  Jerzy Jaromczyk, Neil Moore, Dave Weisrock, and Hunter Moseley.
-  Hunter Moseley spent many hours critiquing my code and developed my
-  programming skills from crawling to running.
-
-  All those involved in The Carpentries instance at U-M who contributed to the
-  curriculum and taught in the pilot workshops.
-
-  Past and present members of our chapter of Girls Who Code at U-M DCMB.
-  Especially Brooke Wolford and Zena Lapp, who co-founded the chapter;
-  Marlena Duda, who spearheaded the effort to develop our custom curriculum; and
-  Audrey Drotos and Hayley Falk, who are passing on the torch to the next
-  generation of graduate students to sustain this club for many years to come.
-  To the Department of Computational Medicine and Bioinformatics, for unwaivering
-  support of the club.
-  Thanks to all the students who participated and tried something new.
-
-  My committee members Greg Dick, Peter Freddolino, Jenna Wiens, and
-  Vince Young for your helpful insights.
-  Krishna Rao for helping me understand clinical guidelines for diagnosing
-  and treating \textit{C. difficile} infections.
-
-  Members of the Schloss Lab past and present. SchLabbies TODO
-
-  Thank you to my advisor, Pat. You are the best!
-abstract: |
-  TODO
+frontispiece: front-matter/frontispiece.png
+dedication: \input{front-matter/dedication.tex}
+acknowledgements: \input{front-matter/acknowledgements.tex}
+abstract: \input{front-matter/abstract.tex}
+acronyms: \input{front-matter/acronyms.tex}
 committee: # alphabetical order
   - Professor Patrick D. Schloss, Chair
   - Associate Professor Gregory J. Dick
@@ -70,18 +38,12 @@ committee: # alphabetical order
   - Associate Professor Jenna Wiens
   - Professor Vincent B. Young
 chair: Professor Patrick D. Schloss, Chair
-acronyms:
-  \acro{OTU}{Operational Taxonomic Unit}
-  \acro{CDI}{\textit{Clostridioides difficile} infection}
-  \acro{ML}{Machine learning}
-frontispiece: front-matter/frontispiece.png
 list-commands:
   - \showlistoffigures
   - \showlistoftables
   - \showlistofacronyms
 
 bibliography: references.bib
-fontsize: 12pt
 format:
   rackham-pdf:
     keep-tex: true

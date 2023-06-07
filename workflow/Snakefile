@@ -1,3 +1,4 @@
+import os
 import yaml
 quarto_yml = '_quarto.yml'
 with open(quarto_yml, 'r') as infile:
@@ -5,13 +6,23 @@ with open(quarto_yml, 'r') as infile:
 
 pdf_output = f"{quarto_meta['project']['output-dir']}/{quarto_meta['book']['output-file']}.pdf"
 
+front_matter_files = list()
+for key in ['preface', 'dedication', 'acknowledgements', 'abstract', 'acronyms', 'frontispiece', 'bibliography']:
+    if key in quarto_meta.keys():
+        val = quarto_meta[key]
+        if val.startswith('\\input{'):
+            filename = val.strip('\\input{').rstrip('}')
+            front_matter_files.append(filename) # input tex file
+        if key in ('frontispiece', 'bibliography'):
+            front_matter_files.append(val) # image file
+
 rule targets:
     input:
         pdf_output
 
 rule update_extension:
     output:
-        directory("_extensions/kelly-sovacool/rackham/")
+        dir=directory("_extensions/kelly-sovacool/rackham/")
     conda: "envs/env.yml"
     shell:
         """
@@ -22,9 +33,9 @@ rule render_pdf:
     input:
         yml = quarto_yml,
         qmd = quarto_meta['book']['chapters'],
-        bib = 'references.bib',
         tex = 'header.tex',
-        ext = rules.update_extension.output
+        frontmatter = front_matter_files,
+        ext = [f"{rules.update_extension.output.dir}/{file}" for file in os.listdir(rules.update_extension.output.dir)],
     output:
         pdf = pdf_output,
         tex = f"{quarto_meta['book']['output-file']}.tex"
