@@ -23,6 +23,7 @@ rule render_pdf:
         yml = quarto_yml,
         qmd = quarto_meta['book']['chapters'],
         bib = 'references.bib',
+        tex = 'header.tex',
         ext = rules.update_extension.output
     output:
         pdf = pdf_output,
