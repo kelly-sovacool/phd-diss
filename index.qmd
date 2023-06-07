@@ -1,3 +1,7 @@
+```{r setup}
+#| include: false
+schtools::set_knitr_opts()
+```
 
 # Introduction
 
