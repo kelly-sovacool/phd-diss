@@ -255,8 +255,8 @@ area under the receiver-operator characteristic curve (AUROC).
 Since the severity outcomes were highly imbalanced with different proportions of
 severe samples between definitions, we also calculated the balanced precision
 and the area under the balanced precision-recall curve (AUBPRC) as first
-proposed by @wu_improved_2021 to describe the precision that would be expected
-if the outcomes were balanced.
+proposed by Wu _et al._ to describe the precision that would be expected
+if the outcomes were balanced [@wu_improved_2021].
 
 ```{r model_comps_full}
 #| output: false
@@ -334,10 +334,10 @@ However, unlike for AUROC, the baseline for the area under the precision-recall
 curve depends on the proportion of positive outcomes (i.e. severe cases) in the
 data, which vary across these severity definitions.
 To allow comparison of precision across datasets with different proportions of
-positives, @wu_improved_2021 introduced the concept of balanced precision, a
+positives, Wu _et al._ introduced the concept of balanced precision, a
 transformation of precision based on Bayes' theorem that represents the
 precision that would have been expected if the proportion of positives were
-balanced at 0.5.
+balanced at 0.5 [@wu_improved_2021].
 Reporting the area under the balanced precision-recall curve (AUBPRC) allows us
 to compare the trade-off between precision and recall for our different severity
 defintions.
@@ -771,7 +771,7 @@ Since the severity labels are imbalanced with different frequencies of severity
 for each definition, we calculated balanced precision, the precision expected if
 the labels were balanced.
 The balanced precision and the area under the balanced precision-recall curve
-(AUBPRC) were calculated with Equations 1 and 7 from @wu_improved_2021.
+(AUBPRC) were calculated with Equations 1 and 7 from Wu _et al._ [@wu_improved_2021].
 
 ### Number needed to benefit
 
@@ -850,19 +850,7 @@ TODO
 
 ## Supplement
 
-<!--
-TODO move aubprc to supplement? wait for committee feedback?
--->
-
-<!-- TODO supplementary figure with alpha and beta diversity & significance.
-Samples were rarefied to 5,000 sequences per sample, repeated 1,000
-times for alpha and beta diversity analysis.
--->
-
-<!-- TODO how get supplement figures labelled with S prefix
--->
-
-::: {#fig-prc fig-cap="**Precision-recall curves.**"}
+::: {#fig-prc fig-cap="Precision-recall curves." fig-pos='H'}
 `r sovatools::insert_image_md('papers/severe-cdi/paper/figures/prc_curves.png')`
 \justify
 \small
@@ -873,7 +861,7 @@ Since each definition has a different baseline precision, the PRCs cannot be
 compared directly without balancing the precision (see @fig-performance).
 :::
 
-::: {#fig-cdiff fig-cap="**_C. difficile_ relative abundance and feature importance.**"}
+::: {#fig-cdiff fig-cap="_C. difficile_ relative abundance and feature importance." fig-pos='H'}
 `r sovatools::insert_image_md('papers/severe-cdi/paper/figures/cdiff-otu.png')`
 \justify
 \small
@@ -888,3 +876,14 @@ The dotted line is a feature importance of zero, meaning the feature is not
 important.
 :::
 
+<!--
+TODO move aubprc to supplement? wait for committee feedback?
+-->
+
+<!-- TODO supplementary figure with alpha and beta diversity & significance.
+Samples were rarefied to 5,000 sequences per sample, repeated 1,000
+times for alpha and beta diversity analysis.
+-->
+
+<!-- TODO how get supplement figures labelled with S prefix
+-->
