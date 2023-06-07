@@ -1,4 +1,5 @@
 ```{r mikropml_downloads}
+schtools::set_knitr_opts()
 library(cranlogs)
 library(dplyr)
 cran_downloads <- cran_downloads(package = "mikropml", 
@@ -11,43 +12,129 @@ conda_downloads <- 24727
 
 ## Major contributions
 
+This dissertation introduces two new tools that improve ML capabilities for
+microbiome research and beyond, applies ML with microbiome data to CDI severity
+prediction, and introduces two new educational resources that teach coding for
+data science to young audiences and scientists.
+The impact of this work spans microbial ecology, gut microbiome research,
+applied machine learning, and data science education.
+
 ### Novel method for reference-based OTU clustering
 
-Enables improved OTU quality paired with machine learning.
-Prior to OptiFit, the only option for researchers who wanted to deploy OTU-based
-ML models was to cluster both the training set and external validation sets to
-the same database using a closed-reference clustering method.
-Reference-based clustering against a database produces lower quality
-OTUs than _de novo_ clustering, but _de novo_ clustering results in slightly
-different OTU assignments when adding new sequences.
-Now with OptiFit, an initial dataset can be clustered _de novo_ and then used to
-train a model, then new sequences from an external validation set can be fit to
-the OTUs from the training data prior to deploying the model on the new dataset.
-A follow-up paper demonstrated the suitability of OptiFit for this very task [@armour_machine_2023].
+OptiFit is a novel OTU clustering method that enables high quality OTUs for ML
+workflows and other applications where consistent OTUs are required.
+Prior to the development of OptiFit, the only option for researchers who wanted
+to deploy OTU-based ML models was to cluster both the training set and external
+validation sets to the same database using a closed-reference clustering method.
+Existing tools for reference-based clustering against databases produce lower
+quality OTUs than _de novo_ clustering with OptiClust.
+However, _de novo_ clustering results in slightly different OTU assignments when
+adding new sequences, thus models trained on one dataset could not be deployed
+on new data due to incompatible features.
+Now with OptiFit, an initial dataset can be clustered _de novo_ with OptiClust
+and then used to train a model, then new sequences from an external validation
+set can be fit to the OTUs from the training data prior to deploying the model
+on the new dataset.
+A follow-up paper demonstrated the suitability of OptiFit for this very task
+on a colorectal cancer dataset to distinguish patients with screen-relevant 
+neoplasias from normal controls [@armour_machine_2023].
+OptiFit opens a new door for microbial ecologists to deploy ML models using
+higher quality OTUs than were possible before.
 
-### Microbiome models for CDI severity
+### Microbiome models for prediction of severe CDI outcomes
+
+Prior studies to date have trained models to predict severe CDI outcomes using
+routine clinical data, selected serum biomarkers, curated variables from EHR
+data, or entire EHRs.
+However, none have focused on using the initial state of the gut microbiome to
+predict CDI severity, despite ample evidence for a link between dysbiosis and
+_C. difficile_ colonization, infection, and recurrence.
+We trained models on OTU relative abundances collected on the day of CDI
+diagnosis to predict four different definitions of severity.
+Models trained to predict the pragmatic severity definition performed best, as
+this definition uses as much data as possible while also using physicians'
+determinations of whether severe outcomes were CDI-attributable when available.
+While these models did not outperform prior EHR-based models extracted two days
+after diagnosis, the pragmatic severity models matched the performance of
+EHR-based models from the day of diagnosis.
+These results provide an initial exploration of the utility of OTU-based models
+for predicting CDI severity, and they may become more clinically relevant in the
+future as new evidence emerges of efficacious treatments for preventing severity.
 
 ### Educational resources
+
+In chapter 4.2, we introduced a new curriculum to teach introductory Python for
+data science via live-coding or a flipped classroom format.
+We deployed the curriculum for in-person and virtual Girls Who Code clubs during
+a three year period with high school students as the audience.
+The curriculum takes students from having no knowledge of programming to being
+able to analyze a real-world dataset and present their findings to the group.
+In a post-survey, students overwhelmingly reported that they improved their
+Python programming skills, problem solving and critical thinking, collaboration
+with others, and self-confidence.
+Not only were the students we taught positively impacted; our curriculum is
+free and available with an open source license so any other educators can use
+our curriculum or modify it for their own needs.
+This curriculum is continually improved upon and is still in use for the chapter
+of Girls Who Code at the University of Michigan Department of Computational
+Medicine and Bioinformatics.
+
+In chapter 4.3, we introduced a new curriculum to teach coding for reproducible
+research practices to scientists and other researchers in an academic setting.
+The Carpentries materials that inspired us taught three topics in a disparate
+manner: introductory R programming, the Unix shell, and version control with
+git and GitHub. 
+Our curriculum covers these topics in an integrated manner so that learners
+understand how they are used together in practice.
+We piloted the curriculum in a virtual workshop and assessed our work with a 
+post-workshop survey.
+On average, learners reported that they felt more confident writing programs,
+using programming to work with data, overcoming problems while programming, and
+searching for answers to technical questions online.
+This curriculum is still in use today for Carpentries workshops at the
+University of Michigan and is freely available with an open source license for
+anyone to use and modify.
 
 ### Software
 
 In chapter 4.4, we introduced a tool that integrates current best practices
 for ML in a user-friendly R package.
 Our goal was to enable researchers who are novices in ML to train and evaluate
-models according to best practices, while allowing experienced users to tailor
-the package for advanced needs.
+models with guard rails to prevent common pitfalls, while allowing experienced
+users to tailor the package for advanced needs.
 At the time of this writing, mikropml has been downloaded `r cran_downloads` 
 times from the Comprehensive R Archive Network and `r conda_downloads` times
-from the Anaconda package manager.
-The mikropml publication has been cited 18 times in fields spanning gut
-microbiome research, microbial ecology, public health, and environmental
-research.
-
+from the Anaconda package manager, suggesting a healthy user base.
+The reach of mikropml has expanded outside of our immediate scientific network
+and into fields spanning gut microbiome research, microbial ecology, public
+health, and environmental research.
+Rather than write code intended for one-time-use-only to conduct the ML analyses
+shown in this work, we chose to bundle our methods into a package for others to
+reuse for their own research.
+As a result, our efforts have contributed directly to the greater scientific
+endeavor, with 18 citations to date of the mikropml publication in the Journal
+of Open Source Software.
 <!-- mikropml snakemake workflow, schtools, mothur snakemake workflow -->
 
 ## Future work
 
-### Integrate microbial features with clinical factors for improved CDI severity prediction
+### Integrate microbiota with clinical factors for improved CDI severity prediction
 
+The ultimate goal is to build models that can be used to predict early on which
+patients are at risk of experiencing disease-related complications so that
+clinicians can tailor treatments to prevent severe outcomes from occurring.
+OTUs + EHRs on same dataset
+
+decision threshold analysis instead of just 95th percentile of risk
+
+### Beyond taxonomic composition
+
+consider functional potential and actual function
+
+### Democratizing the democratizers
+
+did i seriously just write that
 
 ## Conclusions
+
+TODO

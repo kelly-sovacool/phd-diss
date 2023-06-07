@@ -1,3 +1,4 @@
+
 # Introduction
 
 ## Microbial communities in human health / microbial ecology / microbiome
@@ -25,6 +26,8 @@ identify patients at risk of being infected with _C. difficile_ in intensive car
 Do no harm [@wiens_no_2019]
 
 ## _Clostridioides difficile_ infection
+
+role of microbiome in _C. difficile_ colonization and recurrence [@seekatz_role_2022]
 
 ## Democratizing reproducible data science
 

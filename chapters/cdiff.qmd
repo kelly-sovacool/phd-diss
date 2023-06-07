@@ -22,6 +22,39 @@ co-authors:
 Kelly L. Sovacool, Sarah E. Tomkovich, Megan L. Coden, Jenna Wiens,
 Vincent B. Young, Krishna Rao, and Patrick D. Schloss.
 
+### another abstract?
+
+Prior studies to date have trained models to predict severe CDI outcomes using
+routine clinical data, selected serum biomarkers, curated variables from EHR
+data, or entire EHRs.
+The ultimate goal is to build models that can be used to predict soon after
+diagnosis which patients are at risk of experiencing disease-related
+complications so that clinicians can tailor treatments to prevent severe
+outcomes.
+While age and immunocompetence are important factors in CDI severity, the role
+of the gut microbiome has been under-explored.
+In mouse studies, the gut microbiota prior to _C. difficile_ exposure
+have been associated with differences in _C. difficile_ colonization, infection,
+clearance, and moribundity.
+As a result, we hypothesized that the initial state of the microbiome could be
+used to predict severe CDI outcomes in humans.
+We profiled the taxonomic composition of the bacterial microbiota from stool
+samples collected on the day of diagnosis from 1,277 CDI patients, then
+trained ML models to predict CDI severity using four different severity
+definitions.
+We found that using as much data as possible for model training while using
+physicians' determinations of CDI-attributable severity when available were
+paramount for good model performance, as the severity outcomes were highly
+imbalanced.
+_Enterococcus_ was the most important OTU contributing to model performance and
+was associated with severity, which concords well with the literature.
+Our model performed as well as a prior EHR-based model extracted on the day of
+diagnosis, but not as well as an EHR-based model extracted two days after
+diagnosis.
+A preliminary analysis of the potential clinical value of severity prediction
+models showed modest performance at the 95th percentile of risk, but further
+work is needed to determine whether deploying OTU-based models would mark an
+improvement over current clinical practices.
 
 <!--
 we do not know which antibiotics were prescribed to treat these CDI cases, nor
