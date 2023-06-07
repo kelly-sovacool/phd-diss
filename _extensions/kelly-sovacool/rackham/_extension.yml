@@ -9,12 +9,14 @@ contributes:
         echo: false
     pdf:
       documentclass: thesis-umich
+      classoption:
+        - thesis
       cite-method: natbib
       biblio-style: plain
       biblio-config: false
       include-in-header:
-        - header.tex
         - packages.tex
+        - header.tex
       format-resources:
         - thesis-umich.cls
       template: template.tex
