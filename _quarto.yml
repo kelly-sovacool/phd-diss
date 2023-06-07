@@ -51,7 +51,7 @@ format:
       - thesis
     include-in-header: header.tex
     fig-cap-location: top
-
+fig-dpi: 600
 execute:
   eval: true
   echo: false
