@@ -29,6 +29,14 @@ rule update_extension:
         quarto update extension kelly-sovacool/rackham
         """
 
+rule update_submods:
+    output:
+        dir=directory("papers/")
+    shell:
+        """
+        git submodule update --remote
+        """
+
 rule render_pdf:
     input:
         yml = quarto_yml,
