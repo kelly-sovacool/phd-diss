@@ -427,7 +427,7 @@ for important OTUs in severe CDI cases, but all of the top 5 OTUs had an
 increased mean relative abundance in severe cases relative to not severe cases.
 
 ::: {#fig-features fig-cap="Most important OTUs for model performance."}
-`r sovatools::insert_image_md('papers/severe-cdi/paper/figures/feature-importance.png')`
+`r sovatools::insert_image_md('papers/severe-cdi/paper/figures/feature-importance.png', width=6.875)`
 \justify
 \small
 **A)** Feature importance via permutation test.
@@ -871,9 +871,8 @@ cases in the dataset for each severity definition.
 Since each definition has a different baseline precision, the PRCs cannot be
 compared directly without balancing the precision (see @fig-performance).
 :::
-<!--
+
 ::: {#fig-cdiff fig-cap="**_C. difficile_ relative abundance and feature importance.**"}
-![](figures/cdiff-otu.png)
 `r sovatools::insert_image_md('papers/severe-cdi/paper/figures/cdiff-otu.png')`
 \justify
 \small
@@ -886,5 +885,5 @@ The point is the mean difference in AUROC and the tails are the 75% confidence
 interval.
 The dotted line is a feature importance of zero, meaning the feature is not
 important.
-:::-->
+:::
 

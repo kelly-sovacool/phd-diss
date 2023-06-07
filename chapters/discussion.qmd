@@ -18,7 +18,7 @@ prediction, and introduces two new educational resources that teach coding for
 data science to young audiences and scientists.
 For all of the analyses described in this dissertation, the complete software
 workflows and dependencies required to reproduce the results are publicly
-available with open source licenses so that anyone can reproduce, replicate or
+available with open source licenses so that anyone can reproduce, replicate, or
 build upon our work.
 The impact of this work spans microbial ecology, gut microbiome research,
 applied machine learning, and data science education.
@@ -132,6 +132,15 @@ OTUs + EHRs on same dataset.
 huge increase in auroc may or may not translate to a huge increase in benefit
 to patients.
 decision threshold analysis instead of just 95th percentile of risk.
+
+
+Models to guide treatment options. In the case of low-risk and non-invasive treatments
+such as choosing between oral antibiotics, a higher number of false positives may
+be tolerable as long as treatment cost is not unbearably high. However, for highly
+invasive and irreversibly treatments such as colectomy, false positives must be minimized.
+
+fidaxomicin. 
+bezlotoxumab shown to prevent systemic organ damage in a mouse study [@mileto_bezlotoxumab_2022].
 
 ### Beyond taxonomic composition
 

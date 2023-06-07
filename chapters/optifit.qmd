@@ -1,7 +1,8 @@
 # OptiFit: an improved method for fitting amplicon sequences to existing OTUs
 
-```{r}
-# this is a dummy code block to force inline code chunks to render correctly
+```{r setup}
+#| include: false
+schtools::set_knitr_opts()
 ```
 
 ## Preamble

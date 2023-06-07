@@ -1,8 +1,10 @@
 # Democratizing data science with open curricula and user-friendly software tools
 
-```{r}
-# this is a dummy code block to force inline code chunks to render correctly
+```{r setup}
+#| include: false
+schtools::set_knitr_opts()
 ```
+
 
 ## Preamble
 
