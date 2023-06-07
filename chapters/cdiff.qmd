@@ -3,6 +3,7 @@
 ```{r setup}
 #| include: false
 schtools::set_knitr_opts()
+knitr::opts_chunk$set(dpi = 600)
 ```
 
 
@@ -427,7 +428,7 @@ for important OTUs in severe CDI cases, but all of the top 5 OTUs had an
 increased mean relative abundance in severe cases relative to not severe cases.
 
 ::: {#fig-features fig-cap="Most important OTUs for model performance."}
-`r sovatools::insert_image_md('papers/severe-cdi/paper/figures/feature-importance.png', width=6.875)`
+`r sovatools::insert_image_md('papers/severe-cdi/paper/figures/feature-importance.png')`
 \justify
 \small
 **A)** Feature importance via permutation test.
