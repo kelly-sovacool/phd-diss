@@ -1,12 +1,12 @@
-The human gut microbiome has been implicated in maintaining health.
+The human gut microbiome plays an important role in maintaining health.
 Changes in the taxonomic composition and metabolic activity of the gut
-microbiota have been associated with numerous diseases including colorectal
+microbiota have been implicated in numerous diseases including colorectal
 cancer, \textit{Clostridioides difficile} infection (CDI), irritable bowel disease,
-and others,
-thus the gut microbiome is a promising source of biomarkers for disease
+and others.
+Thus, the gut microbiome is a promising source of biomarkers for disease
 diagnosis and prediction.
 Machine learning (ML) approaches can integrate big data to gain insight into
-patterns that aren't interrogable by traditional statistics
+patterns that aren't interrogable by traditional statistics.
 Here, we introduce a new algorithm to improve capabilities of using ML for
 microbiome research,
 apply ML to predict severe outcomes of CDI,
@@ -15,46 +15,46 @@ levels to take programming skills from basic through being able to apply data
 science responsibly to investigate their own research questions.
 
 Assigning amplicon sequences to operational taxonomic units (OTUs) is an
-important step in characterizing microbial communities across large
-datasets.
-Gap in existing clustering methods: \textit{de novo} clustering produces better
-quality OTUs than reference-based methods, but only reference-based methods can
-be used to cluster consistent OTUs across different datasets.
-However,
-one may wish to incorporate new samples to previously clustered datasets
-without clustering all sequences again, such as when comparing across
-datasets or deploying machine learning models.
-To provide an efficient method to fit sequences to existing OTUs, we
-developed the OptiFit algorithm, an improved implementation
-of reference-based clustering inspired by the \textit{de novo} OptiClust
-algorithm.
-OptiFit produces similar quality OTUs as
-OptiClust at faster speeds when using the split dataset strategy.
-OptiFit provides a suitable option for users requiring consistent OTU
-assignments at the same quality afforded by \textit{de novo} clustering
-methods.
+important step in characterizing microbial communities across large datasets.
+However, a gap in existing OTU assignment methods inhibited the ability of
+researchers to incorporate new samples to previously clustered datasets without
+clustering all sequences again, such as when comparing across datasets or
+deploying machine learning models.
+\textit{De novo} clustering produces better quality OTUs than reference-based
+methods, but only reference-based methods can be used to cluster consistent OTUs
+across different datasets.
+To provide an efficient method to fit sequences to existing OTUs, we developed
+the OptiFit algorithm, an improved implementation of reference-based clustering
+inspired by the \textit{de novo} OptiClust algorithm.
+Our benchmarks revealed that OptiFit produces similar quality OTUs as OptiClust
+at faster speeds in a range of microbial communities, thus OptiFit provides a
+suitable option for users requiring consistent OTU assignments at the same
+quality afforded by \textit{de novo} clustering methods.
 
 CDI can lead to adverse outcomes including ICU admission, colectomy, and death,
-with half a million cases annually in the United States.
-The composition of the gut microbiome plays an important role in determining
-colonization resistance and clearance upon exposure to \textit{C. difficile}.
-We investigated whether machine learning (ML) models trained on OTUs from patient
-stool samples on the day of CDI diagnosis could predict which CDI cases
-led to severe outcomes.
+with half a million cases annually in the United States. The composition of the
+gut microbiome plays an important role in determining colonization resistance
+and clearance upon exposure to \textit{C. difficile}.
+We investigated whether ML models trained on OTUs from patient stool samples on
+the day of CDI diagnosis could predict which CDI cases led to severe outcomes.
 We trained ML models to predict CDI severity on OTU relative abundances
 according to four different severity definitions described by prior studies.
 The models performed best when predicting pragmatic severity, a composite
 definition based on the occurrence of complications due to any cause that uses
-physician chart review to confirm the complications as CDI-attributable when
-possible.
+physician chart review to confirm the event as CDI-attributable when possible.
 Our results suggest that while chart review is valuable to verify the cause of
 complications, including as many samples as possible is indispensable for
 training performant models on imbalanced datasets.
-We evaluated the potential clinical value of the OTU-based models and
-found similar performance compared to prior models based on Electronic Health
-Records, although further work is needed to determine the feasibility of
-deploying such models in clinical practice.
+We evaluated the potential clinical value of the OTU-based models and found
+similar performance compared to prior models based on Electronic Health Records,
+although further work is needed to determine the feasibility of deploying such
+models in clinical practice.
 These OTU-based models represents a step toward the goal of deploying ML to
 inform clinical decisions and ultimately improve CDI outcomes.
 
-democratize data science
+democratize data science.
+Bioinformatics is an interdisciplinary field integrating computer science,
+statistics, and biological knowledge.
+Big data necessary to use computer science to analyze large datasets.
+An important attribute of any scientific product is reproducibility, where
+others can apply the same methods on the original dataset to obtain the same result.

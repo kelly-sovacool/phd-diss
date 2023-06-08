@@ -18,7 +18,7 @@ for key in ['preface', 'dedication', 'acknowledgements', 'abstract', 'acronyms',
 
 rule targets:
     input:
-        pdf_output
+        pdf_output, 'README.md'
 
 rule update_extension:
     output:
