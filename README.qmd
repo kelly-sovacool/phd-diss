@@ -3,8 +3,11 @@ format:
   gfm: default
 execute:
   echo: false
-jupyter: python3
 ---
+
+```{r}
+# can i trick it to use knitr instead of jupyter?
+```
 
 # phd-diss
 
@@ -18,10 +21,7 @@ My Bioinformatics PhD dissertation
 
 ```{python}
 #| output: asis
-import yaml
-
-with open('_quarto.yml', "r") as infile:
-    yaml_dict = yaml.load(infile, Loader=yaml.CLoader)
-
-print('abstract:', len(yaml_dict['abstract'].split()))
+with open('front-matter/abstract.tex', 'r') as infile:
+    word_count = len([word for line in infile for word in line.split()])
+    print('abstract:', word_count)
 ```
