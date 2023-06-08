@@ -87,10 +87,10 @@ In chapter 4.3, we introduced a new curriculum to teach coding for reproducible
 research practices to scientists and other researchers in an academic setting.
 The Carpentries materials that inspired us taught three topics in a disparate
 manner: introductory R programming, the Unix shell, and version control with
-git and GitHub. 
+git and GitHub.
 Our curriculum covers these topics in an integrated manner so that learners
 understand how they are used together in practice.
-We piloted the curriculum in a virtual workshop and assessed our work with a 
+We piloted the curriculum in a virtual workshop and assessed our work with a
 post-workshop survey.
 On average, learners reported that they felt more confident writing programs,
 using programming to work with data, overcoming problems while programming, and
@@ -106,7 +106,7 @@ for ML in a user-friendly R package.
 Our goal was to enable researchers who are novices in ML to train and evaluate
 models with guard rails to prevent common pitfalls, while allowing experienced
 users to tailor the package for advanced needs.
-At the time of this writing, mikropml has been downloaded `r cran_downloads` 
+At the time of this writing, mikropml has been downloaded `r cran_downloads`
 times from the Comprehensive R Archive Network and `r conda_downloads` times
 from the Anaconda package manager, suggesting a healthy user base.
 The reach of mikropml has expanded outside of our immediate scientific network
@@ -133,10 +133,19 @@ huge increase in auroc may or may not translate to a huge increase in benefit
 to patients.
 decision threshold analysis instead of just 95th percentile of risk.
 
-Models to guide treatment options. In the case of low-risk and non-invasive treatments
-such as choosing between oral antibiotics, a higher number of false positives may
-be tolerable as long as treatment cost is not unbearably high. However, for highly
-invasive and irreversibly treatments such as colectomy, false positives must be minimized.
+Models to guide treatment options. 
+While AUROC is easy to interpret, it is not necessarily the best metric to
+use when comparing models for clinical applications.
+The importance of each quadrant of the confusion matrix depends on the application
+as well as the nature of the dataset.
+In the case of highly imbalanced data as is the case with CDI severity,
+there are very few positive samples, and a model may have a good AUROC but
+perform poorly at identifying true positives.
+In the case of low-risk and non-invasive treatments such as choosing between
+oral antibiotics, a higher number of false positives may be tolerable as long as
+treatment cost is not unbearably high.
+However, for highly invasive and irreversibly treatments such as colectomy,
+false positives must be minimized.
 
 fidaxomicin.
 bezlotoxumab shown to prevent systemic organ damage in a mouse study [@mileto_bezlotoxumab_2022].
@@ -145,14 +154,37 @@ bezlotoxumab shown to prevent systemic organ damage in a mouse study [@mileto_be
 
 consider functional potential and actual function
 
-Efforts to find consistent changes in taxonomic composition of microbiomes between normal and dysbiotic states have found mixed success, in part because interpersonal variability in taxonomic composition sometimes exceeds the variability between disease states.
-Variability of microbiome composition between individuals with the same disease status may be explained by functional redundancy, where different microbial species carry out the same functions and thus can replace each other with little effect on the overall function of the community.
+Efforts to find consistent changes in taxonomic composition of microbiomes
+between normal and dysbiotic states have found mixed success, in part because
+interpersonal variability in taxonomic composition sometimes exceeds the
+variability between disease states.
+Variability of microbiome composition between individuals with the same disease
+status may be explained by functional redundancy, where different microbial
+species carry out the same functions and thus can replace each other with
+little effect on the overall function of the community.
 
-Sequencing whole metagenomes to identify the genes present and annotate known gene functions is commonly used to build a profile of functional potential of the microbiome.
-Combining taxonomic composition from OTUs with functional potential from metagenomes allows one to characterize functional redundancy across communities, where communities with similar functional potential have different taxonomic composition.
-Untargeted mass spectrometry can validate the functional potential characterized from metagenomics by identifying metabolites that are active in a community, thus painting a more precise picture of active microbial functions.
+Sequencing whole metagenomes to identify the genes present and annotate known
+gene functions is commonly used to build a profile of functional potential of
+the microbiome.
+Combining taxonomic composition from OTUs with functional potential from
+metagenomes allows one to characterize functional redundancy across communities,
+where communities with similar functional potential have different taxonomic
+composition.
+Untargeted mass spectrometry or transcriptomics can validate the functional
+potential characterized from metagenomics by identifying metabolites or gene
+products that are active in a community,
+thus painting a more precise picture of active microbial functions.
 ... investigate the impacts of taking functional redundancy and active metabolites into account for microbiome analyses.
+incorporate functional composition from metagenomic data to improve the
+performance of machine learning models...
 
+Previous studies have built OTU-based machine learning models to classify stool
+samples as normal or cancerous to serve as a less invasive diagnostic tool for
+CRC than colonoscopy, but have only achieved modest performance.
+Incorporating the known functional potential of the microbiome from metagenomic
+data may help account for functional redundancy and improve the performance of
+OTU-based models in classifying CRC, predicting CDI severity, or other 
+microbiome modeling problems.
 
 ### Democratizing the democratizers
 
