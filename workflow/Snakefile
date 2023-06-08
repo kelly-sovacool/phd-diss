@@ -63,3 +63,24 @@ rule render_readme:
         """
         quarto render {input.qmd}
         """
+
+rule make_standalone_abstract:
+    input:
+        tex='abstract-standalone.tex',
+        deps='front-matter/abstract.tex',
+    output:
+        pdf='_book/abstract_KLS.pdf'
+    params:
+        pdf='abstract-standalone.pdf'
+    shell:
+        """
+        xelatex {input.tex}
+        mv {params.pdf} {output.pdf}
+        rm *.aux *.log
+        """
+
+rule texclean:
+    shell:
+        """
+        rm -f *.out *.bbl *.log *.aux
+        """
