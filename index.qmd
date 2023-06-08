@@ -49,5 +49,24 @@ others can apply the same methods on the original dataset to obtain the same res
 
 ## Datasets used in this dissertation
 
+In chapter two, we re-used previously published 16S rRNA gene amplicon sequence
+data extracted from four different communities: soil, marine, mouse gut, and
+human gut.
+Using multiple datasets from disparate sources allowed us to
+demonstrate the suitability of OptiFit for microbiome researchers and microbial
+ecologists with diverse scientific interests.
+In chapter three, we used a dataset of 16S rRNA gene amplicon sequences extracted
+from 1,277 stool samples collected on the day of diagnosis from
+CDI patients at the University of Michigan.
+White blood cell counts and creatinine levels were also collected on the day of
+diagnosis in order to calculate IDSA severity scores.
+The occurence of ICU admission, colectomy, or death within 30 days was recorded
+and in some cases, physicians conducted chart review to determine whether the
+complication was attributable to the CDI.
+In chapter four, we used results from surveys of learners who participated in the
+Girls Who Code club and Carpentries workshops where we piloted our new
+curricula, which allowed us to measure the success of our teaching approaches.
+The data are described in further detail in each of the chapters below.
+
 ## Dissertation outline
 
