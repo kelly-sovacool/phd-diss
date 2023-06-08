@@ -139,7 +139,7 @@ such as choosing between oral antibiotics, a higher number of false positives ma
 be tolerable as long as treatment cost is not unbearably high. However, for highly
 invasive and irreversibly treatments such as colectomy, false positives must be minimized.
 
-fidaxomicin. 
+fidaxomicin.
 bezlotoxumab shown to prevent systemic organ damage in a mouse study [@mileto_bezlotoxumab_2022].
 
 ### Beyond taxonomic composition
