@@ -5,6 +5,7 @@ on:
       - _quarto.yml
       - "*.qmd"
       - "*.tex"
+      - "_freeze/**"
 
 jobs:
   quarto-render-and-deploy:
@@ -19,15 +20,15 @@ jobs:
       with:
         submodules: recursive
 
-    - name: Render with snakemake
-      uses: snakemake/snakemake-github-action@v1.24.0
-      with:
-        directory: .
-        snakefile: workflow/Snakefile
-        args: "render_pdf --cores 1 --use-conda --conda-frontend mamba --show-failed-logs"
+    # - name: Render with snakemake
+    #   uses: snakemake/snakemake-github-action@v1.24.0
+    #   with:
+    #     directory: .
+    #     snakefile: workflow/Snakefile
+    #     args: "render_pdf --cores 1 --use-conda --conda-frontend mamba --show-failed-logs"
 
     - name: Publish
       uses: quarto-dev/quarto-actions/publish@v2
       with:
         target: gh-pages
-        render: false
+        #render: false
