@@ -1,7 +1,7 @@
 The human gut microbiome has been implicated in maintaining health.
 Changes in the taxonomic composition and metabolic activity of the gut
 microbiota have been associated with numerous diseases including colorectal
-cancer, \textit{Clostridioides difficile} infection, irritable bowel disease,
+cancer, \textit{Clostridioides difficile} infection (CDI), irritable bowel disease,
 and others,
 thus the gut microbiome is a promising source of biomarkers for disease
 diagnosis and prediction.
@@ -9,7 +9,7 @@ Machine learning (ML) approaches can integrate big data to gain insight into
 patterns that aren't interrogable by traditional statistics
 Here, we introduce a new algorithm to improve capabilities of using ML for
 microbiome research,
-apply ML to predict severe outcomes of \textit{C. difficile} infections,
+apply ML to predict severe outcomes of CDI,
 and introduce resources that empower data scientists from a range of skill
 levels to take programming skills from basic through being able to apply data
 science responsibly to investigate their own research questions.
@@ -34,34 +34,27 @@ OptiFit provides a suitable option for users requiring consistent OTU
 assignments at the same quality afforded by \textit{de novo} clustering
 methods.
 
-\textit{C. difficile} infection (CDI) can lead to adverse outcomes
-including ICU admission, colectomy, and death. The composition of the
-gut microbiome plays an important role in determining colonization
-resistance and clearance upon exposure to \textit{C. difficile}.
+CDI can lead to adverse outcomes including ICU admission, colectomy, and death,
+with half a million cases annually in the United States.
+The composition of the gut microbiome plays an important role in determining
+colonization resistance and clearance upon exposure to \textit{C. difficile}.
 We investigated whether machine learning (ML) models trained on OTUs from patient
 stool samples on the day of CDI diagnosis could predict which CDI cases
 led to severe outcomes.
-We trained ML models to predict CDI
-severity on OTU relative abundances according to four different severity
-definitions: the IDSA severity score on the day of diagnosis, all-cause
-adverse outcomes within 30 days, adverse outcomes confirmed as
-attributable to CDI via chart review, and a pragmatic definition that
-uses the attributable definition when available and otherwise uses the
-all-cause definition.
-The models predicting pragmatic severity performed
-best, suggesting that while chart review is valuable to verify the cause
-of complications, including as many samples as possible is indispensable
-for training performant models on imbalanced datasets.
-Permutation
-importance identified \textit{Enterococcus} as the most important OTU for model
-performance, and increased relative abundance of \textit{Enterococcus} was
-associated with severe outcomes.
-Finally, we evaluated the potential
-clinical value of the OTU-based models and found similar performance
-compared to prior models based on Electronic Health Records.
-The modest
-performance of the OTU-based models represents a step toward the goal of
-deploying models to inform clinical decisions and ultimately improve CDI
-outcomes.
+We trained ML models to predict CDI severity on OTU relative abundances
+according to four different severity definitions described by prior studies.
+The models performed best when predicting pragmatic severity, a composite
+definition based on the occurrence of complications due to any cause that uses
+physician chart review to confirm the complications as CDI-attributable when
+possible.
+Our results suggest that while chart review is valuable to verify the cause of
+complications, including as many samples as possible is indispensable for
+training performant models on imbalanced datasets.
+We evaluated the potential clinical value of the OTU-based models and
+found similar performance compared to prior models based on Electronic Health
+Records, although further work is needed to determine the feasibility of
+deploying such models in clinical practice.
+These OTU-based models represents a step toward the goal of deploying ML to
+inform clinical decisions and ultimately improve CDI outcomes.
 
 democratize data science

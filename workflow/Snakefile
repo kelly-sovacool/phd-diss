@@ -54,7 +54,9 @@ rule render_pdf:
         """
 
 rule render_readme:
-    input: qmd='README.qmd'
+    input:
+        qmd='README.qmd',
+        deps='front-matter/abstract.tex'
     output: md='README.md'
     conda: "envs/env.yml"
     shell:
