@@ -1,12 +1,11 @@
 The human microbiome plays an important role in maintaining health.
 Changes in the taxonomic and functional composition of the gut microbiota have
 been implicated in numerous diseases including colorectal cancer,
-\textit{Clostridioides difficile} infection (CDI), irritable bowel disease, and
-others.
+\textit{Clostridioides difficile} infection (CDI), and others.
 Thus, the gut microbiome is a promising source of biomarkers for disease
 diagnosis and prediction.
 Machine learning (ML) approaches can leverage large datasets to gain insights
-into associations between the microbiota and human diseases.
+into associations between the microbiota and diseases.
 Here, we present a new algorithm that improves microbiome analysis for ML applications,
 apply ML to predict severity of CDI,
 and introduce resources that empower data scientists to go from the basics of
@@ -16,7 +15,7 @@ Assigning amplicon sequences to operational taxonomic units (OTUs) is an
 important step in characterizing microbial communities across large datasets.
 However, a gap in existing OTU assignment methods inhibited the ability of
 researchers to incorporate new samples to previously clustered datasets,
-such as when comparing across datasets or deploying ML models.
+such as when deploying ML models.
 To provide an efficient method to fit sequences to existing OTUs while
 maintaining high OTU quality, we developed the OptiFit algorithm, an improved
 implementation of reference-based clustering.
@@ -31,8 +30,7 @@ The composition of the gut microbiome plays an important role in determining
 colonization resistance and clearance upon exposure to \textit{C. difficile}.
 We investigated whether ML models trained on OTUs from stool samples on
 the day of CDI diagnosis could predict which cases led to severe outcomes.
-We trained ML models to predict CDI severity from OTUs
-according to four different severity definitions.
+We trained models to predict CDI severity for four different severity definitions.
 The models performed best when predicting pragmatic severity, a composite
 definition of complications due to any cause or confirmed as CDI-attributable
 via chart review when possible.
@@ -54,7 +52,10 @@ practices in reproducibility.
 We developed three resources to help democratize data science:
 a curriculum teaching the basics of Python for data science to young students,
 a curriculum teaching programming skills for reproducible research,
-and an R package implementing a framework of best practices in ML to help
-novices apply ML responsibly while being customizable for advanced users.
-These contributions cover a breadth of audience skill levels to help fill
-gaps in existing resources for reproducible data science.
+and an R package implementing an ML framework to help novices apply ML
+responsibly while being customizable for advanced users.
+These contributions cover a breadth of audience skill levels to help fill gaps
+in existing resources for data science.
+In summary, this dissertation advances bioinformatics for microbiome research
+from the start of data analysis through application,
+and ultimately toward enabling others to reproduce and extend our work.
