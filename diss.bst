@@ -937,7 +937,6 @@ FUNCTION {article}
       format.pages output
     }
   if$
-  format.issn output
   new.block
   format.url output
   new.block
@@ -1290,7 +1289,7 @@ FUNCTION {begin.bib}
   write$ newline$
   "\providecommand{\url}[1]{\texttt{#1}}"
   write$ newline$
-  "\providecommand{\urlprefix}{URL }"
+  "\providecommand{\urlprefix}{}"
   write$ newline$
 }
 EXECUTE {begin.bib}
