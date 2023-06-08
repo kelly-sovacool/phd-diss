@@ -70,3 +70,14 @@ The data are described in further detail in each of the chapters below.
 
 ## Dissertation outline
 
+In the preambles of chapters two through four, I note my specific contributions
+to the work described in each chapter.
+In chapter two, we present a new OTU clustering algorithm that enables researchers
+to fit new data to existing \textit{de novo} OTUs while maintaining OTU quality.
+In chapter three, we train ML models to predict the severity of CDIs from OTUs and
+compare model performance to existing approaches.
+In chapter four, we introduce two curricula and one software package which help
+democratize data science for a range of audiences.
+In chapter five, I discuss the impacts of the findings presented in chapters two
+through four and discuss future work to build upon this dissertation.
+

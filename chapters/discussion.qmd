@@ -133,7 +133,6 @@ huge increase in auroc may or may not translate to a huge increase in benefit
 to patients.
 decision threshold analysis instead of just 95th percentile of risk.
 
-
 Models to guide treatment options. In the case of low-risk and non-invasive treatments
 such as choosing between oral antibiotics, a higher number of false positives may
 be tolerable as long as treatment cost is not unbearably high. However, for highly
