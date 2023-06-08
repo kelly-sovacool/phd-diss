@@ -769,11 +769,9 @@ a clinical setting, with lower NNB numbers being better.
 ### Code availability
 
 The complete workflow, code, and supporting files required to reproduce this
-manuscript with accompanying figures is available at
-<https://github.com/SchlossLab/severe-CDI>.
-<!--
-TODO update GitHub URL once accepted to journal
--->
+manuscript with accompanying figures is available on
+GitHub (<https://github.com/SchlossLab/severe-CDI>)
+and archived in Zenodo [@severe-CDI-zenodo].
 
 The workflow was defined with Snakemake [@koster_snakemake_2012] and
 dependencies were managed with conda environments.
