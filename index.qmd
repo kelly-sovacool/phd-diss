@@ -43,6 +43,10 @@ not only teach people how to code, but teach them how to follow best practices
 
 reproducibility & replicability [@schloss_identifying_2018]
 
+Big data necessary to use computer science to analyze large datasets.
+An important attribute of any scientific product is reproducibility, where
+others can apply the same methods on the original dataset to obtain the same result.
+
 ## Datasets used in this dissertation
 
 ## Dissertation outline

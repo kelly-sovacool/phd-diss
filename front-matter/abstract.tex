@@ -20,16 +20,13 @@ However, a gap in existing OTU assignment methods inhibited the ability of
 researchers to incorporate new samples to previously clustered datasets without
 clustering all sequences again, such as when comparing across datasets or
 deploying machine learning models.
-\textit{De novo} clustering produces better quality OTUs than reference-based
-methods, but only reference-based methods can be used to cluster consistent OTUs
-across different datasets.
-To provide an efficient method to fit sequences to existing OTUs, we developed
-the OptiFit algorithm, an improved implementation of reference-based clustering
-inspired by the \textit{de novo} OptiClust algorithm.
-Our benchmarks revealed that OptiFit produces similar quality OTUs as OptiClust
-at faster speeds in a range of microbial communities, thus OptiFit provides a
-suitable option for users requiring consistent OTU assignments at the same
-quality afforded by \textit{de novo} clustering methods.
+To provide an efficient method to fit sequences to existing OTUs while
+maintaining high OTU quality, we developed the OptiFit algorithm, an improved
+implementation of reference-based clustering.
+Our benchmarks revealed that OptiFit produces similar quality OTUs as a gold
+standard method yet at faster speeds.
+Thus, OptiFit provides a suitable option for users requiring consistent OTU
+assignments at the same quality afforded by \textit{de novo} clustering methods.
 
 CDI can lead to adverse outcomes including ICU admission, colectomy, and death,
 with half a million cases annually in the United States. The composition of the
@@ -40,8 +37,8 @@ the day of CDI diagnosis could predict which CDI cases led to severe outcomes.
 We trained ML models to predict CDI severity on OTU relative abundances
 according to four different severity definitions described by prior studies.
 The models performed best when predicting pragmatic severity, a composite
-definition based on the occurrence of complications due to any cause that uses
-physician chart review to confirm the event as CDI-attributable when possible.
+definition based on the occurrence of complications due to any cause or
+confirmed as CDI-attributable via chart review when possible.
 Our results suggest that while chart review is valuable to verify the cause of
 complications, including as many samples as possible is indispensable for
 training performant models on imbalanced datasets.
@@ -52,9 +49,16 @@ models in clinical practice.
 These OTU-based models represents a step toward the goal of deploying ML to
 inform clinical decisions and ultimately improve CDI outcomes.
 
-democratize data science.
-Bioinformatics is an interdisciplinary field integrating computer science,
-statistics, and biological knowledge.
-Big data necessary to use computer science to analyze large datasets.
-An important attribute of any scientific product is reproducibility, where
-others can apply the same methods on the original dataset to obtain the same result.
+Bioinformatics is a kind of data science, an interdisciplinary field integrating
+computer science, statistics, and domain knowledge.
+Novice researchers frequently have domain knowledge, but lack other skills necessary to
+apply data science to their datasets while adhering to best practices in
+reproducibility.
+We developed three resources to help democratize data science:
+a curriculum for high school students to learn the basics of Python for data science,
+an introductory curriculum for researchers to learn best practices in coding for
+reproducible science,
+and an R package implementing a framework of best practices in ML that allows
+novices to apply ML responsibly while being malleable for advanced users.
+These resources cover a breadth of audience skill levels to help fill several
+gaps in existing tools for reproducible data science.
