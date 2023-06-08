@@ -1,64 +1,60 @@
-The human gut microbiome plays an important role in maintaining health.
-Changes in the taxonomic composition and metabolic activity of the gut
-microbiota have been implicated in numerous diseases including colorectal
-cancer, \textit{Clostridioides difficile} infection (CDI), irritable bowel disease,
-and others.
+The human microbiome plays an important role in maintaining health.
+Changes in the taxonomic and functional composition of the gut microbiota have
+been implicated in numerous diseases including colorectal cancer,
+\textit{Clostridioides difficile} infection (CDI), irritable bowel disease, and
+others.
 Thus, the gut microbiome is a promising source of biomarkers for disease
 diagnosis and prediction.
-Machine learning (ML) approaches can integrate big data to gain insight into
-patterns that aren't interrogable by traditional statistics.
-Here, we introduce a new algorithm to improve capabilities of using ML for
-microbiome research,
-apply ML to predict severe outcomes of CDI,
-and introduce resources that empower data scientists from a range of skill
-levels to take programming skills from basic through being able to apply data
-science responsibly to investigate their own research questions.
+Machine learning (ML) approaches can leverage large datasets to gain insights
+into associations between the microbiota and human diseases.
+Here, we present a new algorithm that improves microbiome analysis for ML applications,
+apply ML to predict severity of CDI,
+and introduce resources that empower data scientists to go from the basics of
+coding to applying ML for reproducible research.
 
 Assigning amplicon sequences to operational taxonomic units (OTUs) is an
 important step in characterizing microbial communities across large datasets.
 However, a gap in existing OTU assignment methods inhibited the ability of
-researchers to incorporate new samples to previously clustered datasets without
-clustering all sequences again, such as when comparing across datasets or
-deploying machine learning models.
+researchers to incorporate new samples to previously clustered datasets,
+such as when comparing across datasets or deploying ML models.
 To provide an efficient method to fit sequences to existing OTUs while
 maintaining high OTU quality, we developed the OptiFit algorithm, an improved
 implementation of reference-based clustering.
 Our benchmarks revealed that OptiFit produces similar quality OTUs as a gold
 standard method yet at faster speeds.
-Thus, OptiFit provides a suitable option for users requiring consistent OTU
-assignments at the same quality afforded by \textit{de novo} clustering methods.
+Thus, OptiFit provides a suitable option for users requiring consistent and
+high quality OTU assignments for ML applications and beyond.
 
-CDI can lead to adverse outcomes including ICU admission, colectomy, and death,
-with half a million cases annually in the United States. The composition of the
-gut microbiome plays an important role in determining colonization resistance
-and clearance upon exposure to \textit{C. difficile}.
-We investigated whether ML models trained on OTUs from patient stool samples on
-the day of CDI diagnosis could predict which CDI cases led to severe outcomes.
-We trained ML models to predict CDI severity on OTU relative abundances
-according to four different severity definitions described by prior studies.
+CDI can lead to severe complications including death, with half a million cases
+annually in the United States.
+The composition of the gut microbiome plays an important role in determining
+colonization resistance and clearance upon exposure to \textit{C. difficile}.
+We investigated whether ML models trained on OTUs from stool samples on
+the day of CDI diagnosis could predict which cases led to severe outcomes.
+We trained ML models to predict CDI severity from OTUs
+according to four different severity definitions.
 The models performed best when predicting pragmatic severity, a composite
-definition based on the occurrence of complications due to any cause or
-confirmed as CDI-attributable via chart review when possible.
+definition of complications due to any cause or confirmed as CDI-attributable
+via chart review when possible.
 Our results suggest that while chart review is valuable to verify the cause of
 complications, including as many samples as possible is indispensable for
 training performant models on imbalanced datasets.
-We evaluated the potential clinical value of the OTU-based models and found
+We evaluated the potential clinical value of these models and found
 similar performance compared to prior models based on Electronic Health Records,
 although further work is needed to determine the feasibility of deploying such
 models in clinical practice.
-These OTU-based models represents a step toward the goal of deploying ML to
+These results represent a step toward the goal of deploying ML to
 inform clinical decisions and ultimately improve CDI outcomes.
 
 Bioinformatics is a kind of data science, an interdisciplinary field integrating
 computer science, statistics, and domain knowledge.
-Novice researchers frequently have domain knowledge, but lack other skills necessary to
-apply data science to their datasets while adhering to best practices in
-reproducibility.
+Novice researchers frequently have domain knowledge, but lack other skills
+necessary to apply data science to their datasets while adhering to best
+practices in reproducibility.
 We developed three resources to help democratize data science:
-a curriculum for high school students to learn the basics of Python for data science,
-an introductory curriculum for researchers to learn best practices in coding for
-reproducible science,
-and an R package implementing a framework of best practices in ML that allows
-novices to apply ML responsibly while being malleable for advanced users.
-These resources cover a breadth of audience skill levels to help fill several
-gaps in existing tools for reproducible data science.
+a curriculum teaching the basics of Python for data science to young students,
+a curriculum teaching best practices in coding for reproducible research,
+and an R package implementing a framework of best practices in ML to help
+novices apply ML responsibly while being customizable for advanced users.
+These contributions cover a breadth of audience skill levels to help fill
+gaps in existing resources for reproducible data science.
