@@ -12,27 +12,103 @@ why
 ## Microbial communities in human health
 
 Microbial communities are assemblages of microorganisms -- archaea, bacteria,
-fungi, protists, and viruses -- that inhabit a local environment.
-The microbiome consists of the microbial community together with the molecules
-they produce such as nucleic acids, proteins, lipids, metabolites, and more [@berg_microbiome_2020].
-human microbiome...
+fungi, protists, and viruses -- that inhabit a local environment [@konopka_what_2009].
+A microbiome consists of the microbial community in its environment together
+with the molecules they produce such as nucleic acids, proteins, lipids,
+metabolites, and more [@berg_microbiome_2020].
+Microbiomes are thus tightly associated with the local environment they occupy
+such as waterways, soil layers, ocean floors, and body parts of plants, insects,
+and animals.
+The human body hosts microbes that inhabit the skin, mouth, gut, vagina, airway,
+and other body regions [@hmp_structure_2012].
+The living members of a microbiome or referred to as the microbiota, and they
+interact with each other cooperatively and competitively [@coyte_understanding_2019]
+and can influence the health of the host directly or indirectly [@tremaroli_functional_2012].
+The composition of a microbiome can be characterized according to the taxonomy
+of its microbiota, the functions they carry out, and the metabolites they
+produce.
 
-microbial ecology / microbiome definitions.
-the role of the microbiome in human health
-define microbial community [@konopka_what_2009], microbiome, microbiota [@berg_microbiome_2020]
-how to characterize them. meta- genomics, transcriptomics, metabolomics, and emerging
-new technologies.
-amplicon sequencing older yet still in wide use. cost effective. down to genus
-level.
+High throughput sequencing and other 'omics techniques can be used to
+characterize the metagenomes, metatranscriptomes, metaproteomes, and
+meta-metabolomes of microbiomes and describe how they change over time, 
+in response to changing environments,
+or between healthy and diseased states of the host.
+A benefit of 'omics techniques is they do not require microbes to be cultured in
+a laboratory, making it possible to observe genes, gene products, and
+metabolites from microbes missed by culturing techniques and even discover new species
+[@dickson_analysis_2014].
+These large, multivariate datasets present a challenge for bioinformatic
+analysis, as greater computational resources and more sophisticated statistical
+techniques are required to process and analyze big data [@hmp_structure_2012].
+An older but still widely-used method to profile the taxonomic composition of
+microbial communities is amplicon sequencing.
+In amplicon sequencing, a region of a marker gene is selected depending on which
+domain of microbial life is being targeted, and the DNA sequences matching that
+region are amplified and sequenced [@pace_analysis_1985;@kolbert_ribosomal_2012].
+Relative to shotgun metagenomics, amplicon sequencing significantly reduces the
+costs and computational resources needed to characterize the taxonomic
+composition of microbiomes.
+Amplicon sequence data can typically be identified at the genus level, while
+shotgun metagenomics data provide a finer taxonomic resolution at the species
+or strain level [@schloss_reintroducing_2019].
+When researchers need to extract sequences from many samples and only require
+taxonomic resolution at the genus level, amplicon sequencing is a practical choice.
 
 ### _Clostridioides difficile_ infection
 
-role of microbiome in _C. difficile_ colonization and recurrence [@seekatz_role_2022].
-nick's study, tomkovich study... enterocci pathogenesis...
+The healthy gut microbiome is resistant to colonization and infection from
+pathogens due to competition from beneficial microbes.
+Medications such as antibiotics, proton-pump inhibitors, and osmotic laxatives
+can disrupt the taxonomic and functional composition of the gut microbiome,
+thereby allowing pathogens to gain a foothold
+[@janarthanan_clostridium_2012;@tomkovich_osmotic_2021].
+_C. difficile_ is classically considered a hospital-acquired pathogen that
+infects patients who are taking antibiotics for other illnesses, and especially
+in elderly patients as the immune system weakens with age.
+However, community-acquired _C. difficile_ infection (CDI) is increasing, even
+in patients with no recent history of antibiotic use [@feuerstadt_burden_2023].
+One mechanism through which the healthy gut community protects against CDI is
+bile acid metabolism, which can inhibit the growth and alter toxin production of
+_C. difficile_ [@theriot_antibiotic-induced_2016;@sorg_inhibiting_2010].
+Mouse studies have shown that the initial taxonomic composition of the gut
+microbiome can influence _C. difficile_ clearance, host moribundity, and cecal
+tissue damage in mice infected with CDI
+[@tomkovich_initial_2020;@lesniak_clearance_2021];@lesniak_gut_2022].
+Differences between resilient versus susceptible microbiomes could be used as
+biomarkers to identify patients at risk of being infected or developing severe
+complications.
+
+Clinical outcomes of CDI can be severe, as a small portion of patients
+experience complications due to CDI such as ileus, toxic megacolon, or death in
+8-9% of cases [@lucado_clostridium_2012;@kassam_clostridium_2016].
+Colectomy is used as a last-resort treatment to prevent death when other
+treatments fail, and the mortality rate in patients who undergo colectomy for
+CDI is approximately 35% [@peprah_comparison_2019].
+CDI is of particular cause for concern due to the risk of recurrence, where a
+patient experiences another CDI within 2-8 weeks of a prior CDI [@kelly_can_2012].
+It is thought that the antibiotics prescribed to treat CDI may also prevent the
+microbiome from recovering, thereby perpetuating a cycle of perturbance and 
+_C. difficile_ proliferation.
+Adjuvant therapies such as bezlotoxumab and fecal microbiota transplant have
+recently been introduced to help break the cycle of recurrence by targeting the
+toxins produced by _C. difficile_ or restoring the microbiota to a healthy
+state, but they are not yet used widely and typically only in patients
+experiencing a first or second recurrence [@de_la_villa_real-world_2022].
+Furthermore, vancomycin is commonly used to treat first cases of CDI, but
+vancomycin-resistant _Enterococcus_ is becoming more common and enterococci have
+been shown to exacerbate the pathogenesis of _C. difficile_
+[@poduval_clostridium_2000;@smith_enterococci_2022].
+There is a great need for improved therapies to prevent recurrent and severe
+CDI, as well as for tools to predict which patients are at risk so that
+clinicians can adjust treatment plans to prevent adverse outcomes from
+occurring.
 
 ## Machine learning for science and health care
 
-ml-based science to learn about underlying biology, and practical application to
+Machine learning approaches to analyze large datasets have transformed
+the quantitative sciences towards a data-driven paradigm.
+
+ml-based science to learn about underlying biology [@kapoor_leakage_2022], and practical application to
 improve health care.
 pragmatic approach -- use microbiome profile as biomarkers for health, or
 mechanistic approach -- understand underlying mechanisms.
