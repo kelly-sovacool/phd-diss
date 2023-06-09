@@ -153,27 +153,27 @@ positives would be less acceptable and a higher precision would be required.
 
 For the analysis of potential clinical value, we reported the precision at the
 95th percentile of risk, which is the decision threshold where 5% of cases are
-predicted to be positive. 
-Choosing this threshold allowed for comparison to EHR models
-which reported precision at that threshold.
+predicted to be positive and would thus undergo a different treatment in order
+to prevent the adverse outcome from occurring.
+Choosing this threshold allowed for comparison to the previously published EHR
+models which reported precision at that threshold.
 However, rather than evaluating performance at a single threshold,
-we could extend this analysis to perform a decision threshold analysis.
+we could extend this across a range of thresholds.
 Decision threshold analysis would explore how the confusion matrix varies
 across a range of thresholds for models of interest.
-We could then compare the net benefit of different modeling approaches.
+We could then compare the net benefit, NNS, or other metrics for different
+modeling approaches, as their relative performance may vary across decision
+thresholds.
+A model based on only OTUs may perform optimally at a different threshold than
+a model based on only EHRs, and different thresholds could be selected for model
+deployment depending on the importance of recall versus precision for the
+alternative treatment being considered by clinicians.
 
 The cost of treatment is a significant factor that influences the practicality
 of model deployment.
 
-Models to guide treatment options. 
-The importance of each quadrant of the confusion matrix depends on the
-application as well as the nature of the dataset.
-
 bezlotoxumab shown to prevent systemic organ damage in a mouse study [@mileto_bezlotoxumab_2022].
 
-The ultimate goal of CDI severity prediction models is to help clinicians
-identify early on which patients are at risk of experiencing a severe outcome
-so they can tailor treatments to prevent the outcome from ever occurring.
 
 ### Beyond taxonomic composition
 
@@ -218,3 +218,8 @@ did i seriously just write that
 ## Conclusions
 
 TODO
+
+
+The ultimate goal of CDI severity prediction models is to help clinicians
+identify early on which patients are at risk of experiencing a severe outcome
+so they can tailor treatments to prevent the outcome from ever occurring.
