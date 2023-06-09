@@ -67,7 +67,7 @@ future as new evidence emerges of efficacious treatments for preventing severity
 
 ### Educational resources
 
-In chapter 4.2, we introduced a new curriculum to teach introductory Python for
+In Chapter 4.2, we introduced a new curriculum to teach introductory Python for
 data science via live-coding or a flipped classroom format.
 We deployed the curriculum for in-person and virtual Girls Who Code clubs during
 a three year period with high school students as the audience.
@@ -83,7 +83,7 @@ This curriculum is continually improved upon and is still in use for the chapter
 of Girls Who Code at the University of Michigan Department of Computational
 Medicine and Bioinformatics.
 
-In chapter 4.3, we introduced a new curriculum to teach coding for reproducible
+In Chapter 4.3, we introduced a new curriculum to teach coding for reproducible
 research practices to scientists and other researchers in an academic setting.
 The Carpentries materials that inspired us taught three topics in a disparate
 manner: introductory R programming, the Unix shell, and version control with
@@ -101,7 +101,7 @@ anyone to use and modify.
 
 ### Software
 
-In chapter 4.4, we introduced a tool that integrates current best practices
+In Chapter 4.4, we introduced a tool that integrates current best practices
 for ML in a user-friendly R package.
 Our goal was to enable researchers who are novices in ML to train and evaluate
 models with guard rails to prevent common pitfalls, while allowing experienced
@@ -113,18 +113,35 @@ The reach of mikropml has expanded outside of our immediate scientific network
 and into fields spanning gut microbiome research, microbial ecology, public
 health, and environmental research.
 Rather than write code intended for one-time-use-only to conduct the ML analyses
-shown in this work, we chose to bundle our methods into a package for others to
-reuse for their own research.
+we routinely perform, we chose to bundle our methods into a package for others
+within and outside our lab to reuse for their own research.
 As a result, our efforts have contributed directly to the greater scientific
 endeavor, with 18 citations to date of the mikropml publication in the Journal
 of Open Source Software.
-<!-- mikropml snakemake workflow, schtools, mothur snakemake workflow -->
+
+In addition to mikropml, other software tools were developed while conducting
+the research described in this dissertation.
+These include: 
+schtools, an R package for processing output from the mothur program and
+miscellaneous functions for microbiome research [@sovacool_schtools_2022];
+the mikropml snakemake workflow, a template for building reusable and scalable
+machine learning pipelines with mikropml for use in high performance computing
+environments [@sovacool_mikropml_2023],
+and the mothur snakemake workflow, a template implementing the mothur MiSeq SOP
+for processing 16S rRNA gene amplicon sequence data and authoring reproducible 
+scientific manuscripts [@sovacool_mothur_2023].
+While we have not published any stand-alone papers to describe these tools, they
+have been used within the Schloss Lab for several manuscripts in process and
+published work [@barron_intestinal_2022;@armour_machine_2023].
 
 ## Future work
 
+Below, we discuss key areas of improvement and propose ideas to build on the
+work described in Chapters 2 through 4.
+
 ### Integrate microbiota with clinical factors for improved CDI severity prediction
 
-Our OTU-based models described in chapter 3 were trained on a different dataset
+Our OTU-based models described in Chapter 3 were trained on a different dataset
 as the EHR-based models we compared them to.
 Since the different datasets have different proportions of severe cases,
 precision and AUPRC are not directly comparable.
@@ -156,7 +173,7 @@ so they can tailor treatments to prevent the outcome from ever occurring, but
 care must be taken to ensure no harm is inflicted on patients who never would
 have experienced a severe outcome.
 
-#### Decision thresholds
+#### Decision curve analysis
 
 For the analysis of potential clinical value, we reported the precision at the
 95th percentile of risk, which is the decision threshold where 5% of cases are
@@ -166,7 +183,7 @@ Choosing this threshold allowed for comparison to the previously published EHR
 models which reported precision at that threshold.
 However, rather than evaluating performance at a single threshold,
 we could extend this across a range of thresholds.
-Decision threshold analysis would explore how the confusion matrix varies
+Decision curve analysis would explore how the confusion matrix varies
 across a range of thresholds for models of interest.
 We could then compare the net benefit, NNS, or other metrics for different
 modeling approaches, as their relative performance may vary across decision
@@ -188,10 +205,10 @@ We did not consider these costs when evaluating the potential clinical value,
 although we reported the NNS and NNB when paired with the NNT of fidaxomicin so
 the work could be extended to consider costs as well as other treatment options.
 (For example, bezlotoxumab has also been shown to prevent recurrent CDI in
-humans as well as systemic organ damage in mice.
-[@thandavaram_efficacy_2022;@mileto_bezlotoxumab_2022]
-However, it is used as an adjuvant therapy and does not replace antibiotics for
-CDI treatment.)
+humans as well as systemic organ damage in mice
+[@thandavaram_efficacy_2022;@mileto_bezlotoxumab_2022].
+However, it is used as an adjuvant therapy and as such it does not replace
+antibiotics for CDI treatment.)
 A predictive model paired with a treatment may be cost-effective if the decrease
 in costs for averting severe outcomes outweighs the increase in treatment costs
 for cases predicted positive plus the costs of deployment, or if any increase in
@@ -200,11 +217,14 @@ Since amplicon sequencing and data processing would need to be performed on CDI
 patients in order to deploy an OTU-based model, while EHR-based models use
 data that is already recorded, OTU-based models likely must far outperform
 EHR-based models for the additional data collection to be cost-effective.
-Although cost-benefit analyses only consider the monetary value of improving
-clinical outcomes,
+A limitation of cost-benefit analysis techniques is that the most often used
+metric of benefit (Quality-Adjusted Life-Years) is controversial, as it is prone
+to systematic bias and devalues health gains for patients with disabilities
+[@kim_how_2021;@loomes_use_1989;@van_osch_correcting_2004;@disability_qaly_2019].
+Although existing methodologies for cost-benefit analyses are imperfect,
 performing a thorough cost-benefit analysis would provide more information about
-whether deploying CDI severity prediction models might be worth the benefits
-gained.
+whether deploying CDI severity prediction models could be worth the estimated
+benefits gained.
 
 ### Beyond taxonomic composition
 
@@ -237,14 +257,40 @@ These insights could inform the design of future experiments to determine the
 mechanisms of dysbiosis or improve performance of ML models for clinical
 decision making.
 
+### Continued maintenance of software tools and educational resources
+
+It is notoriously difficult to fund the development and maintenance of
+scientific software and educational resources.
+Nevertheless, we initially developed and continue to maintain the open source
+contributions described in Chapter 4 with our discretionary time because we
+believe they are valuable to the scientific community and society at large.
+Developing software and educational resources is never a one-and-done task; they
+must be maintained as users discover and report bugs, new methods are
+discovered, and the preferences of the community change over time.
+While no tool is designed to be used forever (despite the best intentions of
+fans of _certain_ programming languages), neglecting to maintain a tool will
+unnecessarily hasten its obsolescence.
+We would much prefer to honor the time and effort spent during initial
+development, as well as that of end-users who adopt our tools and resources, by
+continuing to maintain them.
+However, few funding mechanisms through traditional grant-making agencies exist
+to maintain existing resources, as most value new discoveries and ideas.
+We are hopeful that the landscape is changing for the better with the
+announcement of programs such as the Better Software for Science initiative by
+the Alfred P. Sloan Foundation [@sloan-better-software].
+Funding mechanisms like these will enable scientists and researchers to not only
+create new tools and resources but also maintain them over time, so that the
+time, effort, and other resources expended in creating and adopting them are
+used efficiently.
+
 ## Conclusions
 
 In this work, we introduced a novel method for OTU clustering that improves the
 ability of researchers to apply ML to microbiome research,
 applied ML to predict the severity of CDI infections from the composition of the 
 gut microbiome,
-and introduced three new resources empower data scientists from a broad range of
-backgrounds to go from coding novices to ML practitioners.
+and introduced three new resources that empower data scientists from a broad
+range of backgrounds to go from coding novices to ML practitioners.
 This dissertation advances bioinformatics for microbiome research
 from the start of the data analysis pipeline through applying machine learning
 to biological and clinical problems, and ultimately toward enabling other
