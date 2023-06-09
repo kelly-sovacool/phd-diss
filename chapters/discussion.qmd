@@ -126,47 +126,49 @@ of Open Source Software.
 
 Our OTU-based models described in chapter 3 were trained on a different dataset
 as the EHR-based models we compared them to.
-As the different datasets have different proportions of severe cases,
+Since the different datasets have different proportions of severe cases,
 precision and AUPRC are not directly comparable.
+While AUROC has the same baseline regardless of the dataset and is thus always
+directly comparable, it is not as useful for rare outcomes because the model
+may identify many true negatives but few true positives and yet report a high
+AUROC.
 A more salient comparison would train models on the same cohort of patients
 using either OTUs, EHRs, or both in order to determine which approach leads to
-the best performance.
+the best performance in terms of AUPRC.
 However, to demonstrate clinical value, it is not enough to simply show that one
 modeling approach outperforms another.
 How a model might improve clinical practice if it were deployed must be
 considered.
 This especially relates to the treatment options available along with their
 potential risks, which influences which performance metrics are most meaningful.
-In situations where a predicting a severe case may lead clinicians to choose a
-treatment option that has an established treatment record, such as oral
+A large increase in AUROC, AUPRC, or other metrics may or may not translate to a
+large increase in benefit to to patients.
+In situations where predicting a severe case may lead clinicians to choose a
+treatment option that has an established record of safety, such as oral
 fidaxomicin instead of vancomycin, false positives are tolerable and a lower
 precision is acceptable.
 On the other hand, if new evidence were to emerge of a treatment preventing
 severe outcomes but with substantial risk of negative side effects, false
 positives would be less acceptable and a higher precision would be required.
 
+For the analysis of potential clinical value, we reported the precision at the
+95th percentile of risk, which is the decision threshold where 5% of cases are
+predicted to be positive. 
+Choosing this threshold allowed for comparison to EHR models
+which reported precision at that threshold.
+However, rather than evaluating performance at a single threshold,
+we could extend this analysis to perform a decision threshold analysis.
+Decision threshold analysis would explore how the confusion matrix varies
+across a range of thresholds for models of interest.
+We could then compare the net benefit of different modeling approaches.
 
-The most useful metrics to compare - precision
-
-huge increase in auroc may or may not translate to a huge increase in benefit
-to patients.
-decision threshold analysis instead of just 95th percentile of risk.
+The cost of treatment is a significant factor that influences the practicality
+of model deployment.
 
 Models to guide treatment options. 
 The importance of each quadrant of the confusion matrix depends on the
 application as well as the nature of the dataset.
-While AUROC is easy to interpret, it is not necessarily the best metric to
-use when comparing models on imbalanced datasets and for certain clinical applications.
-In the case of highly imbalanced data as is the case with CDI severity,
-there are very few positive samples, and a model may have a good AUROC but
-perform poorly at identifying true positives.
-In the case of low-risk and non-invasive treatments such as choosing between
-oral antibiotics, a higher number of false positives may be tolerable as long as
-treatment cost is not unbearably high.
-However, for highly invasive and irreversibly treatments such as colectomy,
-false positives must be minimized.
 
-fidaxomicin.
 bezlotoxumab shown to prevent systemic organ damage in a mouse study [@mileto_bezlotoxumab_2022].
 
 The ultimate goal of CDI severity prediction models is to help clinicians
