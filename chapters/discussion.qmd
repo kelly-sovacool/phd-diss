@@ -50,9 +50,9 @@ higher quality OTUs than were possible before.
 Prior studies to date have trained models to predict severe CDI outcomes using
 routine clinical data, selected serum biomarkers, curated variables from EHR
 data, or entire EHRs.
-However, none have focused on using the initial state of the gut microbiome to
-predict CDI severity, despite ample evidence for a link between dysbiosis and
-_C. difficile_ colonization, infection, and recurrence.
+However, none have focused on using the initial taxonomic composition of the gut
+microbiome to predict CDI severity, despite ample evidence for a link between
+dysbiosis and _C. difficile_ colonization, infection, and recurrence.
 We trained models on OTU relative abundances collected on the day of CDI
 diagnosis to predict four different definitions of severity.
 Models trained to predict the pragmatic severity definition performed best, as
@@ -124,20 +124,39 @@ of Open Source Software.
 
 ### Integrate microbiota with clinical factors for improved CDI severity prediction
 
-The ultimate goal of CDI severity prediction models is to help clinicians
-identify early on which patients are at risk of experiencing a severe outcome
-so they can tailor treatments to prevent the outcome from ever occurring.
+Our OTU-based models described in chapter 3 were trained on a different dataset
+as the EHR-based models we compared them to.
+As the different datasets have different proportions of severe cases,
+precision and AUPRC are not directly comparable.
+A more salient comparison would train models on the same cohort of patients
+using either OTUs, EHRs, or both in order to determine which approach leads to
+the best performance.
+However, to demonstrate clinical value, it is not enough to simply show that one
+modeling approach outperforms another.
+How a model might improve clinical practice if it were deployed must be
+considered.
+This especially relates to the treatment options available along with their
+potential risks, which influences which performance metrics are most meaningful.
+In situations where a predicting a severe case may lead clinicians to choose a
+treatment option that has an established treatment record, such as oral
+fidaxomicin instead of vancomycin, false positives are tolerable and a lower
+precision is acceptable.
+On the other hand, if new evidence were to emerge of a treatment preventing
+severe outcomes but with substantial risk of negative side effects, false
+positives would be less acceptable and a higher precision would be required.
 
-OTUs + EHRs on same dataset.
+
+The most useful metrics to compare - precision
+
 huge increase in auroc may or may not translate to a huge increase in benefit
 to patients.
 decision threshold analysis instead of just 95th percentile of risk.
 
 Models to guide treatment options. 
+The importance of each quadrant of the confusion matrix depends on the
+application as well as the nature of the dataset.
 While AUROC is easy to interpret, it is not necessarily the best metric to
-use when comparing models for clinical applications.
-The importance of each quadrant of the confusion matrix depends on the application
-as well as the nature of the dataset.
+use when comparing models on imbalanced datasets and for certain clinical applications.
 In the case of highly imbalanced data as is the case with CDI severity,
 there are very few positive samples, and a model may have a good AUROC but
 perform poorly at identifying true positives.
@@ -149,6 +168,10 @@ false positives must be minimized.
 
 fidaxomicin.
 bezlotoxumab shown to prevent systemic organ damage in a mouse study [@mileto_bezlotoxumab_2022].
+
+The ultimate goal of CDI severity prediction models is to help clinicians
+identify early on which patients are at risk of experiencing a severe outcome
+so they can tailor treatments to prevent the outcome from ever occurring.
 
 ### Beyond taxonomic composition
 
