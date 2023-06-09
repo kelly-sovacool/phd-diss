@@ -187,11 +187,11 @@ it would be paired with is too expensive.
 We did not consider these costs when evaluating the potential clinical value,
 although we reported the NNS and NNB when paired with the NNT of fidaxomicin so
 the work could be extended to consider costs as well as other treatment options.
-[^For example, bezlotoxumab has also been shown to prevent recurrent CDI in
+(For example, bezlotoxumab has also been shown to prevent recurrent CDI in
 humans as well as systemic organ damage in mice.
 [@thandavaram_efficacy_2022;@mileto_bezlotoxumab_2022]
 However, it is used as an adjuvant therapy and does not replace antibiotics for
-CDI treatment.]
+CDI treatment.)
 A predictive model paired with a treatment may be cost-effective if the decrease
 in costs for averting severe outcomes outweighs the increase in treatment costs
 for cases predicted positive plus the costs of deployment, or if any increase in
@@ -217,7 +217,7 @@ moderately well, but may not perform well enough to justify clinical deployment.
 Variability of microbiome composition between individuals with the same disease
 status may be explained by functional redundancy, where different microbial
 species carry out the same functions and thus can replace each other with
-little effect on the overall function of the community.
+little effect on the overall function of the community [@louca_function_2018].
 Extending analyses of taxonomic composition to also include the functional
 composition of the microbiome may shed more light on how the microbiome changes
 in disease states. 
