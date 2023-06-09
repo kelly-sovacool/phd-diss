@@ -430,7 +430,7 @@ None.
 
 ## Developing and deploying an integrated workshop curriculum teaching computational skills for reproducible research
 
-This paper was original published in 2022 in the Journal of Open Source
+This paper was originally published in 2022 in the Journal of Open Source
 Education with the following co-authors:
 Zena Lapp^\*^, Kelly L. Sovacool^\*^, Nick Lesniak, Dana King,
 Catherine Barnier, Matthew Flickinger, Jule Krüger, Courtney R. Armour,
@@ -731,8 +731,8 @@ None.
 
 ## mikropml: User-Friendly R Package for Supervised Machine Learning Pipelines
 
-This paper was original published in 2021 in the Journal of Open Source Software
-with the following co-authors:
+This paper was originally published in 2021 in the Journal of Open Source
+Software with the following co-authors:
 Begüm D. Topçuoğlu^\*^, Zena Lapp^\*^, Kelly L. Sovacool^\*^, Evan Snitkin,
 Jenna Wiens, and Patrick D. Schloss [@topcuoglu_mikropml_2021].
 

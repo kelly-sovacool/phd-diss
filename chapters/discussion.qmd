@@ -131,8 +131,8 @@ and the mothur snakemake workflow, a template implementing the mothur MiSeq SOP
 for processing 16S rRNA gene amplicon sequence data and authoring reproducible 
 scientific manuscripts [@sovacool_mothur_2023].
 While we have not published any stand-alone papers to describe these tools, they
-have been used within the Schloss Lab for several manuscripts in process and
-published work [@barron_intestinal_2022;@armour_machine_2023].
+have been used within the Schloss Lab for several manuscripts-in-process and
+published work [@armour_machine_2023;@barron_intestinal_2022].
 
 ## Future work
 
