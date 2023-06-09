@@ -150,6 +150,13 @@ precision is acceptable.
 On the other hand, if new evidence were to emerge of a treatment preventing
 severe outcomes but with substantial risk of negative side effects, false
 positives would be less acceptable and a higher precision would be required.
+The ultimate goal of CDI severity prediction models is to help clinicians
+identify early on which patients are at risk of experiencing a severe outcome
+so they can tailor treatments to prevent the outcome from ever occurring, but
+care must be taken to ensure no harm is inflicted on patients who never would
+have experienced a severe outcome.
+
+#### Decision thresholds
 
 For the analysis of potential clinical value, we reported the precision at the
 95th percentile of risk, which is the decision threshold where 5% of cases are
@@ -168,6 +175,8 @@ A model based on only OTUs may perform optimally at a different threshold than
 a model based on only EHRs, and different thresholds could be selected for model
 deployment depending on the importance of recall versus precision for the
 alternative treatment being considered by clinicians.
+
+#### Cost-benefit analysis
 
 The costs of model training, deployment, and treatment are significant factors
 that influence the practicality of deploying models in clinical settings.
@@ -189,7 +198,7 @@ for cases predicted positive plus the costs of deployment, or if any increase in
 cost is deemed worth the benefit [@kim_how_2021].
 Since amplicon sequencing and data processing would need to be performed on CDI
 patients in order to deploy an OTU-based model, while EHR-based models use
-data that is already recorded, OTU-based models likely must outperform
+data that is already recorded, OTU-based models likely must far outperform
 EHR-based models for the additional data collection to be cost-effective.
 Although cost-benefit analyses only consider the monetary value of improving
 clinical outcomes,
@@ -199,49 +208,44 @@ gained.
 
 ### Beyond taxonomic composition
 
-consider functional potential and actual function
-
 Efforts to find consistent changes in taxonomic composition of microbiomes
 between normal and dysbiotic states have found mixed success, in part because
 interpersonal variability in taxonomic composition sometimes exceeds the
 variability between disease states.
+ML models for diagnosing colorectal cancer or predicting severe CDI perform
+moderately well, but may not perform well enough to justify clinical deployment.
 Variability of microbiome composition between individuals with the same disease
 status may be explained by functional redundancy, where different microbial
 species carry out the same functions and thus can replace each other with
 little effect on the overall function of the community.
-
+Extending analyses of taxonomic composition to also include the functional
+composition of the microbiome may shed more light on how the microbiome changes
+in disease states. 
 Sequencing whole metagenomes to identify the genes present and annotate known
 gene functions is commonly used to build a profile of functional potential of
 the microbiome.
-Combining taxonomic composition from OTUs with functional potential from
-metagenomes allows one to characterize functional redundancy across communities,
-where communities with similar functional potential have different taxonomic
-composition.
-Untargeted mass spectrometry or transcriptomics can validate the functional
-potential characterized from metagenomics by identifying metabolites or gene
-products that are active in a community,
-thus painting a more precise picture of active microbial functions.
-... investigate the impacts of taking functional redundancy and active metabolites into account for microbiome analyses.
-incorporate functional composition from metagenomic data to improve the
-performance of machine learning models...
-
-Previous studies have built OTU-based machine learning models to classify stool
-samples as normal or cancerous to serve as a less invasive diagnostic tool for
-CRC than colonoscopy, but have only achieved modest performance.
+Functional potential could be paired with meta-transcriptomics or
+untargeted mass spectrometry to validate the gene products that are activate in
+a community, 
+thus painting a more precise picture of active microbial functions than with
+metagenomics alone.
 Incorporating the known functional potential of the microbiome from metagenomic
 data may help account for functional redundancy and improve the performance of
 OTU-based models in classifying CRC, predicting CDI severity, or other 
 microbiome modeling problems.
-
-### Democratizing the democratizers
-
-did i seriously just write that
+These insights could inform the design of future experiments to determine the
+mechanisms of dysbiosis or improve performance of ML models for clinical
+decision making.
 
 ## Conclusions
 
-TODO
-
-
-The ultimate goal of CDI severity prediction models is to help clinicians
-identify early on which patients are at risk of experiencing a severe outcome
-so they can tailor treatments to prevent the outcome from ever occurring.
+In this work, we introduced a novel method for OTU clustering that improves the
+ability of researchers to apply ML to microbiome research,
+applied ML to predict the severity of CDI infections from the composition of the 
+gut microbiome,
+and introduced three new resources empower data scientists from a broad range of
+backgrounds to go from coding novices to ML practitioners.
+This dissertation advances bioinformatics for microbiome research
+from the start of the data analysis pipeline through applying machine learning
+to biological and clinical problems, and ultimately toward enabling other
+scientists to reproduce, replicate, and build upon our work.
