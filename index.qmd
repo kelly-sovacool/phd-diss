@@ -43,14 +43,64 @@ Do no harm [@wiens_no_2019].
 
 ## Democratizing reproducible data science
 
+Data science is an interdisciplinary field that integrates computer science,
+statistics, and expertise from a problem domain.
+When the problem domain is biology, the field could be referred to as
+biological data science, computational biology, or bioinformatics, although
+there is no consensus definition for any of these terms.
+As costs decrease for generating large datasets such as those from
+high-throughput DNA sequencing, there is an ever-growing need for data science
+practitioners with the skills and knowledge to process the data, make
+inferences, and communicate their findings.
+Democratizing data science means making the theory, methods, and tools, more
+accessible by creating educational resources, user-friendly software tools, or
+even simply making data publicly available.
+Accessibility is important for filling the growing demand for skilled data 
+scientists across sectors as well as to improve diversity in the field
+[@ncses_diversity_2023;@gilshan_ethics_2021;@cowgill_biased_2020;@hong_groups_2004].
+Non-profit organizations have been founded to help address the diversity gap in
+computer science, data science, and other STEM fields including
+Girls Who Code, 
+Women in Science and Engineering, 
+Association for Women in Science,
+Society for Advancement of Chicanos and Native Americans in Science,
+and many others.
+
+An important attribute of any scientific finding is reproducibility, where
+others can repeat the same methods on the original dataset to obtain the same
+result [@schloss_identifying_2018].
+Reproducibility does not guarantee correctness, replicability, nor
+generalizability, but it is a minimal achievable standard that helps others
+evaluate scientific claims [@sandve_ten_2013].
+A finding could be entirely unreproducible, where the data are not
+shared and the analysis methods are not described in sufficient detail.
+Achieving perfect reproduciblity is unlikely as eventually link rot, software
+bugs, and shuttering of organizations can occur, but "good enough" practices are
+attainable [@wilson_good_2017].
+Aside from enable others to validate or build upon one's work, reproducible
+practices make researchers more productive both collaboratively and individually
+[@wilson_good_2017].
+However, many early-career researchers lack the quantitative and computational
+skills and self-confidence necessary to perform reproducible computational
+science, in some cases due to prior demotivating experiences
+[@cuddington_challenges_2023].
+Toward the goal of disseminating reproducible research practices,
+Software Carpentry, Data Carpentry, and Library Carpentry (together under the
+umbrella term "The Carpentries") have developed extensive educational
+materials and taught them in hands-on workshops worldwide to researchers,
+scientists, librarians, and other data wranglers [@wilson_software_2016].
+A particularly important contribution of The Carpentries is the instructor
+training course which promotes evidence-based pedagogical practices that
+motivate and empower learners such as instruction via participatory live-coding
+[@deans_science_2015;@carpentries_training_2021].
+
+<!--
 build quantitative self-confidence in biologists [@cuddington_challenges_2023].
 not only teach people how to code, but teach them how to follow best practices.
-reproducibility & replicability [@schloss_identifying_2018].
-Big data necessary to use computer science to analyze large datasets.
-An important attribute of any scientific product is reproducibility, where
-others can apply the same methods on the original dataset to obtain the same result.
 
-live coding pedagogy.
+ml common pitfalls.
+is democratizing data science dangerous?
+-->
 
 ## Datasets used in this dissertation
 
@@ -65,22 +115,23 @@ from 1,277 stool samples collected on the day of diagnosis from
 CDI patients at the University of Michigan.
 White blood cell counts and creatinine levels were also collected on the day of
 diagnosis in order to calculate IDSA severity scores.
-The occurence of ICU admission, colectomy, or death within 30 days was recorded
+The occurrence of ICU admission, colectomy, or death within 30 days was recorded
 and in some cases, physicians conducted chart review to determine whether the
 complication was attributable to the CDI.
 In chapter four, we used results from surveys of learners who participated in the
 Girls Who Code club and Carpentries workshop where we piloted our new
 curricula, which allowed us to measure the success of our teaching approaches.
-The data are described in further detail in each of the chapters below.
+The data are described in further detail in each of their respective chapters.
 
 ## Dissertation outline
 
 In the preambles of chapters two through four, I note my specific contributions
 to the work described in each chapter.
-In chapter two, we present a new OTU clustering algorithm that enables researchers
-to fit new data to existing \textit{de novo} OTUs while maintaining OTU quality.
-In chapter three, we train ML models to predict the severity of CDIs from OTUs and
-compare model performance to prior approaches.
+In chapter two, we present a new OTU clustering algorithm that enables
+researchers to fit new data to existing \textit{de novo} OTUs while maintaining
+OTU quality.
+In chapter three, we train ML models to predict the severity of CDIs from OTUs
+and compare model performance to prior approaches.
 In chapter four, we introduce two curricula and one software package which help
 democratize data science for a range of audiences.
 In chapter five, I discuss the impacts of the findings presented in chapters two
