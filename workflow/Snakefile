@@ -69,7 +69,7 @@ rule make_standalone_abstract:
         tex='abstract-standalone.tex',
         deps='front-matter/abstract.tex',
     output:
-        pdf='_book/abstract_KLS.pdf'
+        pdf='abstract_KLS.pdf'
     params:
         pdf='abstract-standalone.pdf'
     shell:
