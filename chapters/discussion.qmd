@@ -231,7 +231,7 @@ benefits gained.
 Efforts to find consistent changes in taxonomic composition of microbiomes
 between normal and dysbiotic states have found mixed success, in part because
 interpersonal variability in taxonomic composition sometimes exceeds the
-variability between disease states.
+variability between disease states [@seekatz_role_2022;@zhu_inter-individual_2015].
 ML models for diagnosing colorectal cancer or predicting severe CDI perform
 moderately well, but may not perform well enough to justify clinical deployment.
 Variability of microbiome composition between individuals with the same disease
@@ -274,7 +274,8 @@ We would much prefer to honor the time and effort spent during initial
 development, as well as that of end-users who adopt our tools and resources, by
 continuing to maintain them.
 However, few funding mechanisms through traditional grant-making agencies exist
-to maintain existing resources, as most value new discoveries and ideas.
+to maintain existing resources, as most value new discoveries and ideas
+[@schloss_reintroducing_2019].
 We are hopeful that the landscape is changing for the better with the
 announcement of programs such as the Better Software for Science initiative by
 the Alfred P. Sloan Foundation [@sloan-better-software].
