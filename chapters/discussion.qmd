@@ -142,7 +142,7 @@ considered.
 This especially relates to the treatment options available along with their
 potential risks, which influences which performance metrics are most meaningful.
 A large increase in AUROC, AUPRC, or other metrics may or may not translate to a
-large increase in benefit to to patients.
+large increase in benefit to patients.
 In situations where predicting a severe case may lead clinicians to choose a
 treatment option that has an established record of safety, such as oral
 fidaxomicin instead of vancomycin, false positives are tolerable and a lower
@@ -169,11 +169,33 @@ a model based on only EHRs, and different thresholds could be selected for model
 deployment depending on the importance of recall versus precision for the
 alternative treatment being considered by clinicians.
 
-The cost of treatment is a significant factor that influences the practicality
-of model deployment.
-
-bezlotoxumab shown to prevent systemic organ damage in a mouse study [@mileto_bezlotoxumab_2022].
-
+The costs of model training, deployment, and treatment are significant factors
+that influence the practicality of deploying models in clinical settings.
+If a model has good discriminative performance, it may never be used if it is
+expensive to collect the data for deployment.
+Similarly, an inexpensive model may never be used if the alternative treatment
+it would be paired with is too expensive.
+We did not consider these costs when evaluating the potential clinical value,
+although we reported the NNS and NNB when paired with the NNT of fidaxomicin so
+the work could be extended to consider costs as well as other treatment options.
+[^For example, bezlotoxumab has also been shown to prevent recurrent CDI in
+humans as well as systemic organ damage in mice.
+[@thandavaram_efficacy_2022;@mileto_bezlotoxumab_2022]
+However, it is used as an adjuvant therapy and does not replace antibiotics for
+CDI treatment.]
+A predictive model paired with a treatment may be cost-effective if the decrease
+in costs for averting severe outcomes outweighs the increase in treatment costs
+for cases predicted positive plus the costs of deployment, or if any increase in
+cost is deemed worth the benefit [@kim_how_2021].
+Since amplicon sequencing and data processing would need to be performed on CDI
+patients in order to deploy an OTU-based model, while EHR-based models use
+data that is already recorded, OTU-based models likely must outperform
+EHR-based models for the additional data collection to be cost-effective.
+Although cost-benefit analyses only consider the monetary value of improving
+clinical outcomes,
+performing a thorough cost-benefit analysis would provide more information about
+whether deploying CDI severity prediction models might be worth the benefits
+gained.
 
 ### Beyond taxonomic composition
 
