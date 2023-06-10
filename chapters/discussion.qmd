@@ -116,8 +116,7 @@ Rather than write code intended for one-time-use-only to conduct the ML analyses
 we routinely perform, we chose to bundle our methods into a package for others
 within and outside our lab to reuse for their own research.
 As a result, our efforts have contributed directly to the greater scientific
-endeavor, with 18 citations to date of the mikropml publication in the Journal
-of Open Source Software.
+endeavor, with 18 citations to date of the mikropml publication.
 
 In addition to mikropml, other software tools were developed while conducting
 the research described in this dissertation.
@@ -131,8 +130,8 @@ and the mothur snakemake workflow, a template implementing the mothur MiSeq SOP
 for processing 16S rRNA gene amplicon sequence data and authoring reproducible 
 scientific manuscripts [@sovacool_mothur_2023].
 While we have not published any stand-alone papers to describe these tools, they
-have been used within the Schloss Lab for several manuscripts-in-process and
-published work [@armour_machine_2023;@barron_intestinal_2022].
+have been used within the Schloss Lab for several manuscripts-in-process as well
+as published studies [@armour_machine_2023;@barron_intestinal_2022].
 
 ## Future work
 
@@ -162,16 +161,20 @@ A large increase in AUROC, AUPRC, or other metrics may or may not translate to a
 large increase in benefit to patients.
 In situations where predicting a severe case may lead clinicians to choose a
 treatment option that has an established record of safety, such as oral
-fidaxomicin instead of vancomycin, false positives are tolerable and a lower
-precision is acceptable.
+fidaxomicin instead of vancomycin, some false positives are tolerable to a
+certain extent and a lower precision is acceptable (although still better than
+a no-skill model).
 On the other hand, if new evidence were to emerge of a treatment preventing
-severe outcomes but with substantial risk of negative side effects, false
-positives would be less acceptable and a higher precision would be required.
+severe outcomes but with substantial risk of negative side effects, fewer false
+positives and a higher precision would be required.
+Collaborating with clinicians in the infectious dieases specialty is paramount
+to discuss the performance requried depending on the intervention at hand.
 The ultimate goal of CDI severity prediction models is to help clinicians
 identify early on which patients are at risk of experiencing a severe outcome
 so they can tailor treatments to prevent the outcome from ever occurring, but
 care must be taken to ensure no harm is inflicted on patients who never would
-have experienced a severe outcome.
+have experienced a severe outcome, and to ensure that clinicians will actually
+find the model useful to support their decision-making.
 
 #### Decision curve analysis
 
@@ -184,7 +187,7 @@ models which reported precision at that threshold.
 However, rather than evaluating performance at a single threshold,
 we could extend this across a range of thresholds.
 Decision curve analysis would explore how the confusion matrix varies
-across a range of thresholds for models of interest.
+across a range of thresholds for models of interest [@vickers_decision_2006].
 We could then compare the net benefit, NNS, or other metrics for different
 modeling approaches, as their relative performance may vary across decision
 thresholds.
@@ -213,10 +216,6 @@ A predictive model paired with a treatment may be cost-effective if the decrease
 in costs for averting severe outcomes outweighs the increase in treatment costs
 for cases predicted positive plus the costs of deployment, or if any increase in
 cost is deemed worth the benefit [@kim_how_2021].
-Since amplicon sequencing and data processing would need to be performed on CDI
-patients in order to deploy an OTU-based model, while EHR-based models use
-data that is already recorded, OTU-based models likely must far outperform
-EHR-based models for the additional data collection to be cost-effective.
 A limitation of cost-benefit analysis techniques is that the most often used
 metric of benefit (Quality-Adjusted Life-Years) is controversial, as it is prone
 to systematic bias and devalues health gains for patients with disabilities
@@ -245,7 +244,7 @@ Sequencing whole metagenomes to identify the genes present and annotate known
 gene functions is commonly used to build a profile of functional potential of
 the microbiome.
 Functional potential could be paired with meta-transcriptomics or
-untargeted mass spectrometry to validate the gene products that are activate in
+untargeted mass spectrometry to validate the gene products that are active in
 a community, 
 thus painting a more precise picture of active microbial functions than with
 metagenomics alone.

@@ -13,10 +13,9 @@ A microbiome consists of the microbial community in its environment together
 with the molecules they produce such as nucleic acids, proteins, lipids,
 metabolites, and more [@berg_microbiome_2020].
 Microbiomes are thus tightly associated with the local environment they occupy
-such as waterways, soil layers, ocean floors, and body parts of plants, insects,
-and animals.
+such as waterways, soil layers, ocean floors, plants, insects, and animals.
 The human body hosts microbes that inhabit the skin, mouth, gut, vagina, airway,
-and other body regions [@hmp_structure_2012].
+and other body regions [@human_microbiome_project_consortium_structure_2012].
 The living members of a microbiome or referred to as the microbiota, and they
 interact with each other cooperatively and competitively [@coyte_understanding_2019]
 and can influence the health of the host directly or indirectly [@tremaroli_functional_2012].
@@ -26,21 +25,22 @@ produce.
 
 High throughput sequencing and other 'omics techniques can be used to
 characterize the metagenomes, metatranscriptomes, metaproteomes, and
-meta-metabolomes of microbiomes and describe how they change over time, 
+meta-metabolomes of microbiomes and describe how they change over time,
 in response to changing environments,
 or between healthy and diseased states of the host.
 A benefit of 'omics techniques is they do not require microbes to be cultured in
 a laboratory, making it possible to observe genes, gene products, and
 metabolites from microbes missed by culturing techniques and even discover new species
-[@dickson_analysis_2014].
+[@dickson_analysis_2020].
 These large, multivariate datasets present a challenge for bioinformatic
 analysis, as greater computational resources and more sophisticated statistical
-techniques are required to process and analyze big data [@hmp_structure_2012].
+techniques are required to process and analyze big data
+[@human_microbiome_project_consortium_structure_2012].
 An older but still widely-used method to profile the taxonomic composition of
 microbial communities is amplicon sequencing.
 In amplicon sequencing, a region of a marker gene is selected depending on which
 domain of microbial life is being targeted, and the DNA sequences matching that
-region are amplified and sequenced [@pace_analysis_1985;@kolbert_ribosomal_2012].
+region are amplified and sequenced [@pace_analysis_1986;@kolbert_ribosomal_1999].
 Relative to shotgun metagenomics, amplicon sequencing significantly reduces the
 costs and computational resources needed to characterize the taxonomic
 composition of microbiomes.
@@ -65,32 +65,32 @@ However, community-acquired _C. difficile_ infection (CDI) is increasing, even
 in patients with no recent history of antibiotic use [@feuerstadt_burden_2023].
 One mechanism through which the healthy gut community protects against CDI is
 bile acid metabolism, which can inhibit the growth and alter toxin production of
-_C. difficile_ 
+_C. difficile_
 [@theriot_antibiotic-induced_2016;@buffie_precision_2015;@sorg_inhibiting_2010].
 Mouse studies have shown that the initial taxonomic composition of the gut
 microbiome can influence _C. difficile_ clearance, host moribundity, and cecal
-tissue damage in mice infected with CDI
-[@tomkovich_initial_2020;@lesniak_clearance_2021];@lesniak_gut_2022].
+tissue damage in infected mice
+[@tomkovich_initial_2020;@lesniak_clearance_2021;@lesniak_gut_2022].
 Differences between resilient versus susceptible microbiomes could be used as
 biomarkers to identify patients at risk of being infected or developing severe
 complications.
 
 Clinical outcomes of CDI can be severe, as a small portion of patients
-experience complications due to CDI such as ileus, toxic megacolon, or death in
-8-9% of cases [@lucado_clostridium_2012;@kassam_clostridium_2016].
+experience complications requiring ICU admission due to CDI such as ileus,
+toxic megacolon, or death in 8-9% of cases [@lucado_clostridium_2012;@kassam_clostridium_2016].
 Colectomy is used as a last-resort treatment to prevent death when other
 treatments fail, and the mortality rate in patients who undergo colectomy for
 CDI is approximately 35% [@peprah_comparison_2019].
 CDI is of particular cause for concern due to the risk of recurrence, where a
 patient experiences another CDI within 2-8 weeks of a prior CDI [@kelly_can_2012].
 It is thought that the antibiotics prescribed to treat CDI may also prevent the
-microbiome from recovering, thereby perpetuating a cycle of perturbance and 
+microbiome from recovering, thereby perpetuating a cycle of perturbance and
 _C. difficile_ proliferation.
 Adjuvant therapies such as bezlotoxumab and fecal microbiota transplant have
 recently been introduced to help break the cycle of recurrence by targeting the
 toxins produced by _C. difficile_ or restoring the microbiota to a healthy
 state, but they are not yet used widely and typically only in patients
-experiencing a first or second recurrence [@de_la_villa_real-world_2022].
+experiencing a first or second recurrence [@de_la_villa_real-world_2023].
 Furthermore, vancomycin is commonly used to treat first cases of CDI, but
 vancomycin-resistant _Enterococcus_ is becoming more common and enterococci have
 been shown to exacerbate the pathogenesis of _C. difficile_
@@ -107,29 +107,30 @@ quantitative sciences towards a data-driven paradigm.
 Supervised ML approaches can be used to classify samples or make predictions,
 and researchers often claim that the good discriminative performance of a model
 supports the veracity of an underlying scientific claim [@kapoor_leakage_2022].
-Alternatively, ML can be used pragmatically in fields like medicine,
-diagnosis diseases or make predictions about disease outcomes, with the goal of
-improving health care.
+Alternatively, ML can be used pragmatically in fields like medicine in order to
+aid in diagnosing diseases or to make predictions about disease outcomes,
+with the goal of improving health care.
 Models based on clinical laboratory tests and Electronic Health Record (EHR)
 data and have been trained to predict deterioration in COVID-19 patients
 [@kamran_early_2022], identify patients at risk of being infected with _C.
 difficile_ in ICU wards [@otles_clostridioides_2023], and predict outcomes in
-CDI patients [@dieterle_systemic_2020]. 
+CDI patients [@dieterle_systemic_2020].
 ML models trained on microbiota have been used to improve detection of
 colorectal cancer [@baxter_microbiota-based_2016], distinguish CDI patients from
 diarrheal controls [@schubert_microbiome_2014], and identify which members of
 the microbiota contribute most to the performance of these models
 [@topcuoglu_framework_2020].
 
-Care must be taken to train, test, validate, and deploy ML models responsibly.
-Pitfalls have been identified as pervasive in studies that apply ML; these
+While ML techniques hold great promise to improve health care,
+caution must be taken to train, test, validate, and deploy ML models responsibly.
+Pervasive pitfalls have been identified in studies applying ML; these
 include data leakage between the training and test/validation set,
 failing to set a random seed,
 biased training data,
 inappropriate choice of performance metric,
 not reporting variation in performance,
 and neglecting to document methods in sufficient detail
-[@kapoor_leakage_2022;@framework_topcuoglu_2020].
+[@kapoor_leakage_2022;@topcuoglu_framework_2020].
 Errors in ML can invalidate the conclusions of a study and erode trust in the
 scientific endeavor.
 Even worse, errors can be dangerous when ML is applied to health care, as
@@ -150,9 +151,9 @@ When the problem domain is biology, the field could be referred to as
 biological data science, computational biology, or bioinformatics, although
 there is no consensus definition for any of these terms.
 As costs decrease for generating large datasets such as those from
-high-throughput DNA sequencing, there is an ever-growing need for data science
-practitioners with the skills and knowledge to process the data, make
-inferences, and communicate their findings.
+high-throughput sequencing experiments, there is an ever-growing need for data
+science practitioners with the skills and knowledge to process the data,
+make inferences, and communicate their findings.
 Democratizing data science means making the theory, methods, and tools, more
 accessible by creating educational resources, user-friendly software tools, or
 even simply making data publicly available.
@@ -197,10 +198,10 @@ materials and taught them in hands-on workshops worldwide to researchers,
 scientists, librarians, and other data wranglers [@wilson_software_2016].
 A particularly important contribution of The Carpentries is the instructor
 training course which promotes evidence-based pedagogical practices that
-motivate and empower learners such as instruction via participatory live-coding
+motivate and empower learners, such as instruction via participatory live-coding
 [@deans_science_2015;@carpentries_training_2021].
 Improving access to educational resources for best practices in coding and
-data science will empower budding scientists with the skills necessary to
+data science will equip budding scientists with the skills necessary to
 conduct and communicate their work reproducibly.
 
 <!--
@@ -212,15 +213,15 @@ is democratizing data science dangerous?
 
 In the preambles of chapters two through four, I note my specific contributions
 to the work described in each chapter.
-In Chapter 2, we present OptiFit, a new OTU clustering algorithm that enables
+Chapter 2 presents OptiFit, a new OTU clustering algorithm that enables
 researchers to fit new data to existing \textit{de novo} OTUs while maintaining
 OTU quality.
-In Chapter 3, we train ML models to predict the severity of CDI from OTUs
-and compare model performance to prior approaches.
-In Chapter 4, we introduce two curricula and one software package which help
+Chapter 3 presents findings from training ML models to predict the severity of
+CDI from OTUs and comparing model performance to prior approaches.
+Chapter 4 introduces two curricula and one software package which help
 democratize data science for a range of audiences.
 In Chapter 5, I discuss the impacts of the findings presented in Chapters 2
-through 4 and discuss future work to build upon this dissertation.
+through 4 and propose future work to build upon this dissertation.
 
 ## Datasets used in this dissertation
 
