@@ -422,7 +422,7 @@ exactly the same for the intersection dataset.
 in the intersection dataset because it was removed during pre-processing due to
 having near-zero variance.
 **B)** Log~10~-transformed mean relative abundances of the most important OTUs
-on the full datasets, grouped by severity (shape). 
+on the full datasets, grouped by severity (shape).
 The vertical dashed line is the limit of detection.
 :::
 
@@ -569,7 +569,7 @@ for the full dataset in models predicting attributable severity, with the
 maximum point more important than any other OTU yet a minimum below zero.
 However, for the intersection dataset, this OTU was removed due to having
 near-zero variance.
-The presence of _Pseudomonas_ was thus informative in a small number of 
+The presence of _Pseudomonas_ was thus informative in a small number of
 patient samples, but not in others, and these samples were lost in the
 intersection dataset.
 Overall the abundance data are patchy, as these patients were likely all taking
@@ -686,7 +686,7 @@ Samples were then subsampled to 5,000 sequences per sample.
 Only the first CDI sample per patient was used for subsequent ML analyses such
 that no patient is represented more than once, resulting in a dataset of
 `r n_cases_first` samples.
- 
+
 ### Defining CDI severity
 
 We chose to explore four different ways to define CDI cases as severe or not (@fig-flowchart).

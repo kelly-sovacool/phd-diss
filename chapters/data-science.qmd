@@ -168,7 +168,7 @@ Following the onset of the COVID-19 pandemic, we quickly pivoted our club to a
 virtual format.
 In preparation for the 2020 Summer Experience, we switched to a flipped
 classroom style following feedback from our club participants that it was too
-difficult to follow along live coding via Zoom 
+difficult to follow along live coding via Zoom
 (see [Instructional Design](#instructional-design)).
 
 ### Curriculum
@@ -676,7 +676,7 @@ smooth as possible:
 1. We used Slack for communication among instructors and helpers, as well as between helpers and learners.
 Learners asked questions in a group Slack channel where helpers could respond.
 This allowed us to address the vast majority of learner questions and bugs quickly, clearly, and efficiently without disrupting the lesson or moving the learner to a Zoom breakout room.
-Furthermore, Slack worked much better than the Zoom chat as questions could be answered in threads, were preserved and visible to all learners regardless of whether they were connected to Zoom at the time, and didn't get lost as easily.  
+Furthermore, Slack worked much better than the Zoom chat as questions could be answered in threads, were preserved and visible to all learners regardless of whether they were connected to Zoom at the time, and didn't get lost as easily.
 1. Whenever a learner needed more help than was possible on Slack, a helper and the
 learner entered a Zoom breakout room together to troubleshoot.
 However, we tried to minimize this option as much as possible to prevent the learner from missing content

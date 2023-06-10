@@ -139,7 +139,7 @@ diagnoses and prognoses assisted by ML can directly affect patients
 Before a model can ever be deployed in clinical practice, it must be rigorously
 evaluated to ensure it avoids these errors, and ultimately that it will improve
 rather than worsen patient outcomes [@wiens_no_2019].
-ML practitioners must take care to avoid technical pitfalls and engage with 
+ML practitioners must take care to avoid technical pitfalls and engage with
 experts from interdisciplinary fields to ensure their models will be useful and
 beneficial for clinical practice.
 
@@ -157,13 +157,13 @@ make inferences, and communicate their findings.
 Democratizing data science means making the theory, methods, and tools, more
 accessible by creating educational resources, user-friendly software tools, or
 even simply making data publicly available.
-Accessibility is important for filling the growing demand for skilled data 
+Accessibility is important for filling the growing demand for skilled data
 scientists across sectors as well as to improve diversity in the field
 [@ncses_diversity_2023;@gilshan_ethics_2021;@cowgill_biased_2020;@hong_groups_2004].
 Non-profit organizations have been founded to help address the diversity gap in
 computer science, data science, and other STEM fields including
-Girls Who Code, 
-Women in Science and Engineering, 
+Girls Who Code,
+Women in Science and Engineering,
 Association for Women in Science,
 Society for Advancement of Chicanos and Native Americans in Science,
 and many others.

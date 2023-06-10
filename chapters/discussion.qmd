@@ -2,8 +2,8 @@
 schtools::set_knitr_opts()
 library(cranlogs)
 library(dplyr)
-cran_downloads <- cran_downloads(package = "mikropml", 
-                                 from = "2020-11-23", to = "2023-06-08") %>% 
+cran_downloads <- cran_downloads(package = "mikropml",
+                                 from = "2020-11-23", to = "2023-06-08") %>%
   pull(count) %>% sum()
 conda_downloads <- 24727
 ```
@@ -40,7 +40,7 @@ and then used to train a model, then new sequences from an external validation
 set can be fit to the OTUs from the training data prior to deploying the model
 on the new dataset.
 A follow-up paper demonstrated the suitability of OptiFit for this very task
-on a colorectal cancer dataset to distinguish patients with screen-relevant 
+on a colorectal cancer dataset to distinguish patients with screen-relevant
 neoplasias from normal controls [@armour_machine_2023].
 OptiFit opens a new door for microbial ecologists to deploy ML models using
 higher quality OTUs than were possible before.
@@ -120,14 +120,14 @@ endeavor, with 18 citations to date of the mikropml publication.
 
 In addition to mikropml, other software tools were developed while conducting
 the research described in this dissertation.
-These include: 
+These include:
 schtools, an R package for processing output from the mothur program and
 miscellaneous functions for microbiome research [@sovacool_schtools_2022];
 the mikropml snakemake workflow, a template for building reusable and scalable
 machine learning pipelines with mikropml for use in high performance computing
 environments [@sovacool_mikropml_2023],
 and the mothur snakemake workflow, a template implementing the mothur MiSeq SOP
-for processing 16S rRNA gene amplicon sequence data and authoring reproducible 
+for processing 16S rRNA gene amplicon sequence data and authoring reproducible
 scientific manuscripts [@sovacool_mothur_2023].
 While we have not published any stand-alone papers to describe these tools, they
 have been used within the Schloss Lab for several manuscripts-in-process as well
@@ -239,18 +239,18 @@ species carry out the same functions and thus can replace each other with
 little effect on the overall function of the community [@louca_function_2018].
 Extending analyses of taxonomic composition to also include the functional
 composition of the microbiome may shed more light on how the microbiome changes
-in disease states. 
+in disease states.
 Sequencing whole metagenomes to identify the genes present and annotate known
 gene functions is commonly used to build a profile of functional potential of
 the microbiome.
 Functional potential could be paired with meta-transcriptomics or
 untargeted mass spectrometry to validate the gene products that are active in
-a community, 
+a community,
 thus painting a more precise picture of active microbial functions than with
 metagenomics alone.
 Incorporating the known functional potential of the microbiome from metagenomic
 data may help account for functional redundancy and improve the performance of
-OTU-based models in classifying CRC, predicting CDI severity, or other 
+OTU-based models in classifying CRC, predicting CDI severity, or other
 microbiome modeling problems.
 These insights could inform the design of future experiments to determine the
 mechanisms of dysbiosis or improve performance of ML models for clinical
@@ -287,7 +287,7 @@ used efficiently.
 
 In this work, we introduced a novel method for OTU clustering that improves the
 ability of researchers to apply ML to microbiome research,
-applied ML to predict the severity of CDI infections from the composition of the 
+applied ML to predict the severity of CDI infections from the composition of the
 gut microbiome,
 and introduced three new resources that empower data scientists from a broad
 range of backgrounds to go from coding novices to ML practitioners.
