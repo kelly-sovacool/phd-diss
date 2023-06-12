@@ -4,8 +4,8 @@ project:
 
 book:
   title: |
-    Improving machine learning models for microbiome analysis
-    and democratizing data science along the way
+    Improving Machine Learning Models for Microbiome Analysis
+    and Democratizing Data Science Along the Way
   output-file: dissertation_KLS
   author:
     - name: Kelly L. Sovacool

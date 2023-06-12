@@ -1,4 +1,4 @@
-# Democratizing data science with open curricula and user-friendly software tools
+# Democratizing Data Science With Open Curricula and User-Friendly Software Tools
 
 ```{r setup}
 #| include: false

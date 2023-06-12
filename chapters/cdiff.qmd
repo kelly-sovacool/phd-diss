@@ -176,7 +176,7 @@ OTU-based models perform for each definition.
 ::: {#fig-flowchart fig-cap="CDI severity definitions."}
 `r sovatools::insert_image_md('papers/severe-cdi/paper/figures/flowchart_sankey.png')`
 \justify
-\small
+\footnotesize
 **A)** Decision flow chart to define CDI cases as severe according to the
 Infectious Diseases Society of America (IDSA) based on lab values,
 the occurrence of an adverse outcome due to any cause (All-cause),
@@ -276,7 +276,7 @@ of AUROC.
 ::: {#fig-performance fig-cap="Performance of ML models."}
 `r sovatools::insert_image_md('papers/severe-cdi/paper/figures/ml-performance.png')`
 \justify
-\small
+\footnotesize
 In the left facets, models were trained on the full datasets, with different
 numbers of samples available for each severity definition.
 In the right facets, models were trained on the same dataset consisting of the
@@ -402,7 +402,7 @@ increased mean relative abundance in severe cases relative to not severe cases.
 ::: {#fig-features fig-cap="Most important OTUs for model performance."}
 `r sovatools::insert_image_md('papers/severe-cdi/paper/figures/feature-importance.png')`
 \justify
-\small
+\footnotesize
 **A)** Feature importance via permutation test.
 For each OTU, the order of samples was randomized in the test set 100 times and
 the AUROC was re-calculated to estimate the permutation performance.
@@ -825,7 +825,7 @@ TODO
 ::: {#fig-prc fig-cap="Precision-recall curves." fig-pos='H'}
 `r sovatools::insert_image_md('papers/severe-cdi/paper/figures/prc_curves.png')`
 \justify
-\small
+\footnotesize
 The original precision-recall curves for each model.
 The horizontal line is the baseline precision, i.e. the proportion of severe
 cases in the dataset for each severity definition.
@@ -836,7 +836,7 @@ compared directly without balancing the precision (see @fig-performance).
 ::: {#fig-cdiff fig-cap="_C. difficile_ relative abundance and feature importance." fig-pos='H'}
 `r sovatools::insert_image_md('papers/severe-cdi/paper/figures/cdiff-otu.png')`
 \justify
-\small
+\footnotesize
 Of the 45 OTUs belonging to the _Peptostreptococcaceae_ family, only one
 (OTU 25) had abundance values above the limit of detection.
 **Left**: log~10~-transformed relative abundance of OTU 25 in the full datasets.
