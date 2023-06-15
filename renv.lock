@@ -1133,8 +1133,14 @@
     "sovatools": {
       "Package": "sovatools",
       "Version": "0.0.0.9000",
-      "Source": "unknown",
-      "Hash": "fe79871e3439e0dddf4b6e5cfa008838",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "kelly-sovacool",
+      "RemoteRepo": "sovatools",
+      "RemoteRef": "main",
+      "RemoteSha": "9115e5289ae1dda0013f12ae7866576a7b82b42f",
+      "Hash": "2b34724ea4ee268ce58d828933dee342",
       "Requirements": [
         "dplyr",
         "glue",
