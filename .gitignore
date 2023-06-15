@@ -1,7 +1,6 @@
 .DS_Store
 .snakemake
 __pycache__
-*_cache*
 /.quarto/
 /_book/
 /dissertation_KLS.tex

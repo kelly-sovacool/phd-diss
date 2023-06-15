@@ -53,8 +53,8 @@ format:
     fig-cap-location: top
 fig-dpi: 600
 execute:
-  freeze: auto  # re-render only when source changes
-  cache: false
+  freeze: auto # re-render only when source changes
+  cache: false # cache seems to mess with inline hook...
   eval: true
   echo: false
   message: false
