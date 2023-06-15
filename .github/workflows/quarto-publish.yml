@@ -19,14 +19,15 @@ jobs:
     - uses: actions/checkout@v2
       with:
         submodules: recursive
-
+    - uses: quarto-dev/quarto-actions/setup@v2
+      with:
+        tinytex: true
     # - name: Render with snakemake
     #   uses: snakemake/snakemake-github-action@v1.24.0
     #   with:
     #     directory: .
     #     snakefile: workflow/Snakefile
     #     args: "render_pdf --cores 1 --use-conda --conda-frontend mamba --show-failed-logs"
-
     - name: Publish
       uses: quarto-dev/quarto-actions/publish@v2
       with:
