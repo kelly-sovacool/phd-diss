@@ -7,6 +7,7 @@ My Bioinformatics PhD dissertation
 - [Rackham formatting
   guidelines](https://rackham.umich.edu/navigating-your-degree/formatting-guidelines/)
 - [Quarto template](https://github.com/kelly-sovacool/rackham)
+- [Defense presentation](https://github.com/kelly-sovacool/phd-defense)
 
 ## Word count
 
