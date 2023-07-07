@@ -107,7 +107,7 @@ datasets nor are any in use in routine clinical practice
 Rather than relying on limited sets of human-curated variables,
 machine learning (ML) is a promising approach that allows for use of thousands
 of features to classify samples and predict outcomes.
-Indeed, ML models trained on entire Electronic Health Record (EHR) data
+Indeed, ML models trained on entire electronic health record (EHR) data
 have demonstrated improved performance over curated models
 [@rao_clostridium_2015;@li_using_2019].
 
@@ -266,7 +266,7 @@ We plotted the receiver-operator characteristic curve and found that the
 pragmatic severity models outperformed the others at all specificity values
 (@fig-performance B).
 For comparison, a prior study with a different dataset trained a logistic
-regression model on whole Electronic Health Record data extracted on the day of
+regression model on whole electronic health record data extracted on the day of
 CDI diagnosis to predict attributable severity, yielding an AUROC of
 `r ehr_auroc` [@li_using_2019].
 While our attributable severity model did not meet this performance, the
@@ -492,7 +492,7 @@ that `r min_screen` to `r max_screen` total CDI patients would need to be
 screened by an OTU-based prediction model and treated with fidaxomicin in order
 for one patient to benefit.
 For comparison, prior studies predicted CDI-attributable severity using whole
-Electronic Health Record data extracted two days after diagnosis and from a
+electronic health record data extracted two days after diagnosis and from a
 smaller set of manually curated variables, achieving precision values of 0.417
 (NNS = `r ehr_nns`) for the EHR model and 0.167 (NNS = `r curated_nns`) for the
 curated model at the 95th percentile of risk
