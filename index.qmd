@@ -209,9 +209,9 @@ ml common pitfalls.
 is democratizing data science dangerous?
 -->
 
-## Dissertation outline
+## Dissertation outline and contributions
 
-In the preambles of chapters two through four, I note my specific contributions
+In the preambles of Chapters 2 through 4, I note my specific contributions
 to the work described in each chapter.
 Chapter 2 presents OptiFit, a new OTU clustering algorithm that enables
 researchers to fit new data to existing \textit{de novo} OTUs while maintaining

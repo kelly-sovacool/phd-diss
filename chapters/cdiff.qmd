@@ -31,8 +31,8 @@ and assessed the potential clinical value of micriobiome-based
 prediction models.
 
 I performed all of the analysis and created the figures and tables for this chapter.
-Other co-authors conceived of the study, processed samples, and assisted in
-training ML models.
+Other co-authors helped to conceive of the study, processed samples, and
+assisted in training ML models.
 This chapter will be submitted to a peer-reviewed journal with the following
 co-authors:
 Kelly L. Sovacool, Sarah E. Tomkovich, Megan L. Coden, Jenna Wiens,
@@ -266,7 +266,7 @@ We plotted the receiver-operator characteristic curve and found that the
 pragmatic severity models outperformed the others at all specificity values
 (@fig-performance B).
 For comparison, a prior study with a different dataset trained a logistic
-regression model on whole electronic health record data extracted on the day of
+regression model on electronic health record data extracted on the day of
 CDI diagnosis to predict attributable severity, yielding an AUROC of
 `r ehr_auroc` [@li_using_2019].
 While our attributable severity model did not meet this performance, the
@@ -491,7 +491,7 @@ patients screened are predicted to experience severity), these NNB values mean
 that `r min_screen` to `r max_screen` total CDI patients would need to be
 screened by an OTU-based prediction model and treated with fidaxomicin in order
 for one patient to benefit.
-For comparison, prior studies predicted CDI-attributable severity using whole
+For comparison, prior studies predicted CDI-attributable severity using
 electronic health record data extracted two days after diagnosis and from a
 smaller set of manually curated variables, achieving precision values of 0.417
 (NNS = `r ehr_nns`) for the EHR model and 0.167 (NNS = `r curated_nns`) for the
