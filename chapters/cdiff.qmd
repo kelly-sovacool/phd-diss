@@ -455,7 +455,8 @@ positive and is calculated as the reciprocal of precision (@eq-nns) [@rembold_nu
 Similarly, the number needed to treat (NNT) is the number of true positive
 patients that must be treated by an intervention in order for one patient to
 benefit from the treatment and is calculated as the reciprocal of the absolute
-risk reduction (ARR) from randomized controlled trials (@eq-arr and @eq-nnt) [@cook_number_1995].
+risk reduction (ARR) from randomized controlled trials (@eq-arr and @eq-nnt)
+[@cook_number_1995;@irwig_smart_2008].
 Multiplying NNS by NNT yields the number needed to benefit (NNB): the number
 of patients predicted to have a severe outcome who then benefit from the
 treatment (@eq-nnb) [@liu_number_2019].
@@ -567,18 +568,18 @@ risk_thresh %>%
 thresh_dat <- read_csv(here('papers','severe-cdi', 'results',
                             'thresholds_results_aggregated.csv'))
 thresh_dat %>% 
-  filter(strategy == 'model', outcome != 'idsa') %>% 
-  group_by(decision_threshold, outcome) %>% 
+  filter(strategy == 'model', outcome != 'idsa', dataset=='full') %>% 
+  group_by(decision_threshold, outcome, dataset) %>% 
   summarise(
     median_nns = median(nns),
     mean_nns = mean(nns),
     upper = quantile(nns, 0.95),
     lower = quantile(nns, 0.05)
-  ) %>% 
+  ) %>%
   ggplot() +
-  geom_ribbon(aes(x = decision_threshold, y = median_nns, 
-             ymin = lower, ymax = upper, fill = outcome), 
-             alpha = 0.08) +
+  # geom_ribbon(aes(x = decision_threshold, y = median_nns, 
+  #            ymin = lower, ymax = upper, fill = outcome), 
+  #            alpha = 0.08) +
   geom_line(aes(x = decision_threshold, y = median_nns, color = outcome),
             alpha = 0.6) +
   scale_color_manual(values = c(idsa = "#1B9E77", 
@@ -595,6 +596,22 @@ thresh_dat %>%
   guides(fill = 'none') +
   labs(y = "Median NNS", x = 'Decision Threshold') +
   theme_sovacool()
+
+
+thresh_dat %>% filter(strategy == 'model') %>% group_by(outcome, dataset) %>% 
+  summarize(med_nns = median(nns),
+            mean_nns = mean(nns),
+            med_diff = median(diff_95th_pct),
+            mean_diff = mean(diff_95th_pct))
+med_nns <- thresh_dat %>% 
+    filter(strategy == 'model', outcome != 'idsa', !(outcome == 'pragmatic' & dataset == 'int')) %>%
+    group_by(outcome, dataset) %>% 
+    slice_min(diff_95th_pct) %>% filter(nns < Inf) %>% summarize(med_nns = median(nns))
+thresh_dat %>% 
+    filter(strategy == 'model', outcome != 'idsa', !(outcome == 'pragmatic' & dataset == 'int')) %>%
+    group_by(outcome, dataset) %>% 
+    slice_min(diff_95th_pct) %>% right_join(med_nns %>% rename(nns = med_nns)) %>% 
+  select(outcome, dataset, nns, diff_95th_pct, decision_threshold) %>% unique()
 ```
 
 ## Discussion
