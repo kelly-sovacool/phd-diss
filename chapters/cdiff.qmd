@@ -99,9 +99,12 @@ There is a need for robust, accurate methods to identify patients at risk of
 severe CDI outcomes.
 When paired with treatment options that may reduce risk of severity, prediction
 models can guide clinician decision-making to improve patient outcomes while
-minimizing harms from unnecessary treatment.
+minimizing harms and costs from unnecessary treatment.
+Clinicians could choose more aggressive treatment options for patients predicted
+as being at high risk for severity, while using less costly or less invasive
+treatments for low-risk patients.
 Numerous scoring systems for predicting severe CDI outcomes based on patient
-clinical factors have been developed, but none have validated well to external
+clinical factors have been developed, but none have generalized to external
 datasets nor are any in use in routine clinical practice
 [@chakra_prediction_2012;@perry_external_2022].
 Rather than relying on limited sets of human-curated variables,
@@ -110,6 +113,10 @@ of features to classify samples and predict outcomes.
 Indeed, ML models trained on entire electronic health record (EHR) data
 have demonstrated improved performance over curated models
 [@rao_clostridium_2015;@li_using_2019].
+However, EHR-based ML models also suffer from generalizability issues as EHR
+standards and structures vary widely across hospital systems, making it
+difficult to integrate disparate EHR data and deploy models in different
+hospitals [@hofer_realistically_2020].
 
 Aside from patient factors encoded in EHRs,
 the state of the patient gut microbiome is a promising factor to predict
@@ -122,6 +129,12 @@ Identifying features of the human gut microbiota that promote or prevent severe
 infections can guide further experiments to elucidate microbial mechanisms of
 CDI severity, and incorporating these features into CDI severity models may
 improve model performance to help guide clinical treatment decisions.
+Furthermore, ML models trained on microbiome data may be more generalizable
+across disparate datasets compared to EHR data as long as the same metagenomic
+or marker gene sequencing protocol is used across datasets [@li_performance_2023].
+While the variables encoded in EHRs vary across hospitals depending on
+individual hospital practices and the EHR software vendor used, the definition
+of a microbial marker gene is universal.
 
 We set out to investigate whether ML models trained on the taxonomic composition
 of the gut microbiome can predict CDI severity in a human cohort,
