@@ -495,20 +495,20 @@ we can pair the NNT of fidaxomicin with the NNS of OTU-based prediction models
 to estimate the NNB.
 
 To calculate a clinically-relevant NNS for these models, we computed the
-confusion matrix at the 95th percentile of risk for each prediction model.
+confusion matrix at the 95th percentile of risk for each prediction model
+trained on the full datasets.
 We excluded the IDSA severity models as the IDSA severity scores were calculated
 on the day of diagnosis, thus they are classification rather than prediction
 problems.
 Furthermore, IDSA severity scores do not correlate well with disease-related
 adverse events which are a more salient outcome to prevent.
-
 We focus on the performance at the 95th percentile of risk in order to compare
 to prior studies based on EHRs that reported model precision at this risk
 threshold.
 Among the models predicting severe outcomes, those trained on the full
 datasets performed best with an NNS of `r allcause_nns` for the all-cause
 definition, `r attrib_nns` for the attributable definition, and
-`r pragmatic_nns` for the pragmatic definition (@tbl-risk).
+`r pragmatic_nns` for the pragmatic definition (@fig-risk).
 Multiplying the NNS of the OTU-based models by the estimated NNT of
 `r fdx_nnt` for fidaxomicin yields NNB values of `r allcause_fdx_nnb`
 for all-cause severity, `r attrib_fdx_nnb` for attributable severity,
@@ -516,17 +516,15 @@ and `r pragmatic_fdx_nnb` for pragmatic severity.
 Thus, in a hypothetical scenario where these assumptions about fidaxomicin hold
 true, at best `r min_fdx_nnb` and at worst `r max_fdx_nnb` patients would need to be
 predicted to experience a severe outcome and be treated with fidaxomicin in
-order for one patient to benefit, with the pragmatic severity models having
-the best NNB when paired with fidaxomicin.
+order for one patient to benefit, with the all-cause severity models yielding
+the best performance.
 For comparison, prior studies predicted CDI-attributable severity using
 electronic health record data extracted two days after diagnosis and from a
-smaller set of manually curated variables, achieving precision values of 0.417
-(NNS = `r ehr_nns`) for the EHR model and 0.167 (NNS = `r curated_nns`) for the
-curated model at the 95th percentile of risk
-[@li_using_2019;@rao_clostridium_2015].
-Pairing the prior EHR-based model with fidaxomicin would yield an NNB of `r
-ehr_fdx_nnb`.
-Thus the pragmatic severity model did not outperform the EHR-based model,
+smaller set of manually curated variables, achieving precision values of `r ehr_prec` 
+(NNS = `r ehr_nns`) for the EHR model and `r curated_prec` (NNS = `r curated_nns`)
+for the curated model at the 95th percentile of risk [@li_using_2019;@rao_clostridium_2015].
+Pairing the prior EHR-based model with fidaxomicin would yield an NNB of `r ehr_fdx_nnb`.
+Thus the best OTU-based model did not outperform the EHR-based model,
 although the EHR data were extracted two days after diagnosis while OTUs in this
 study are from stool samples collected on the day of diagnosis.
 These estimates represent a proof-of-concept demonstration of the potential
@@ -536,45 +534,22 @@ microbial factors versus EHRs to guide clinicians' treatment decisions.
 TODO possible to find NNS on day of diagnosis for EHR model?
 -->
 
-```{r risk_95th_pct_decision_thresholds}
-#| message: false
-#| label: tbl-risk
-#| tbl-pos: h
-#| tbl-cap: "**Predictive model performance at 95th percentile of risk.**
-#|   The confusion matrix was computed for the decision threshold at
-#|   the 95th percentile of risk for each severity prediction model,
-#|   which corresponds to 5% of cases predicted to have a severe outcome.
-#|   The number needed to screen (NNS) to identify one true positive
-#|   is the reciprocal of precision.
-#|   "
-#| tbl-subcap:
-#|   - "Full datasets"
-#|   - "Intersection of samples with all labels available"
-risk_thresh <- read_csv(here('papers','severe-cdi','results','decision_thresholds.csv'))
-risk_thresh %>%
-  filter(Dataset == 'Full') %>%
-  select(-Dataset) %>%
-  kable() %>%
-  kable_styling(font_size = table_font_size)
-risk_thresh %>%
-  filter(Dataset == 'Intersection') %>%
-  select(-Dataset) %>%
-  kable() %>%
-  kable_styling(font_size = table_font_size)
-```
-
+::: {#fig-risk fig-cap="Model performance in terms of the number needed to screen across risk thresholds."}
 ```{r plot_risk_thresholds}
 # todo annotate with 95th pct
 thresh_dat <- read_csv(here('papers','severe-cdi', 'results',
-                            'thresholds_results_aggregated.csv'))
+                            'thresholds_results_aggregated.csv')) %>% 
+  mutate(predicted_pos_frac = (tp + fp) / (tp + fp + tn + fn),
+         diff_95th_pct = abs(predicted_pos_frac - 0.05))
+nns_95th_pct <- read_csv(here('papers','severe-cdi','results','decision_thresholds.csv'))
 thresh_dat %>% 
   filter(strategy == 'model', outcome != 'idsa', dataset=='full') %>% 
   group_by(decision_threshold, outcome, dataset) %>% 
   summarise(
     median_nns = median(nns),
     mean_nns = mean(nns),
-    upper = quantile(nns, 0.95),
-    lower = quantile(nns, 0.05)
+    #upper = quantile(nns, 0.95),
+    #lower = quantile(nns, 0.05)
   ) %>%
   ggplot() +
   # geom_ribbon(aes(x = decision_threshold, y = median_nns, 
@@ -582,6 +557,8 @@ thresh_dat %>%
   #            alpha = 0.08) +
   geom_line(aes(x = decision_threshold, y = median_nns, color = outcome),
             alpha = 0.6) +
+  geom_point(data = nns_95th_pct, 
+             aes(x = decision_threshold, nns, color = outcome)) +
   scale_color_manual(values = c(idsa = "#1B9E77", 
                                 attrib = "#D95F02", 
                                 allcause = "#7570B3", 
@@ -594,25 +571,16 @@ thresh_dat %>%
                                allcause='All-cause', pragmatic='Pragmatic')
   ) +
   guides(fill = 'none') +
-  labs(y = "Median NNS", x = 'Decision Threshold') +
-  theme_sovacool()
-
-
-thresh_dat %>% filter(strategy == 'model') %>% group_by(outcome, dataset) %>% 
-  summarize(med_nns = median(nns),
-            mean_nns = mean(nns),
-            med_diff = median(diff_95th_pct),
-            mean_diff = mean(diff_95th_pct))
-med_nns <- thresh_dat %>% 
-    filter(strategy == 'model', outcome != 'idsa', !(outcome == 'pragmatic' & dataset == 'int')) %>%
-    group_by(outcome, dataset) %>% 
-    slice_min(diff_95th_pct) %>% filter(nns < Inf) %>% summarize(med_nns = median(nns))
-thresh_dat %>% 
-    filter(strategy == 'model', outcome != 'idsa', !(outcome == 'pragmatic' & dataset == 'int')) %>%
-    group_by(outcome, dataset) %>% 
-    slice_min(diff_95th_pct) %>% right_join(med_nns %>% rename(nns = med_nns)) %>% 
-  select(outcome, dataset, nns, diff_95th_pct, decision_threshold) %>% unique()
+  labs(y = "Median NNS", x = 'Risk Threshold') +
+  theme_sovacool() +
+  theme(legend.title = element_blank(),
+        legend.position = 'top')
 ```
+\justify
+\footnotesize
+TODO caption.
+The confusion matrix was computed for the decision threshold at the 95th percentile of risk for each severity prediction model, which corresponds to 5% of cases predicted to have a severe outcome. The number needed to screen (NNS) to identify one true positive is the reciprocal of precision.
+:::
 
 ## Discussion
 
