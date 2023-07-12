@@ -10,10 +10,12 @@ knitr::opts_chunk$set(dpi = 600)
 ```{r load_data}
 #| output: false
 library(assertthat)
+library(cowplot)
 library(glue)
 library(here)
 library(kableExtra)
 library(knitr)
+library(schtools)
 library(tidyverse)
 load(here('papers','severe-cdi',"results", "stats.RData"))
 table_font_size <- 10
@@ -31,8 +33,8 @@ and assessed the potential clinical value of micriobiome-based
 prediction models.
 
 I performed all of the analysis and created the figures and tables for this chapter.
-Other co-authors conceived of the study, processed samples, and assisted in
-training ML models.
+Other co-authors helped to conceive of the study, processed samples, and
+assisted in training ML models.
 This chapter will be submitted to a peer-reviewed journal with the following
 co-authors:
 Kelly L. Sovacool, Sarah E. Tomkovich, Megan L. Coden, Jenna Wiens,
@@ -99,17 +101,24 @@ There is a need for robust, accurate methods to identify patients at risk of
 severe CDI outcomes.
 When paired with treatment options that may reduce risk of severity, prediction
 models can guide clinician decision-making to improve patient outcomes while
-minimizing harms from unnecessary treatment.
+minimizing harms and costs from unnecessary treatment.
+Clinicians could choose more aggressive treatment options for patients predicted
+as being at high risk for severity, while using less costly or less invasive
+treatments for low-risk patients.
 Numerous scoring systems for predicting severe CDI outcomes based on patient
-clinical factors have been developed, but none have validated well to external
+clinical factors have been developed, but none have generalized to external
 datasets nor are any in use in routine clinical practice
 [@chakra_prediction_2012;@perry_external_2022].
 Rather than relying on limited sets of human-curated variables,
 machine learning (ML) is a promising approach that allows for use of thousands
 of features to classify samples and predict outcomes.
-Indeed, ML models trained on entire Electronic Health Record (EHR) data
+Indeed, ML models trained on entire electronic health record (EHR) data
 have demonstrated improved performance over curated models
 [@rao_clostridium_2015;@li_using_2019].
+However, EHR-based ML models also suffer from generalizability issues as EHR
+standards and structures vary widely across hospital systems, making it
+difficult to integrate disparate EHR data and deploy models in different
+hospitals [@hofer_realistically_2020].
 
 Aside from patient factors encoded in EHRs,
 the state of the patient gut microbiome is a promising factor to predict
@@ -122,6 +131,12 @@ Identifying features of the human gut microbiota that promote or prevent severe
 infections can guide further experiments to elucidate microbial mechanisms of
 CDI severity, and incorporating these features into CDI severity models may
 improve model performance to help guide clinical treatment decisions.
+Furthermore, ML models trained on microbiome data may be more generalizable
+across disparate datasets compared to EHR data as long as the same metagenomic
+or marker gene sequencing protocol is used across datasets [@li_performance_2023].
+While the variables encoded in EHRs vary across hospitals depending on
+individual hospital practices and the EHR software vendor used, the definition
+of a microbial marker gene is universal.
 
 We set out to investigate whether ML models trained on the taxonomic composition
 of the gut microbiome can predict CDI severity in a human cohort,
@@ -266,7 +281,7 @@ We plotted the receiver-operator characteristic curve and found that the
 pragmatic severity models outperformed the others at all specificity values
 (@fig-performance B).
 For comparison, a prior study with a different dataset trained a logistic
-regression model on whole Electronic Health Record data extracted on the day of
+regression model on electronic health record data extracted on the day of
 CDI diagnosis to predict attributable severity, yielding an AUROC of
 `r ehr_auroc` [@li_using_2019].
 While our attributable severity model did not meet this performance, the
@@ -395,9 +410,8 @@ _Lactobacillus_ was important only for the all-cause definition on the intersect
 dataset.
 All remaining OTUs had differences in AUROC < 0.02 and were only significantly
 important in one or two of the models at most.
-There is not always a clear pattern of increased or decreased relative abundance
-for important OTUs in severe CDI cases, but all of the top 5 OTUs had an
-increased mean relative abundance in severe cases relative to not severe cases.
+All of the significantly importance OTUs had an increased mean relative
+abundance in severe cases relative to not severe cases.
 
 ::: {#fig-features fig-cap="Most important OTUs for model performance."}
 `r sovatools::insert_image_md('papers/severe-cdi/paper/figures/feature-importance.png')`
@@ -438,18 +452,32 @@ with treatments that may reduce severity.
 When considering the suitability of a model for deployment in clinical settings,
 the number needed to screen (NNS) is a highly relevant metric representing how
 many patients must be predicted as severe by the model to identify one true
-positive.
+positive. NNS is calculated as the reciprocal of precision (@eq-nns) [@rembold_number_1998].
 Similarly, the number needed to treat (NNT) is the number of true positive
 patients that must be treated by an intervention in order for one patient to
-benefit from the treatment.
+benefit from the treatment. NNT is calculated as the reciprocal of the absolute
+risk reduction (ARR) from randomized controlled trials (@eq-arr and @eq-nnt)
+[@cook_number_1995;@laupacis_assessment_1988;@irwig_relative_2008].
 Multiplying NNS by NNT yields the number needed to benefit (NNB): the number
 of patients predicted to have a severe outcome who then benefit from the
-treatment [@liu_number_2019].
+treatment (@eq-nnb) [@liu_number_2019].
 Thus the NNB pairs model performance with treatment effectiveness to estimate
-the benefit of using predictive models in clinical practice, and are useful for
-comparing models and performing cost-benefit analyses.
+the benefit of using predictive models in clinical practice.
 Lower values of NNS, NNT, and NNB are better, with the minimum value being 1,
 as fewer patients must be screened and treated in order to benefit a single patient.
+
+$$
+NNS = \frac{1}{Precision}
+$$ {#eq-nns}
+$$
+ARR = Control\ Event\ Rate - Experimental\ Event\ Rate
+$$ {#eq-arr}
+$$
+NNT = \frac{1}{ARR}
+$$ {#eq-nnt}
+$$
+NNB = NNS \times NNT
+$$ {#eq-nnb}
 
 Current clinical guidelines specify vancomycin and fidaxomicin as the standard
 antibiotics to treat CDI, with a preference for fidaxomicin due to its higher
@@ -466,76 +494,143 @@ and reduced recurrence also translates to reducing the risk of severe outcomes,
 we can pair the NNT of fidaxomicin with the NNS of OTU-based prediction models
 to estimate the NNB.
 
+::: {#fig-risk fig-cap="Model performance in terms of the number needed to screen across decision thresholds and risk percentiles."}
+```{r plot_risk_thresholds, fig.width=6.5, fig.height=5.5}
+thresh_dat <- read_csv(here('papers','severe-cdi', 'results',
+                            'thresholds_results_aggregated.csv')) %>% 
+  mutate(predicted_pos_frac = (tp + fp) / (tp + fp + tn + fn),
+         predicted_pos_frac = round(predicted_pos_frac,2),
+         risk_pct = 1 - predicted_pos_frac,
+         diff_95th_pct = abs(predicted_pos_frac - 0.05),
+         nns2 = 1/Precision)
+nns_95th_pct <- read_csv(here('papers','severe-cdi','results','decision_thresholds.csv'))
+plot_decision <- thresh_dat %>% 
+  filter(strategy == 'model', outcome != 'idsa', dataset=='full') %>% 
+  group_by(decision_threshold, outcome, dataset) %>% 
+  summarise(
+    median_nns = median(nns),
+    mean_nns = mean(nns),
+    #upper = quantile(nns, 0.95),
+    #lower = quantile(nns, 0.05)
+  ) %>%
+  ggplot() +
+  # geom_ribbon(aes(x = decision_threshold, y = median_nns, 
+  #            ymin = lower, ymax = upper, fill = outcome), 
+  #            alpha = 0.08) +
+  geom_line(aes(x = decision_threshold, y = median_nns, color = outcome),
+            alpha = 0.6) +
+  geom_point(data = nns_95th_pct,
+             aes(x = decision_threshold, nns, color = outcome)) +
+  scale_x_continuous(expand = c(0, 0), limits = c(-0.01, 1.01)) +
+  scale_color_manual(values = c(idsa = "#1B9E77", 
+                                attrib = "#D95F02", 
+                                allcause = "#7570B3", 
+                                pragmatic = "#E7298A"),
+                     labels = c(idsa='IDSA', attrib='Attributable', 
+                                allcause='All-cause', pragmatic='Pragmatic'),
+                     guide = guide_legend(label.position = "top")) +
+  scale_fill_manual(values = c(idsa = "#1B9E77", 
+                               attrib = "#D95F02", 
+                               allcause = "#7570B3", 
+                               pragmatic = "#E7298A"),
+                    labels = c(idsa='IDSA', attrib='Attributable', 
+                               allcause='All-cause', pragmatic='Pragmatic')
+  ) +
+  guides(fill = 'none') +
+  labs(y = "Median NNS", x = 'Decision Threshold') +
+  theme_sovacool() +
+  theme(text = element_text(size = 10, family = 'Helvetica'),
+        legend.title = element_blank(),
+        legend.position = 'top',
+        plot.margin = margin(0,5,0,0))
+plot_risk <- thresh_dat %>% 
+  filter(strategy == 'model', outcome != 'idsa', dataset=='full') %>% 
+  ggplot() +
+  stat_summary(aes(x = risk_pct, y = nns, color = outcome),
+            alpha = 0.6, geom = 'line', fun='median') +
+  geom_vline(xintercept = 0.95, linetype = 'dashed') +
+  scale_x_continuous(expand = c(0, 0), limits = c(-0.01, 1.01)) +
+  scale_color_manual(values = c(idsa = "#1B9E77", 
+                                attrib = "#D95F02", 
+                                allcause = "#7570B3", 
+                                pragmatic = "#E7298A")) +
+  labs(x = 'Risk Percentile', y = 'Median NNS') +
+  theme_sovacool() +
+  theme(text = element_text(size = 10, family = 'Helvetica'),
+        legend.position = 'none',
+        plot.margin = margin(10,5,0,7))
+plot_grid(plot_decision, plot_risk,
+          nrow = 2, labels = 'AUTO', 
+          align = 'hv', axis = 'l')
+```
+\justify
+\footnotesize
+The number needed to screen (NNS) represents how many patients must be predicted
+as severe by the model to identify one true positive (@eq-nns).
+NNS ranges from 1 to infinity, with 1 being perfect.
+**A)**
+The median NNS was computed for each decision threshold from
+0 to 1, incremented by 0.05.
+A decision threshold of 0.20 means that patients with at least a 20% risk of
+severity are predicted as severe.
+The points mark the decision threshold at the 95th percentile of risk for each
+severity prediction model, which corresponds to 5% of cases predicted to have a
+severe outcome.
+**B)**
+The median NNS is shown across risk percentiles. The vertical dashed line marks
+the 95th percentile of risk.
+:::
+
 To calculate a clinically-relevant NNS for these models, we computed the
-confusion matrix at the 95th percentile of risk for each prediction model.
+NNS across decision thresholds and risk percentiles for each
+prediction model trained on the full datasets (@fig-risk).
 We excluded the IDSA severity models as the IDSA severity scores were calculated
 on the day of diagnosis, thus they are classification rather than prediction
 problems.
 Furthermore, IDSA severity scores do not correlate well with disease-related
 adverse events which are a more salient outcome to prevent.
+We report the median NNS for each decision threshold and risk percentile from
+0 to 1 (@fig-risk).
+The decision threshold is the risk level at which patients are predicted to have a
+severe outcome.
+For example, a decision threshold of 0.20 means that patients with at least a
+20% risk of severity are predicted to have a severe outcome by the model.
+The decision threshold at a given risk percentile is different for each model,
+with the 95th percentile of risk corresponding to the decision threshold where
+5% of patients are predicted to have a severe outcome.
+
+We further focused on the 95th percentile of risk in order to compare our models
+to EHR-based models from prior studies that reported model precision at this
+risk threshold.
 Among the models predicting severe outcomes, those trained on the full
 datasets performed best with an NNS of `r allcause_nns` for the all-cause
 definition, `r attrib_nns` for the attributable definition, and
-`r pragmatic_nns` for the pragmatic definition (@tbl-risk).
+`r pragmatic_nns` for the pragmatic definition at the 95th percentile of risk (@fig-risk).
 Multiplying the NNS of the OTU-based models by the estimated NNT of
 `r fdx_nnt` for fidaxomicin yields NNB values of `r allcause_fdx_nnb`
 for all-cause severity, `r attrib_fdx_nnb` for attributable severity,
 and `r pragmatic_fdx_nnb` for pragmatic severity.
 Thus, in a hypothetical scenario where these assumptions about fidaxomicin hold
-true, between `r min_fdx_nnb` and `r max_fdx_nnb` patients would need to be
+true, at best `r min_fdx_nnb` and at worst `r max_fdx_nnb` patients would need to be
 predicted to experience a severe outcome and be treated with fidaxomicin in
-order for one patient to benefit, with the pragmatic severity models having
-the best NNB when paired with fidaxomicin.
-As the NNS values were computed at the 95th percentile of risk (where 5% of
-patients screened are predicted to experience severity), these NNB values mean
-that `r min_screen` to `r max_screen` total CDI patients would need to be
-screened by an OTU-based prediction model and treated with fidaxomicin in order
-for one patient to benefit.
-For comparison, prior studies predicted CDI-attributable severity using whole
-Electronic Health Record data extracted two days after diagnosis and from a
-smaller set of manually curated variables, achieving precision values of 0.417
-(NNS = `r ehr_nns`) for the EHR model and 0.167 (NNS = `r curated_nns`) for the
-curated model at the 95th percentile of risk
-[@li_using_2019;@rao_clostridium_2015].
-Pairing the prior EHR-based model with fidaxomicin would yield
-an NNB of `r ehr_fdx_nnb` with `r ehr_screen` total CDI patients screened and
-treated for one patient to benefit.
-Thus the pragmatic severity model did not outperform the EHR-based model,
-although the EHR data were extracted two days after diagnosis while OTUs in this
-study are from stool samples collected on the day of diagnosis.
+order for one patient to benefit, with the all-cause severity models yielding
+the best performance.
+For comparison, prior studies predicted CDI-attributable severity using
+electronic health record data extracted two days after diagnosis and from a
+smaller set of manually curated variables, achieving precision values of `r ehr_prec` 
+(NNS = `r ehr_nns`) for the EHR model and `r curated_prec` (NNS = `r curated_nns`)
+for the curated model at the 95th percentile of risk [@li_using_2019;@rao_clostridium_2015].
+Pairing the prior EHR-based model with fidaxomicin would yield an NNB of `r ehr_fdx_nnb`.
+Thus the all-cause and pragmatic OTU-based models outperformed the curated model
+but not the EHR-based model, although the EHR data were extracted two days after
+diagnosis while OTUs in this study are from stool samples collected on the day
+of diagnosis.
 These estimates represent a proof-of-concept demonstration of the potential
 value and trade-offs of deploying severity prediction models trained on
 microbial factors versus EHRs to guide clinicians' treatment decisions.
 <!--
 TODO possible to find NNS on day of diagnosis for EHR model?
 -->
-
-```{r risk_95th_pct_decision_thresholds}
-#| message: false
-#| label: tbl-risk
-#| tbl-pos: h
-#| tbl-cap: "**Predictive model performance at 95th percentile of risk.**
-#|   The confusion matrix was computed for the decision threshold at
-#|   the 95th percentile of risk for each severity prediction model,
-#|   which corresponds to 5% of cases predicted to have a severe outcome.
-#|   The number needed to screen (NNS) to identify one true positive
-#|   is the reciprocal of precision.
-#|   "
-#| tbl-subcap:
-#|   - "Full datasets"
-#|   - "Intersection of samples with all labels available"
-risk_thresh <- read_csv(here('papers','severe-cdi','results','decision_thresholds.csv'))
-risk_thresh %>%
-  filter(Dataset == 'Full') %>%
-  select(-Dataset) %>%
-  kable() %>%
-  kable_styling(font_size = table_font_size)
-risk_thresh %>%
-  filter(Dataset == 'Intersection') %>%
-  select(-Dataset) %>%
-  kable() %>%
-  kable_styling(font_size = table_font_size)
-```
 
 ## Discussion
 
@@ -582,13 +677,12 @@ captured by permutation importance.
 The full pragmatic severity model performed just as well as a prior
 EHR-based model trained on the day of diagnosis, demonstrating the potential
 utility of OTU-based models.
-In terms of the number needed to screen, the OTU-based pragmatic severity model
-outperformed a prior model of manually curated clinical variables, but not a
-model trained on EHR data extracted two days after diagnosis.
-While the attributable definition had a worse NNS for the OTU-based models, it
-did not perform worse than the prior curated model, and it may be the most
-clinically relevant as physician chart review increases confidence that
-positively-labelled severe outcomes are due to the CDI rather than other causes.
+In terms of the number needed to screen, the OTU-based pragmatic and all-cause
+severity models outperformed a prior model of manually curated clinical
+variables, but not a model trained on EHR data extracted two days after
+diagnosis.
+The attributable definition had the worst NNS of all models, despite its
+clinical relevance.
 Obtaining EHR data for the dataset in this study would allow a more direct
 comparison of the performance of models trained on OTUs, EHRs, or both, as well
 as extracting EHR data on the day of diagnosis rather than two days after.
@@ -621,6 +715,12 @@ CDI, our results can be incorporated into future considerations of whether to
 build severity prediction models and what features should be incorporated.
 In practice, EHR-based models are less costly to deploy than OTU-based models
 and do not require additional clinical sample collection.
+However, EHR systems notoriously lack interoperability across hospitals, which
+inhibits the ability of EHR-based models to generalize to datasets from
+different hospitals.
+OTU-based models may be more generalizable across disparate hospital systems
+than EHR-based models as long as the same sample collection and sequencing
+protocol is used.
 Amplicon sequencing is not typically performed for CDI patients, however,
 routinely profiling the microbial communities of CDI patients could be justified
 if models that incorporate microbial features were shown to improve patient
@@ -644,11 +744,11 @@ CDI.
 ### Sample collection
 
 This study was approved by the University of Michigan Institutional Review
-Board. All patient samples were collected by the University of Michigan Health
-System from January 2016 through December 2017.
-Stool samples that had unformed stool consistency were tested for *C. difficile* by
-the clinical microbiology lab with a two-step algorithm that included detection
-of *C. difficile* glutamate dehydrogenase and toxins A and B by enzyme
+Board. Samples were collected from patients diagnosed with CDI by the University
+of Michigan Health System from January 2016 through December 2017.
+Stool samples that had unformed stool consistency were tested for *C. difficile*
+by the clinical microbiology lab with a two-step algorithm that included
+detection of *C. difficile* glutamate dehydrogenase and toxins A and B by enzyme
 immunoassay with reflex to PCR for the *tcdB* gene when results were discordant.
 1,517 stool samples were collected from patients diagnosed with a CDI.
 Leftover stool samples that were sent to the clinical microbiology lab were
@@ -757,14 +857,15 @@ model, which corresponds to 5% of cases being predicted by the model to
 experience a severe outcome.
 At this threshold we computed the number needed to screen (NNS), which is the
 reciprocal of precision and represents the number of cases that must be
-predicted as severe to identify one true positive [@rembold_number_1998].
-The number needed to treat (NNT) is the number of true positive
-patients that must be treated by an intervention in order for one patient to
-benefit, and is calculated from the reciprocal of absolute risk in randomized
-controlled trials [@laupacis_assessment_1988].
+predicted as severe to identify one true positive (@eq-nns) [@rembold_number_1998].
+The number needed to treat (NNT) is the number of true positive patients that
+must be treated by an intervention in order for one patient to benefit, and is
+calculated from the reciprocal of absolute risk reduction in randomized
+controlled trials (@eq-nnt and @eq-arr) [@cook_number_1995;@laupacis_assessment_1988;@irwig_relative_2008].
 Multiplying the NNS of a model by the NNT of a treatment yields the number
 needed to benefit (NNB) - the number of patients that must be predicted to have
-a severe outcome and undergo a treatment to benefit from it [@liu_number_2019].
+a severe outcome and undergo a treatment to benefit from it 
+(@eq-nnb) [@liu_number_2019].
 NNB encapsulates the benefit of pairing a predictive model with a treatment in
 a clinical setting, with lower NNB numbers being better.
 

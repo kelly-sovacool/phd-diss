@@ -110,7 +110,7 @@ supports the veracity of an underlying scientific claim [@kapoor_leakage_2022].
 Alternatively, ML can be used pragmatically in fields like medicine in order to
 aid in diagnosing diseases or to make predictions about disease outcomes,
 with the goal of improving health care.
-Models based on clinical laboratory tests and Electronic Health Record (EHR)
+Models based on clinical laboratory tests and electronic health record (EHR)
 data and have been trained to predict deterioration in COVID-19 patients
 [@kamran_early_2022], identify patients at risk of being infected with _C.
 difficile_ in ICU wards [@otles_clostridioides_2023], and predict outcomes in
@@ -209,9 +209,9 @@ ml common pitfalls.
 is democratizing data science dangerous?
 -->
 
-## Dissertation outline
+## Dissertation outline and contributions
 
-In the preambles of chapters two through four, I note my specific contributions
+In the preambles of Chapters 2 through 4, I note my specific contributions
 to the work described in each chapter.
 Chapter 2 presents OptiFit, a new OTU clustering algorithm that enables
 researchers to fit new data to existing \textit{de novo} OTUs while maintaining

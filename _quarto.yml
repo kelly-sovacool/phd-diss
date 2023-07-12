@@ -40,7 +40,6 @@ committee: # alphabetical order
 chair: Professor Patrick D. Schloss, Chair
 list-commands:
   - \showlistoffigures
-  - \showlistoftables
   - \showlistofacronyms
 
 bibliography: references.bib
