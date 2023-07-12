@@ -34,7 +34,6 @@ acronyms: \input{front-matter/acronyms.tex}
 committee: # alphabetical order
   - Professor Patrick D. Schloss, Chair
   - Associate Professor Gregory J. Dick
-  - Associate Professor Peter L. Freddolino
   - Associate Professor Jenna Wiens
   - Professor Vincent B. Young
 chair: Professor Patrick D. Schloss, Chair
