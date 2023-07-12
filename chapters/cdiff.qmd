@@ -536,15 +536,16 @@ TODO possible to find NNS on day of diagnosis for EHR model?
 
 ::: {#fig-risk fig-cap="Model performance in terms of the number needed to screen across risk thresholds."}
 ```{r plot_risk_thresholds}
-# todo annotate with 95th pct
 thresh_dat <- read_csv(here('papers','severe-cdi', 'results',
                             'thresholds_results_aggregated.csv')) %>% 
   mutate(predicted_pos_frac = (tp + fp) / (tp + fp + tn + fn),
-         diff_95th_pct = abs(predicted_pos_frac - 0.05))
+         diff_95th_pct = abs(predicted_pos_frac - 0.05),
+         nns2 = 1/Precision)
 nns_95th_pct <- read_csv(here('papers','severe-cdi','results','decision_thresholds.csv'))
 thresh_dat %>% 
   filter(strategy == 'model', outcome != 'idsa', dataset=='full') %>% 
-  group_by(decision_threshold, outcome, dataset) %>% 
+  mutate(predicted_pos_frac = round(predicted_pos_frac,2)) %>% 
+  group_by(predicted_pos_frac, outcome, dataset) %>% 
   summarise(
     median_nns = median(nns),
     mean_nns = mean(nns),
@@ -555,10 +556,10 @@ thresh_dat %>%
   # geom_ribbon(aes(x = decision_threshold, y = median_nns, 
   #            ymin = lower, ymax = upper, fill = outcome), 
   #            alpha = 0.08) +
-  geom_line(aes(x = decision_threshold, y = median_nns, color = outcome),
+  geom_line(aes(x = predicted_pos_frac, y = median_nns, color = outcome),
             alpha = 0.6) +
-  geom_point(data = nns_95th_pct, 
-             aes(x = decision_threshold, nns, color = outcome)) +
+  # geom_point(data = nns_95th_pct, 
+  #            aes(x = decision_threshold, nns, color = outcome)) +
   scale_color_manual(values = c(idsa = "#1B9E77", 
                                 attrib = "#D95F02", 
                                 allcause = "#7570B3", 
@@ -575,6 +576,33 @@ thresh_dat %>%
   theme_sovacool() +
   theme(legend.title = element_blank(),
         legend.position = 'top')
+thresh_dat %>% 
+  filter(strategy == 'model', outcome != 'idsa', dataset=='full') %>% 
+  mutate(predicted_pos_frac = round(predicted_pos_frac,2)) %>% 
+  ggplot() +
+  stat_summary(aes(x = predicted_pos_frac, y = nns, color = outcome),
+            alpha = 0.6, geom = 'line', fun='median') +
+  scale_color_manual(values = c(idsa = "#1B9E77", 
+                                attrib = "#D95F02", 
+                                allcause = "#7570B3", 
+                                pragmatic = "#E7298A")) +
+  theme_sovacool() +
+  theme(legend.title = element_blank(),
+        legend.position = 'top')
+thresh_dat %>% 
+  filter(strategy == 'model', outcome != 'idsa', dataset=='full') %>% 
+  #mutate(predicted_pos_frac = round(predicted_pos_frac,2)) %>% 
+  ggplot(aes(x = decision_threshold, y = predicted_pos_frac, color = outcome)) +
+  stat_summary(geom = 'line', fun = 'median', mapping = aes(shape = outcome),
+               alpha = 0.6) +
+  geom_hline(yintercept = 0.05, linetype = 'dashed') +
+  scale_color_manual(values = c(idsa = "#1B9E77", 
+                                attrib = "#D95F02", 
+                                allcause = "#7570B3", 
+                                pragmatic = "#E7298A")) +
+  theme_sovacool() +
+  theme(legend.position = 'none')
+
 ```
 \justify
 \footnotesize
