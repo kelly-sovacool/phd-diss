@@ -40,6 +40,7 @@ chair: Professor Patrick D. Schloss, Chair
 list-commands:
   - \showlistoffigures
   - \showlistofacronyms
+  - \hidelistoftables
 
 bibliography: references.bib
 format:
